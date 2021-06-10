@@ -2,7 +2,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/ffcode/blob/master/LICENSE.txt)
 
 This LaTeX package helps you write source code in your academic papers
-and make sure it looks neat.
+and make sure it looks neat. The package uses `minted` and `tcolorbox`
+packages.
 
 First, [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
 from [CTAN](https://ctan.org/pkg/ffcode) 
