@@ -49,7 +49,6 @@ zip: ffcode.pdf ffcode.sty
 	gsed -i "s|0\.0\.0|$${version}|" ffcode.tex
 	gsed -i "s|00\.00\.0000|$${date}|" ffcode.tex
 	cp ../../.latexmkrc .
-	cp ../../cactus.pdf .
 	latexmk -pdf ffcode.tex
 	rm .latexmkrc
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out *.exc

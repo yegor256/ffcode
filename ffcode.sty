@@ -23,12 +23,22 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}[00.00.0000 0.0.0 Fixed Font Code]
 
-\RequirePackage[draft=true]{minted}
-  \setminted{breaklines}
-  \usemintedstyle{bw}
-  \renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
-  \newminted[ffcode]{text}{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,
-    rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
+\RequirePackage{microtype}
+\RequirePackage{xkeyval}
+\newif\ifnopygments
+\DeclareOptionX{nopygments}{\nopygmentstrue}
+\ProcessOptionsX\relax
+
+\ifnopygments
+  \RequirePackage[draft=true]{minted}
+\else
+  \RequirePackage{minted}
+\fi
+\setminted{breaklines}
+\usemintedstyle{bw}
+\renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
+\newminted[ffcode]{text}{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,
+  rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
 
 \RequirePackage{tcolorbox}
   \newtcbox{\codebox}{nobeforeafter,colframe=gray!80!white,

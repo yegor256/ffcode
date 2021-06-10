@@ -22,17 +22,19 @@
 
 \documentclass[12pt]{article}
 \usepackage[tt=false,type1=true]{libertine}
+\usepackage{amsmath}
 \usepackage{multicol}
 \usepackage{ffcode}
 \title{\ff{ffcode}: \LaTeX{} Package \\ for Fixed-Font Code Blocks}
 \author{Yegor Bugayenko}
 \date{0.0.0 00.00.0000}
 \begin{document}
-\raggedbottom%
-\setlength{\topskip}{0mm}%
-\setlength{\parindent}{0pt}%
 \pagenumbering{gobble}
-\setlength{\columnsep}{32pt}%
+\raggedbottom
+\setlength{\topskip}{0mm}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{32pt}
+\setlength{\parskip}{6pt}
 \maketitle
 
 This package helps you write source code in your articles
@@ -41,13 +43,14 @@ use like this (pay attention to the \ff{\char`\\ff} command
 and the \ff{ffcode} environment):
 
 \begin{multicols}{2}
+\setlength{\parskip}{0pt}
 \scriptsize
 \raggedcolumns
 \begin{verbatim}
 \documentclass{article}
 \usepackage{ffcode}
 \begin{document}
-The function \tt{fibo()} is recursive:
+The function \ff{fibo()} is recursive:
 \begin{ffcode}
 void fibo(int n) {
   if (n < 2) {
@@ -56,13 +59,13 @@ void fibo(int n) {
   return fibo(n - 1) + fibo(n - 2);
 }
 \end{ffcode}
+The line~\ref{ln:ret} terminates it.
 \end{document}
-The line~\ref{ln:ret} terminates recursion.
 \end{verbatim}
 
 \columnbreak
 
-This C++ function \ff{fibo()} is recursive:
+The function \ff{fibo()} is recursive:
 
 \begin{ffcode}
 void fibo(int n) {
@@ -71,11 +74,15 @@ void fibo(int n) {
   }
   return fibo(n - 1) + fibo(n - 2);
 }
-\ end{ffcode}
 \end{ffcode}
 
-The line~\ref{ln:ret} terminates recursion.
+The line~\ref{ln:ret} terminates it.
 \end{multicols}
+
+You have to run \ff{pdflatex} with the \ff{--shell-escape} flag
+in order to let \ff{minted} (the package we use) to run Pygments
+and format the code. If you don't want this to happen,
+just use the \ff{nopygments} option.
 
 More details about this package you can find
 in the \ff{yegor256/ffcode} GitHub repository.
