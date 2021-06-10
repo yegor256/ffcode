@@ -1,0 +1,83 @@
+% (The MIT License)
+%
+% Copyright (c) 2021 Yegor Bugayenko
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the 'Software'), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\documentclass[12pt]{article}
+\usepackage[tt=false,type1=true]{libertine}
+\usepackage{multicol}
+\usepackage{ffcode}
+\title{\ff{ffcode}: \LaTeX{} Package \\ for Fixed-Font Code Blocks}
+\author{Yegor Bugayenko}
+\date{0.0.0 00.00.0000}
+\begin{document}
+\raggedbottom%
+\setlength{\topskip}{0mm}%
+\setlength{\parindent}{0pt}%
+\pagenumbering{gobble}
+\setlength{\columnsep}{32pt}%
+\maketitle
+
+This package helps you write source code in your articles
+and make sure it looks nice. Install it from CTAN and then
+use like this (pay attention to the \ff{\char`\\ff} command
+and the \ff{ffcode} environment):
+
+\begin{multicols}{2}
+\scriptsize
+\raggedcolumns
+\begin{verbatim}
+\documentclass{article}
+\usepackage{ffcode}
+\begin{document}
+The function \tt{fibo()} is recursive:
+\begin{ffcode}
+void fibo(int n) {
+  if (n < 2) {
+    return n; |$\label{ln:ret}$|
+  }
+  return fibo(n - 1) + fibo(n - 2);
+}
+\end{ffcode}
+\end{document}
+The line~\ref{ln:ret} terminates recursion.
+\end{verbatim}
+
+\columnbreak
+
+This C++ function \ff{fibo()} is recursive:
+
+\begin{ffcode}
+void fibo(int n) {
+  if (n < 2) { |$\label{ln:ret}$|
+    return n;
+  }
+  return fibo(n - 1) + fibo(n - 2);
+}
+\ end{ffcode}
+\end{ffcode}
+
+The line~\ref{ln:ret} terminates recursion.
+\end{multicols}
+
+More details about this package you can find
+in the \ff{yegor256/ffcode} GitHub repository.
+
+\end{document}
