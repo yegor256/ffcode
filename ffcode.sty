@@ -29,6 +29,8 @@
 \DeclareOptionX{nopygments}{\nopygmentstrue}
 \newif\ifnoframes
 \DeclareOptionX{noframes}{\noframestrue}
+\newif\ifnonumbers
+\DeclareOptionX{nonumbers}{\nonumberstrue}
 \ProcessOptionsX\relax
 
 \ifnopygments
@@ -38,9 +40,13 @@
 \fi
 \setminted{breaklines}
 \usemintedstyle{bw}
-\renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
-\newminted[ffcode]{text}{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,
-  rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
+\ifnonumbers
+  \newminted[ffcode]{text}{framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
+\else
+  \renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
+  \newminted[ffcode]{text}{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,
+    rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
+\fi
 
 \ifnoframes
   \newcommand{\ff}[1]{\vrule height 6pt depth 1pt width 0pt\texttt{#1}}
