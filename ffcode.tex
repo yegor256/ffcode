@@ -51,7 +51,7 @@ and the \ff{ffcode} environment):
 \begin{document}
 The function \ff{fibo()} is recursive:
 \begin{ffcode}
-void fibo(int n) {
+int fibo(int n) {
   if (n < 2) {
     return n; |$\label{ln:ret}$|
   }
@@ -67,9 +67,9 @@ The line~\ref{ln:ret} terminates it.
 The function \ff{fibo()} is recursive:
 
 \begin{ffcode}
-void fibo(int n) {
-  if (n < 2) { |$\label{ln:ret}$|
-    return n;
+int fibo(int n) {
+  if (n < 2) {
+    return n; |$\label{ln:ret}$|
   }
   return fibo(n - 1) + fibo(n - 2);
 }
