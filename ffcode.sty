@@ -27,6 +27,8 @@
 \RequirePackage{xkeyval}
 \newif\ifnopygments
 \DeclareOptionX{nopygments}{\nopygmentstrue}
+\newif\ifnoframes
+\DeclareOptionX{noframes}{\noframestrue}
 \ProcessOptionsX\relax
 
 \ifnopygments
@@ -40,11 +42,15 @@
 \newminted[ffcode]{text}{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,
   rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
 
-\RequirePackage{tcolorbox}
-  \newtcbox{\codebox}{nobeforeafter,colframe=gray!80!white,
-  colback=gray!5!white,boxrule=0.1pt,arc=1pt,
-  boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
-  tcbox raise base}
-\newcommand{\ff}[1]{\codebox{\vrule height 6pt depth 1pt width 0pt\texttt{#1}}}
+\ifnoframes
+  \newcommand{\ff}[1]{\vrule height 6pt depth 1pt width 0pt\texttt{#1}}
+\else
+  \RequirePackage{tcolorbox}
+    \newtcbox{\codebox}{nobeforeafter,colframe=gray!80!white,
+    colback=gray!5!white,boxrule=0.1pt,arc=1pt,
+    boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
+    tcbox raise base}
+  \newcommand{\ff}[1]{\codebox{\vrule height 6pt depth 1pt width 0pt\texttt{#1}}}
+\fi
 
 \endinput
