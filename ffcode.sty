@@ -48,15 +48,16 @@
     rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
 \fi
 
+\newcommand\ffcoderule{\vrule height 6pt depth 1pt width 0pt}
 \ifnoframes
-  \newcommand{\ff}[1]{\vrule height 6pt depth 1pt width 0pt\texttt{#1}}
+  \newcommand{\ff}[1]{\ffcoderule\texttt{#1}}
 \else
   \RequirePackage{tcolorbox}
-    \newtcbox{\codebox}{nobeforeafter,colframe=gray!80!white,
+    \newtcbox{\ffcodebox}{nobeforeafter,colframe=gray!80!white,
     colback=gray!5!white,boxrule=0.1pt,arc=1pt,
     boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
     tcbox raise base}
-  \newcommand{\ff}[1]{\codebox{\vrule height 6pt depth 1pt width 0pt\texttt{#1}}}
+  \newcommand{\ff}[1]{\ffcodebox{\ffcoderule\texttt{#1}}}
 \fi
 
 \endinput
