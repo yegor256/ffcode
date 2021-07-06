@@ -1,4 +1,4 @@
-[![make](https://github.com/yegor256/ffcode/actions/workflows/make.yml/badge.svg)](https://github.com/yegor256/ffcode/actions/workflows/make.yml)
+[![make](https://github.com/yegor256/ffcode/actions/workflows/latexmk.yml/badge.svg)](https://github.com/yegor256/ffcode/actions/workflows/latexmk.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/ffcode/blob/master/LICENSE.txt)
 
 This LaTeX package helps you write source code in your academic papers
