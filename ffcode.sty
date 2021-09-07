@@ -41,10 +41,10 @@
 \setminted{breaklines}
 \usemintedstyle{bw}
 \ifnonumbers
-  \newminted[ffcode]{text}{framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
+  \newminted[ffcode]{text}{framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,escapeinside=||,mathescape,highlightcolor=gray!30}
 \else
   \renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
-  \newminted[ffcode]{text}{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,
+  \newminted[ffcode]{text}{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,highlightcolor=gray!30,
     rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
 \fi
 
