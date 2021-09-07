@@ -25,6 +25,7 @@
 \usepackage{amsmath}
 \usepackage{multicol}
 \usepackage{ffcode}
+\usepackage{xcolor}
 \title{\ff{ffcode}: \LaTeX{} Package \\ for Fixed-Font Code Blocks}
 \author{Yegor Bugayenko}
 \date{0.0.0 00.00.0000}
@@ -87,6 +88,37 @@ If you want to omit the light gray frames around \ff{\char`\\ff}
 texts, use the package option \ff{noframes}.
 
 To omit the line numbers, use the \ff{nonumbers} option of the package.
+
+You can highlight some lines in your \ff{ffcode} environment,
+or can use any other additional configuration parameters from
+the \ff{minted} package:
+
+\begin{multicols}{2}
+\setlength{\parskip}{0pt}
+\scriptsize
+\raggedcolumns
+\begin{verbatim}
+\begin{ffcode*}{highlightlines={1,4-5}}
+while (true) {
+  print("Hello!")
+  print("Enter your name:")
+  scan(x)
+  print("You name is " + x)
+}
+\end{ffcode*}
+\end{verbatim}
+
+\columnbreak
+
+\begin{ffcode*}{highlightlines={7,10-11},highlightcolor=gray!30}
+while (true) {
+  print("Hello!")
+  print("Enter your name:")
+  scan(x)
+  print("You name is " + x)
+}
+\end{ffcode*}
+\end{multicols}
 
 More details about this package you can find
 in the \ff{yegor256/ffcode} GitHub repository.

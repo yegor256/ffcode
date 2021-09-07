@@ -10,3 +10,4 @@
 --ignore=textcolor:pp
 --ignore=newmdenv:op
 --ignore=ff,nospell,citet,citep
+--ignore=ffcode,ffcode*
