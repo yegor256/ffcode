@@ -52,7 +52,7 @@ zip: ffcode.pdf ffcode.sty
 	latexmk -pdf ffcode.tex
 	rm .latexmkrc
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out *.exc
-	cat ffcode.sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
+	cat ffcode.sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" | uniq > DEPENDS.txt
 	cd ..
 	zip -r ffcode.zip *
 	cp ffcode.zip ..
