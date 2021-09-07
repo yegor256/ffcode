@@ -48,16 +48,21 @@
     rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
 \fi
 
+\makeatletter
+\newcommand\ffprint{\begingroup\obeyspaces\@ffprint}
+\newcommand{\@ffprint}[1]{\texttt{#1}\endgroup}
+\makeatother
+
 \newcommand\ffcoderule{\vrule height 6pt depth 1pt width 0pt}
 \ifnoframes
-  \newcommand{\ff}[1]{\ffcoderule\texttt{#1}}
+  \newcommand{\ff}[1]{\ffcoderule\ffprint{#1}}
 \else
   \RequirePackage{tcolorbox}
     \newtcbox{\ffcodebox}{nobeforeafter,colframe=gray!80!white,
     colback=gray!5!white,boxrule=0.1pt,arc=1pt,
     boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
     tcbox raise base}
-  \newcommand{\ff}[1]{\ffcodebox{\ffcoderule\texttt{#1}}}
+  \newcommand{\ff}[1]{\ffcodebox{\ffcoderule\ffprint{#1}}}
 \fi
 
 \endinput
