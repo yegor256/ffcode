@@ -55,7 +55,7 @@ zip: ffcode.pdf ffcode.sty
 	cat ffcode.sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" | uniq > DEPENDS.txt
 	cd ..
 	zip -r ffcode.zip *
-	cp ffcode.zip ..
+	cp ffcode.zip ../ffcode-$${version}.zip
 	cd ..
 
 clean:

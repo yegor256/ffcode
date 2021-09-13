@@ -26,6 +26,7 @@
 \usepackage{multicol}
 \usepackage{ffcode}
 \usepackage{xcolor}
+\usepackage{microtype}
 \title{\ff{ffcode}: \LaTeX{} Package \\ for Fixed-Font Code Blocks}
 \author{Yegor Bugayenko}
 \date{0.0.0 00.00.0000}
@@ -125,6 +126,10 @@ while (true) {
 }
 \end{ffcode*}
 \end{multicols}
+
+Using this second argument of the \ff{ffcode*} (with the trailing asterisk),
+you can provide any other options from the \ff{minted} package to the
+snippet.
 
 More details about this package you can find
 in the \ff{yegor256/ffcode} GitHub repository.
