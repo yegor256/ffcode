@@ -24,7 +24,10 @@
 
 .ONESHELL:
 
-all: ffcode.pdf zip
+all: ffcode.pdf test zip
+
+test:
+	pdflatex -pdf -shell-escape test.tex
 
 ffcode.pdf: ffcode.tex ffcode.sty
 	latexmk -pdf $<
