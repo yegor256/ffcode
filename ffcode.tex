@@ -21,6 +21,7 @@
 % SOFTWARE.
 
 \documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
 \usepackage[tt=false,type1=true]{libertine}
 \usepackage{amsmath}
 \usepackage{multicol}
@@ -49,6 +50,7 @@ and the \ff{ffcode} environment):
 \raggedcolumns
 \begin{verbatim}
 \documentclass{article}
+\usepackage[T1]{fontenc}
 \usepackage{ffcode}
 \begin{document}
 The function \ff{fibo()} is recursive:
@@ -84,6 +86,10 @@ You have to run \ff{pdflatex} with the \ff{--shell-escape} flag
 in order to let \ff{minted} (the package we use) to run Pygments
 and format the code. If you don't want this to happen,
 just use the \ff{nopygments} option.
+
+A pair of vertical lines decorate a TeX command inside the snippet.
+If you want to print a single vertical line, use this:
+\ff{|\char`\\vert|}.
 
 If you want to omit the light gray frames around \ff{\char`\\ff}
 texts, use the package option \ff{noframes}.
@@ -130,6 +136,9 @@ while (true) {
 Using this second argument of the \ff{ffcode*} (with the trailing asterisk),
 you can provide any other options from the \ff{minted} package to the
 snippet.
+
+By the way, the package correctly formats low-height texts, for example, just
+a dot: \ff{.}
 
 More details about this package you can find
 in the \ff{yegor256/ffcode} GitHub repository.
