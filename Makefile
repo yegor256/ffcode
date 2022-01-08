@@ -21,48 +21,52 @@
 # SOFTWARE.
 
 .SHELLFLAGS = -e -x -c
-
 .ONESHELL:
 
-all: ffcode.pdf test copyright zip
+NAME=ffcode
+
+all: $(NAME).pdf test copyright zip
 
 copyright:
-	grep -q -r "2021-$$(date +%Y)" --include '*.tex' --include '*.sty' --include 'Makefile' .
+	find . -name '*.tex' -o -name '*.sty' -o -name 'Makefile' | xargs -n1 grep -r "(c) 2021-$$(date +%Y) "
 
-test:
-	pdflatex -pdf -shell-escape test.tex
+test: tests/*.tex $(NAME).sty
+	if [ -d tests ]; then
+		cd tests && make && cd ..
+	fi
 
-ffcode.pdf: ffcode.tex ffcode.sty
+$(NAME).pdf: $(NAME).tex $(NAME).sty
 	latexmk -pdf $<
 	texsc $<
 	texqc --ignore 'You have requested document class' $<
 
-zip: ffcode.pdf ffcode.sty
+zip: $(NAME).pdf $(NAME).sty
 	rm -rf package
 	mkdir package
 	cd package
-	mkdir ffcode
-	cd ffcode
+	mkdir $(NAME)
+	cd $(NAME)
 	cp ../../README.md .
-	version=$$(curl --silent -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/yegor256/ffcode/releases/latest | jq -r '.tag_name')
+	version=$$(curl --silent -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/yegor256/$(NAME)/releases/latest | jq -r '.tag_name')
 	echo "Version is: $${version}"
 	date=$$(date +%Y/%m/%d)
 	echo "Date is: $${date}"
-	cp ../../ffcode.sty .
-	gsed -i "s|0\.0\.0|$${version}|" ffcode.sty
-	gsed -i "s|00\.00\.0000|$${date}|" ffcode.sty
-	cp ../../ffcode.tex .
-	gsed -i "s|0\.0\.0|$${version}|" ffcode.tex
-	gsed -i "s|00\.00\.0000|$${date}|" ffcode.tex
+	cp ../../$(NAME).sty .
+	gsed -i "s|0\.0\.0|$${version}|" $(NAME).sty
+	gsed -i "s|00\.00\.0000|$${date}|" $(NAME).sty
+	cp ../../$(NAME).tex .
+	gsed -i "s|0\.0\.0|$${version}|" $(NAME).tex
+	gsed -i "s|00\.00\.0000|$${date}|" $(NAME).tex
 	cp ../../.latexmkrc .
-	latexmk -pdf ffcode.tex
+	latexmk -pdf $(NAME).tex
 	rm .latexmkrc
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out *.exc
-	cat ffcode.sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" | uniq > DEPENDS.txt
+	cat $(NAME).sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" | uniq > DEPENDS.txt
 	cd ..
-	zip -r ffcode.zip *
-	cp ffcode.zip ../ffcode-$${version}.zip
+	zip -r $(NAME).zip *
+	cp $(NAME).zip ../$(NAME)-$${version}.zip
 	cd ..
 
 clean:
 	git clean -dfX
+	cd tests && make clean && cd ..
