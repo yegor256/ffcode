@@ -1,6 +1,6 @@
 # (The MIT License)
 #
-# Copyright (c) 2021 Yegor Bugayenko
+# Copyright (c) 2021-2022 Yegor Bugayenko
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the 'Software'), to deal
@@ -24,7 +24,10 @@
 
 .ONESHELL:
 
-all: ffcode.pdf test zip
+all: ffcode.pdf test copyright zip
+
+copyright:
+	grep -q -r "2021-$$(date +%Y)" --include '*.tex' --include '*.sty' --include 'Makefile' .
 
 test:
 	pdflatex -pdf -shell-escape test.tex
@@ -41,7 +44,7 @@ zip: ffcode.pdf ffcode.sty
 	mkdir ffcode
 	cd ffcode
 	cp ../../README.md .
-	version=$$(cat ../../VERSION.txt)
+	version=$$(curl --silent -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/yegor256/ffcode/releases/latest | jq -r '.tag_name')
 	echo "Version is: $${version}"
 	date=$$(date +%Y/%m/%d)
 	echo "Date is: $${date}"

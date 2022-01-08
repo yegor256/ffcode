@@ -11,4 +11,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: yegor256/latexmk-action@0.1.20
         with:
+          opts: -pdf
           packages: xkeyval libertine minted fvextra catchfile xstring framed tcolorbox environ
