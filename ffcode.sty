@@ -39,17 +39,16 @@
 \RequirePackage{minted}
 
 \setminted{breaklines}
+\setminted{escapeinside=||,mathescape}
+\setminted{highlightcolor=gray!30}
 \usemintedstyle{bw}
 
 \makeatletter\ifff@nonumbers
   \ifff@nobars
-    \newminted[ffcode]{text}{
-      escapeinside=||,mathescape,highlightcolor=gray!30
-    }
+    \newminted[ffcode]{text}{}
   \else
     \newminted[ffcode]{text}{
-      framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,
-      escapeinside=||,mathescape,highlightcolor=gray!30
+      framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline
     }
   \fi
 \else
@@ -57,23 +56,23 @@
   \ifff@nocn
     \ifff@nobars
       \newminted[ffcode]{text}{
-        linenos,numbersep=2pt,highlightcolor=gray!30,escapeinside=||,mathescape
+        linenos,numbersep=2pt
       }
     \else
       \newminted[ffcode]{text}{
         framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,
-        linenos,numbersep=2pt,highlightcolor=gray!30,escapeinside=||,mathescape
+        linenos,numbersep=2pt
       }
     \fi
   \else
     \ifff@nobars
       \newminted[ffcode]{text}{
-        firstnumber=last,linenos,numbersep=2pt,highlightcolor=gray!30,escapeinside=||,mathescape
+        firstnumber=last,linenos,numbersep=2pt
       }
     \else
       \newminted[ffcode]{text}{
         framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,
-        firstnumber=last,linenos,numbersep=2pt,highlightcolor=gray!30,escapeinside=||,mathescape
+        firstnumber=last,linenos,numbersep=2pt
       }
     \fi
   \fi
