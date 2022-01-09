@@ -21,17 +21,10 @@
 % SOFTWARE.
 
 \documentclass{article}
-\usepackage[T1]{fontenc}
-\usepackage[nocn,nonumbers,noframes]{../ffcode}
+\usepackage[nobars]{../ffcode}
 \begin{document}
-The function \ff{fibo()} is recursive:
+Here is some code:
 \begin{ffcode}
-int fibo(int n) {
-  if (n < 2) {
-    return n; |$\label{ln:ret}$|
-  }
-  return fibo(n - 1) + fibo(n - 2);
-}
+Hello, world!
 \end{ffcode}
-The line~\ref{ln:ret} terminates it.
 \end{document}

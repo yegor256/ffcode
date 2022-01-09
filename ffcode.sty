@@ -26,50 +26,81 @@
 \RequirePackage{xkeyval}
 
 \makeatletter
-\newif\ifffcode@nopygments
-\DeclareOptionX{nopygments}{\ffcode@nopygmentstrue}
-\newif\ifffcode@noframes
-\DeclareOptionX{noframes}{\ffcode@noframestrue}
-\newif\ifffcode@nonumbers
-\DeclareOptionX{nonumbers}{\ffcode@nonumberstrue}
-\newif\ifffcode@nocn
-\DeclareOptionX{nocn}{\ffcode@nocntrue}
+\newif\ifff@nopygments
+\DeclareOptionX{nopygments}{\ff@nopygmentstrue}
+\newif\ifff@noframes
+\DeclareOptionX{noframes}{\ff@noframestrue}
+\newif\ifff@nobars
+\DeclareOptionX{nobars}{\ff@nobarstrue}
+\newif\ifff@nonumbers
+\DeclareOptionX{nonumbers}{\ff@nonumberstrue}
+\newif\ifff@nocn
+\DeclareOptionX{nocn}{\ff@nocntrue}
 \ProcessOptionsX\relax
 \makeatother
 
-\makeatletter\ifffcode@nopygments
+\makeatletter\ifff@nopygments
   \RequirePackage[draft=true]{minted}
 \else
   \RequirePackage{minted}
 \fi\makeatother
+
 \setminted{breaklines}
 \usemintedstyle{bw}
-\makeatletter\ifffcode@nonumbers
-  \newminted[ffcode]{text}{framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,escapeinside=||,mathescape,highlightcolor=gray!30}
+
+\makeatletter\ifff@nonumbers
+  \ifff@nobars
+    \newminted[ffcode]{text}{
+      escapeinside=||,mathescape,highlightcolor=gray!30
+    }
+  \else
+    \newminted[ffcode]{text}{
+      framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,
+      escapeinside=||,mathescape,highlightcolor=gray!30
+    }
+  \fi
 \else
   \renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
-  \ifffcode@nocn
-    \newminted[ffcode]{text}{linenos,numbersep=2pt,framesep=6pt,framerule=1pt,highlightcolor=gray!30,rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
+  \ifff@nocn
+    \ifff@nobars
+      \newminted[ffcode]{text}{
+        linenos,numbersep=2pt,highlightcolor=gray!30,escapeinside=||,mathescape
+      }
+    \else
+      \newminted[ffcode]{text}{
+        framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,
+        linenos,numbersep=2pt,highlightcolor=gray!30,escapeinside=||,mathescape
+      }
+    \fi
   \else
-    \newminted[ffcode]{text}{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,highlightcolor=gray!30,rulecolor=gray,frame=leftline,escapeinside=||,mathescape}
+    \ifff@nobars
+      \newminted[ffcode]{text}{
+        firstnumber=last,linenos,numbersep=2pt,highlightcolor=gray!30,escapeinside=||,mathescape
+      }
+    \else
+      \newminted[ffcode]{text}{
+        framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,
+        firstnumber=last,linenos,numbersep=2pt,highlightcolor=gray!30,escapeinside=||,mathescape
+      }
+    \fi
   \fi
 \fi\makeatother
 
 \makeatletter
-\newcommand\ffcode@print{\begingroup\obeyspaces\ffcode@printx}
-\newcommand\ffcode@printx[1]{\texttt{#1}\endgroup}
+\newcommand\ff@print{\begingroup\obeyspaces\ff@printx}
+\newcommand\ff@printx[1]{\texttt{#1}\endgroup}
 \makeatother
 
-\makeatletter\newcommand\ffcode@rule{\vrule height 6pt depth 1pt width 0pt}
-\makeatletter\ifffcode@noframes
-  \newcommand\ff[1]{\ffcode@rule\ffcode@print{#1}}
+\makeatletter\newcommand\ff@rule{\vrule height 6pt depth 1pt width 0pt}
+\makeatletter\ifff@noframes
+  \newcommand\ff[1]{\ff@rule\ff@print{#1}}
 \else
   \RequirePackage{tcolorbox}
-    \newtcbox\ffcode@box{nobeforeafter,colframe=gray!80!white,
+    \newtcbox\ff@box{nobeforeafter,colframe=gray!80!white,
     colback=gray!5!white,boxrule=0.1pt,arc=1pt,
     boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
     tcbox raise base}
-  \newcommand\ff[1]{\ffcode@box{\ffcode@rule\ffcode@print{#1}}}
+  \newcommand\ff[1]{\ff@box{\ff@rule\ff@print{#1}}}
 \fi\makeatother
 
 \endinput
