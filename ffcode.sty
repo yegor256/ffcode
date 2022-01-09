@@ -26,8 +26,7 @@
 \RequirePackage{xkeyval}
 
 \makeatletter
-\newif\ifff@nopygments
-\DeclareOptionX{nopygments}{\ff@nopygmentstrue}
+\DeclareOptionX{nopygments}{\PassOptionsToPackage{draft=true}{minted}}
 \newif\ifff@noframes
 \DeclareOptionX{noframes}{\ff@noframestrue}
 \newif\ifff@nobars
@@ -39,11 +38,7 @@
 \ProcessOptionsX\relax
 \makeatother
 
-\makeatletter\ifff@nopygments
-  \RequirePackage[draft=true]{minted}
-\else
-  \RequirePackage{minted}
-\fi\makeatother
+\RequirePackage{minted}
 
 \setminted{breaklines}
 \usemintedstyle{bw}
