@@ -94,6 +94,12 @@ If you want to print a single vertical line, use this:
 If you want to omit the light gray frames around \ff{\char`\\ff}
 texts, use the package option \ff{noframes}.
 
+The command \ff{\char`\\ff} behaves differently in math mode: it doesn't
+add gray frames:
+\begin{equation}
+x = \int_\ff{home}^N f(x).
+\end{equation}
+
 To omit the vertical gray bar at the left side of each snippet,
 use the \ff{nobars} option of the package.
 
