@@ -94,7 +94,7 @@
     colback=gray!5!white,boxrule=0.1pt,arc=1pt,
     boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
     tcbox raise base}
-  \newcommand\ff[1]{\ff@box{\ff@rule\ff@print{#1}}}
+  \newcommand\ff[1]{\relax\ifmmode\ff@rule\ff@print{#1}\else\ff@box{\ff@rule\ff@print{#1}}\fi}
 \fi\makeatother
 
 \endinput
