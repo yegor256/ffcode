@@ -47,16 +47,7 @@ zip: $(NAME).pdf $(NAME).sty
 	mkdir $(NAME)
 	cd $(NAME)
 	cp ../../README.md .
-	version=$$(curl --silent -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/yegor256/$(NAME)/releases/latest | jq -r '.tag_name')
-	echo "Version is: $${version}"
-	date=$$(date +%Y/%m/%d)
-	echo "Date is: $${date}"
 	cp ../../$(NAME).sty .
-	gsed -i "s|0\.0\.0|$${version}|" $(NAME).sty
-	gsed -i "s|00\.00\.0000|$${date}|" $(NAME).sty
-	cp ../../$(NAME).tex .
-	gsed -i "s|0\.0\.0|$${version}|" $(NAME).tex
-	gsed -i "s|00\.00\.0000|$${date}|" $(NAME).tex
 	cp ../../.latexmkrc .
 	latexmk -pdf $(NAME).tex
 	rm .latexmkrc
@@ -64,7 +55,7 @@ zip: $(NAME).pdf $(NAME).sty
 	cat $(NAME).sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" | uniq > DEPENDS.txt
 	cd ..
 	zip -r $(NAME).zip *
-	cp $(NAME).zip ../$(NAME)-$${version}.zip
+	cp $(NAME).zip ../$(NAME)-ctan.zip
 	cd ..
 
 clean:
