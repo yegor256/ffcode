@@ -9,7 +9,6 @@ release:
     sed -i "s|00\.00\.0000|${date}|" ffcode.tex
     sed -i "s/0\.0\.0/${tag}/g" ffcode.tex
     sed -i "s/0\.0\.0/${tag}/g" build.lua
-    git add ffcode.sty ffcode.tex build.lua
     git commit -m "version set to ${tag}"
     make
     l3build upload
