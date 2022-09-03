@@ -1,8 +1,10 @@
 docker:
-  image: yegor256/rultor-image:1.9.1
+  image: yegor256/rultor-image:1.11.0
 release:
   script: |-
-    tlmgr install l3build
+    tlmgr option repository ctan
+    tlmgr --verify-repo=none update --self
+    tlmgr --verify-repo=none install l3build
     date=$(date +%Y/%m/%d)
     sed -i "s|00\.00\.0000|${date}|" ffcode.sty
     sed -i "s/0\.0\.0/${tag}/g" ffcode.sty
