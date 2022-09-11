@@ -40,6 +40,14 @@ $(NAME).pdf: $(NAME).tex $(NAME).sty
 	texsc $<
 	texqc --ignore 'You have requested document class' $<
 
+set-version:
+	date=$$(date +%Y/%m/%d)
+	sed -i "s|00\.00\.0000|$${date}|" $(NAME).sty
+	sed -i "s/0\.0\.0/$(VERSION)/g" $(NAME).sty
+	sed -i "s|00\.00\.0000|$${date}|" $(NAME).tex
+	sed -i "s/0\.0\.0/$(VERSION)/g" $(NAME).tex
+	sed -i "s/0\.0\.0/$(VERSION)/g" build.lua
+
 zip: $(NAME).pdf $(NAME).sty
 	rm -rf package
 	mkdir package

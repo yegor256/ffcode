@@ -1,17 +1,13 @@
 docker:
   image: yegor256/rultor-image:1.11.0
 install: |-
+  env
   tlmgr option repository ctan
   tlmgr --verify-repo=none update --self
   tlmgr --verify-repo=none install l3build
 release:
   script: |-
-    date=$(date +%Y/%m/%d)
-    sed -i "s|00\.00\.0000|${date}|" ffcode.sty
-    sed -i "s/0\.0\.0/${tag}/g" ffcode.sty
-    sed -i "s|00\.00\.0000|${date}|" ffcode.tex
-    sed -i "s/0\.0\.0/${tag}/g" ffcode.tex
-    sed -i "s/0\.0\.0/${tag}/g" build.lua
+    make VERSION=${tag} set-version
     git commit -m "version set to ${tag}"
     make
     l3build upload
