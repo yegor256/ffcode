@@ -41,8 +41,8 @@
 
 This package helps you write source code in your articles
 and make sure it looks nice. Install it from CTAN and then
-use like this (pay attention to the \ff{\char`\\ff} command
-and the \ff{ffcode} environment):
+use like this (pay attention to \ff{\char`\\ff} command
+and \ff{ffcode} environment):
 
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
@@ -82,10 +82,10 @@ int fibo(int n) {
 The line no.~\ref{ln:ret} terminates it.
 \end{multicols}
 
-You have to run \ff{pdflatex} with the \ff{--shell-escape} flag
+You have to run \ff{pdflatex} with \ff{--shell-escape} flag
 in order to let \ff{minted} (the package we use) to run Pygments
 and format the code. If you don't want this to happen,
-just use the \ff{nopygments} option.
+just use \ff{nopygments} option.
 
 A pair of vertical lines decorate a TeX command inside the snippet.
 If you want to print a single vertical line, use this:
@@ -94,16 +94,16 @@ If you want to print a single vertical line, use this:
 If you want to omit the light gray frames around \ff{\char`\\ff}
 texts, use the package option \ff{noframes}.
 
-The command \ff{\char`\\ff} behaves differently in math mode: it doesn't
+The command \ff{\char`\\ff\char`\{...\char`\}} behaves differently in math mode: it doesn't
 add gray frames:
 \begin{equation}
 x = \int_\ff{home}^N f(x).
 \end{equation}
 
 To omit the vertical gray bar at the left side of each snippet,
-use the \ff{nobars} option of the package.
+use \ff{nobars} option of the package.
 
-To omit the line numbers, use the \ff{nonumbers} option of the package.
+To omit the line numbers, use \ff{nonumbers} option of the package.
 
 By default, the numbering is continuous: line numbers start at the
 first snippet and increment until the end of the document. If you
@@ -113,7 +113,7 @@ option of the package.
 
 You can highlight some lines in your \ff{ffcode} environment,
 or can use any other additional configuration parameters from
-the \ff{minted} package:
+\ff{minted} package:
 
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
@@ -142,14 +142,14 @@ while (true) {
 \end{ffcode*}
 \end{multicols}
 
-Using this second argument of the \ff{ffcode*} (with the trailing asterisk),
-you can provide any other options from the \ff{minted} package to the
+Using this second argument of \ff{ffcode*} (with the trailing asterisk),
+you can provide any other options from \ff{minted} package to the
 snippet.
 
 By the way, the package correctly formats low-height texts, for example, just
 a dot: \ff{.}
 
 More details about this package you can find
-in the \ff{yegor256/ffcode} GitHub repository.
+in \ff{yegor256/ffcode} GitHub repository.
 
 \end{document}

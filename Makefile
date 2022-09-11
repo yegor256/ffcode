@@ -48,6 +48,7 @@ zip: $(NAME).pdf $(NAME).sty
 	cd $(NAME)
 	cp ../../README.md .
 	cp ../../$(NAME).sty .
+	cp ../../$(NAME).tex .
 	cp ../../.latexmkrc .
 	latexmk -pdf $(NAME).tex
 	rm .latexmkrc
