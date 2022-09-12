@@ -6,7 +6,7 @@ install: |-
   sudo tlmgr option repository ctan
   sudo gem install texsc:0.6.0
   sudo gem install texqc:0.6.0
-  suso apt-get install -y aspell
+  sudo apt-get install -y aspell
   sudo tlmgr --verify-repo=none update --self
   sudo tlmgr --verify-repo=none install l3build
   sudo tlmgr --verify-repo=none install libertine minted fvextra framed tcolorbox environ catchfile xstring xkeyval
