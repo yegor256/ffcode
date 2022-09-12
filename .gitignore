@@ -21,3 +21,4 @@ _minted-*
 *.exc
 *.synctex.gz
 package/
+ffcode-ctan.curlopt

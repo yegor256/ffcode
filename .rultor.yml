@@ -15,4 +15,4 @@ release:
     make VERSION=${tag} set-version
     git commit -am "version set to ${tag}"
     make
-    l3build upload
+    echo 'y' | l3build upload --halt-on-error
