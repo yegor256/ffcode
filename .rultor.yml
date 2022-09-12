@@ -7,6 +7,6 @@ install: |-
 release:
   script: |-
     make VERSION=${tag} set-version
-    git commit -m "version set to ${tag}"
+    git commit -am "version set to ${tag}"
     make
     l3build upload
