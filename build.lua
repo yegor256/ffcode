@@ -5,5 +5,6 @@ uploadconfig = {
  author = "Yegor Bugayenko",
  uploader = "Yegor Bugayenko",
  email = "yegor256@gmail.com",
- note = "Bug fixes"
+ note = "Bug fixes",
+ announcement = "Some non-critical bug fixes"
 }
