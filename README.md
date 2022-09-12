@@ -1,4 +1,5 @@
 [![make](https://github.com/yegor256/ffcode/actions/workflows/latexmk.yml/badge.svg)](https://github.com/yegor256/ffcode/actions/workflows/latexmk.yml)
+[![CTAN](https://img.shields.io/ctan/v/ffcode)](https://ctan.org/pkg/ffcode)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/ffcode/blob/master/LICENSE.txt)
 
 This LaTeX package helps you write source code in your academic papers
