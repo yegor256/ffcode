@@ -1,0 +1,18 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage[nocn,nonumbers,noframes]{ffcode}
+\begin{document}
+\START
+
+The function \ff{fibo()} is recursive:
+\begin{ffcode}
+int fibo(int n) {
+  if (n < 2) {
+    return n; |$\label{ln:ret}$|
+  }
+  return fibo(n - 1) + fibo(n - 2);
+}
+\end{ffcode}
+The line~\ref{ln:ret} terminates it.
+
+\END

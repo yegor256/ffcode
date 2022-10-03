@@ -1,0 +1,13 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage[nopygments]{ffcode}
+\begin{document}
+\START
+
+\begin{document}
+Here is some code:
+\begin{ffcode}
+Hello, world!
+\end{ffcode}
+
+\END

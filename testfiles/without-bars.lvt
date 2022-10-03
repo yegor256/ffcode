@@ -1,0 +1,12 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage[nobars]{ffcode}
+\begin{document}
+\START
+
+Here is some code:
+\begin{ffcode}
+Hello, world!
+\end{ffcode}
+
+\END

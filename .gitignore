@@ -1,6 +1,10 @@
 .DS_Store
 target/
+build/
 _minted-*
+*.glo
+*.sty
+*.tex
 *.zip
 *.toc
 *.pdf

@@ -1,0 +1,383 @@
+% \iffalse meta-comment
+% (The MIT License)
+%
+% Copyright (c) 2021-2022 Yegor Bugayenko
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the 'Software'), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+% \fi
+
+% \CheckSum{0}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+
+% \GetFileInfo{ffcode.dtx}
+% \DoNotIndex{\endgroup,\begingroup,\let,\else,\fi,\newcommand,\newenvironment}
+
+% \iffalse
+%<*driver>
+\ProvidesFile{ffcode.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}
+%<package>\ProvidesPackage{ffcode}
+%<*package>
+[00.00.0000 0.0.0 Fixed Font Code]
+%</package>
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage[T1]{fontenc}
+\usepackage[tt=false,type1=true]{libertine}
+\usepackage{microtype}
+\usepackage{href-ul}
+\usepackage{ffcode}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\PageIndex
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+	\DocInput{ffcode.dtx}
+	\PrintChanges
+	\PrintIndex
+\end{document}
+%</driver>
+% \fi
+
+% \title{|ffcode|: \LaTeX{} Package \\ for Fixed-Font Code Blocks\thanks{The sources are in GitHub at \href{https://github.com/yegor256/ffcode}{yegor256/ffcode}}}
+% \author{Yegor Bugayenko \\ \texttt{yegor256@gmail.com}}
+% \date{\filedate, \fileversion}
+%
+% \maketitle
+%
+% \section{Introduction}
+%
+% This package helps you write source code in your articles
+% and make sure it looks nice. Install it from CTAN and then
+% use like this (pay attention to |\ff| command
+% and |ffcode| environment):
+% \begin{multicols}{2}
+% \setlength{\parskip}{0pt}
+% \raggedcolumns
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\documentclass{article}
+\usepackage{ffcode}
+\begin{document}
+The function \ff{fibo()}
+is recursive:
+\begin{ffcode}
+int fibo(int n) {
+  if (n < 2) {
+    return n; |$\label{ln:ret}$|
+  }
+  return fibo(n-1)+fibo(n-2);
+}
+\end{ffcode}
+The line no.~\ref{ln:ret}
+terminates it.
+\end{document}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+%
+% \columnbreak
+%
+% The function \ff{fibo()} is recursive:
+%
+%\iffalse
+%<*verb>
+%\fi
+\begin{ffcode}
+int fibo(int n) {
+  if (n < 2) {
+    return n; |$\label{ln:ret}$|
+  }
+  return fibo(n-1)+fibo(n-2);
+}
+\end{ffcode}
+%\iffalse
+%</verb>
+%\fi
+%
+% The line no.~\ref{ln:ret} terminates it.
+% \end{multicols}
+
+% \section{Package Options}
+
+% \begin{macro}{nopygments}
+% You have to run |pdflatex| with |--shell-escape| flag
+% in order to let |minted| (the package we use) to run Pygments
+% and format the code. If you don't want this to happen,
+% just use |nopygments| option.
+% \end{macro}
+
+% \begin{macro}{noframes}
+% If you want to omit the light gray frames around |\ff|
+% texts, use the package option |noframes|.
+% \end{macro}
+
+% \begin{macro}{nobars}
+% To omit the vertical gray bar at the left side of each snippet,
+% use |nobars| option of the package.
+% \end{macro}
+
+% \begin{macro}{nonumbers}
+% To omit the line numbers, use |nonumbers| option of the package.
+% \end{macro}
+
+% \begin{macro}{nocn}
+% By default, the numbering is continuous: line numbers start at the
+% first snippet and increment until the end of the document. If you
+% want them to start from one at each snippet, use |nocn|
+% (stands for ``no continuous numbering'')
+% option of the package.
+% \end{macro}
+
+% \section{Typesetting}
+
+% By the way, the package correctly formats low-height texts, for example, just
+% a dot: \ff{.}
+
+% A pair of vertical lines decorate a TeX command inside the snippet.
+% If you want to print a single vertical line, use this:
+% \ff{|\char`\\vert|}.
+
+% The command |\ff| behaves differently in math mode --- it doesn't
+% add gray frames:
+% \begin{multicols}{2}
+% \setlength{\parskip}{0pt}
+% \raggedcolumns
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\documentclass{article}
+\usepackage{ffcode}
+\begin{document}
+\begin{equation}
+x = \int_\ff{home}^N f(x).
+\end{equation}
+\end{document}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+%
+% \columnbreak
+%
+%\iffalse
+%<*verb>
+%\fi
+% \begin{equation}
+% x = \int_\ff{home}^N f(x).
+% \end{equation}
+%\iffalse
+%</verb>
+%\fi
+% \end{multicols}
+
+% \section{Line Highlighting}
+
+% You can highlight some lines in your |ffcode| environment,
+% or can use any other additional configuration parameters from
+% |minted| package:
+
+% \begin{multicols}{2}
+% \setlength{\parskip}{0pt}
+% \raggedcolumns
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\documentclass{article}
+\usepackage{ffcode}
+\begin{document}
+\begin{ffcode*}
+  {highlightlines={1,4-5}}
+while (true) {
+  print("Hello!")
+  print("Enter your name:")
+  scan(x)
+  print("You name is " + x)
+}
+\end{ffcode*}
+\end{document}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+%
+% \columnbreak
+%
+%\iffalse
+%<*verb>
+%\fi
+\begin{ffcode*}{highlightlines={7,10-11}}
+while (true) {
+  print("Hello!")
+  print("Enter your name:")
+  scan(x)
+  print("You name is " + x)
+}
+\end{ffcode*}
+%\iffalse
+%</verb>
+%\fi
+% \end{multicols}
+
+% Using this second argument of |ffcode*| (with the trailing asterisk),
+% you can provide any other options from |minted| package to the
+% snippet.
+
+% \StopEventually{}
+
+% \section{Implementation}
+
+% \changes{v0.2.0}{2021/07/10}{Initial version}
+
+% First, we parse package options:
+%    \begin{macrocode}
+\RequirePackage{xkeyval}
+\makeatletter
+\DeclareOptionX{nopygments}{\PassOptionsToPackage{draft=true}{minted}}
+\newif\ifff@noframes
+\DeclareOptionX{noframes}{\ff@noframestrue}
+\newif\ifff@nobars
+\DeclareOptionX{nobars}{\ff@nobarstrue}
+\newif\ifff@nonumbers
+\DeclareOptionX{nonumbers}{\ff@nonumberstrue}
+\newif\ifff@nocn
+\DeclareOptionX{nocn}{\ff@nocntrue}
+\ProcessOptionsX\relax
+\makeatother
+%    \end{macrocode}
+
+% Then, we configure |minted| package:
+%    \begin{macrocode}
+\RequirePackage{minted}
+\setminted{breaklines}
+\setminted{escapeinside=||,mathescape}
+\setminted{highlightcolor=gray!25}
+\usemintedstyle{bw}
+%    \end{macrocode}
+
+% \begin{macro}{ffcode}
+% Then, we define |ffcode| environment:
+%    \begin{macrocode}
+\makeatletter\ifff@nonumbers
+  \ifff@nobars
+    \newminted[ffcode]{text}{}
+  \else
+    \newminted[ffcode]{text}{framesep=6pt,
+      framerule=1pt,rulecolor=gray,frame=leftline}
+  \fi
+\else
+  \renewcommand{\theFancyVerbLine}{\textcolor{gray}
+    {\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
+  \ifff@nocn
+    \ifff@nobars
+      \newminted[ffcode]{text}{
+        linenos,numbersep=2pt
+      }
+    \else
+      \newminted[ffcode]{text}{
+        framesep=6pt,framerule=1pt,rulecolor=gray,
+        frame=leftline,linenos,numbersep=2pt
+      }
+    \fi
+  \else
+    \ifff@nobars
+      \newminted[ffcode]{text}{
+        firstnumber=last,linenos,numbersep=2pt
+      }
+    \else
+      \newminted[ffcode]{text}{
+        framesep=6pt,framerule=1pt,rulecolor=gray,
+        frame=leftline,firstnumber=last,linenos,numbersep=2pt
+      }
+    \fi
+  \fi
+\fi\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\ff@print}
+% Then, we define supplementary commands |\ff@print| and |\ff@printx|:
+%    \begin{macrocode}
+\makeatletter
+\newcommand\ff@print{\begingroup\obeyspaces\ff@printx}
+\newcommand\ff@printx[1]{\texttt{#1}\endgroup}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\ff@rule}
+% Then, we define supplementary command |\ff@rule|:
+%    \begin{macrocode}
+\makeatletter\newcommand\ff@rule
+  {\vrule height 6pt depth 1pt width 0pt}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\ff}
+% Finally, we define |\ff| command:
+%    \begin{macrocode}
+\makeatletter\ifff@noframes
+  \newcommand\ff[1]{\ff@rule\ff@print{#1}}
+\else
+  \RequirePackage{tcolorbox}
+    \newtcbox\ff@box{nobeforeafter,colframe=gray!80!white,
+    colback=gray!5!white,boxrule=0.1pt,arc=1pt,
+    boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
+    tcbox raise base}
+  \newcommand\ff[1]{\relax\ifmmode%
+    {\ff@rule\ff@print{#1}}%
+  \else%
+    {\ff@box{\ff@rule\ff@print{#1}}}
+  \fi}
+\fi\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \Finale
+
+%\clearpage
+%
+%\PrintChanges
+%\clearpage
+%\PrintIndex

@@ -1,0 +1,7 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+runsystem(pygmentize -S bw -f latex -P commandprefix=PYG > _minted-without-bars/bw.pygstyle)...executed.
+(_minted-without-bars/bw.pygstyle)
+runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P stripnl=False -P "escapeinside=||" -P mathescape=True -o _minted-without-bars/746308829575E17C3331BBCB00C0898BBD956004AB40852B66625BDC789905E4.pygtex without-bars.pyg)...executed.
+(_minted-without-bars/746308829575E17C3331BBCB00C0898BBD956004AB40852B66625BDC789905E4.pygtex
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line ....
