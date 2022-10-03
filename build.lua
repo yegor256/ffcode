@@ -8,7 +8,7 @@ checkengines = {"pdftex"}
 
 uploadconfig = {
   pkg = "ffcode",
-  version = "0.0.0",
+  version = "0.5.0",
   author = "Yegor Bugayenko",
   uploader = "Yegor Bugayenko",
   email = "yegor256@gmail.com",
