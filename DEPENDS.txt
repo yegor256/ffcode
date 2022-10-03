@@ -1,3 +1,4 @@
 hard xkeyval
 hard minted
 hard tcolorbox
+hard pgf
