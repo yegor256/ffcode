@@ -18,7 +18,7 @@ jobs:
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
-          packages: scheme-basic xetex libertine l3build microtype href-ul pdfcrop docshots pgfopts pgf environ hypdoc
+          packages: scheme-basic xetex libertine l3build microtype href-ul pdfcrop docshots pgfopts pgf environ hypdoc mathtools
       - run: l3build ctan --show-log-on-error --halt-on-error || echo 1
       - run: cat build/doc/ffcode.log ; exit 1
       - uses: JamesIves/github-pages-deploy-action@v4.4.1
