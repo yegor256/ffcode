@@ -63,6 +63,7 @@
 \usepackage{amsmath}
 \usepackage{multicol}
 \usepackage{xcolor}
+\usepackage[dtx,runs=2]{docshots}
 \PageIndex
 \EnableCrossrefs
 \CodelineIndex
@@ -87,55 +88,25 @@
 % and make sure it looks nice. Install it from CTAN and then
 % use like this (pay attention to |\ff| command
 % and |ffcode| environment):
-% \begin{multicols}{2}
-% \setlength{\parskip}{0pt}
-% \raggedcolumns
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{article}
-\usepackage{ffcode}
-\begin{document}
-The function \ff{fibo()}
-is recursive:
-\begin{ffcode}
-int fibo(int n) {
-  if (n < 2) {
-    return n; |$\label{ln:ret}$|
-  }
-  return fibo(n-1)+fibo(n-2);
-}
-\end{ffcode}
-The line no.~\ref{ln:ret}
-terminates it.
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
-%
-% \columnbreak
-%
-% The function \ff{fibo()} is recursive:
-%
-%\iffalse
-%<*verb>
-%\fi
-\begin{ffcode}
-int fibo(int n) {
-  if (n < 2) {
-    return n; |$\label{ln:ret}$|
-  }
-  return fibo(n-1)+fibo(n-2);
-}
-\end{ffcode}
-%\iffalse
-%</verb>
-%\fi
-%
-% The line no.~\ref{ln:ret} terminates it.
-% \end{multicols}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{ffcode}
+% \pagestyle{empty}
+% \begin{document}
+% The function \ff{fibo()}
+% is recursive:
+% \begin{ffcode}
+% int fibo(int n) {
+%   if (n < 2) {
+%     return n; |$\label{ln:ret}$|
+%   }
+%   return fibo(n-1)+fibo(n-2);
+% }
+% \end{ffcode}
+% The line no.~\ref{ln:ret}
+% terminates it.
+% \end{document}
+% \end{docshot}
 
 % \section{Package Options}
 
@@ -174,86 +145,40 @@ int fibo(int n) {
 
 % The command |\ff| behaves differently in math mode --- it doesn't
 % add gray frames:
-% \begin{multicols}{2}
-% \setlength{\parskip}{0pt}
-% \raggedcolumns
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{article}
-\usepackage{ffcode}
-\begin{document}
-\begin{equation}
-x = \int_\ff{home}^N f(x).
-\end{equation}
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
-%
-% \columnbreak
-%
-%\iffalse
-%<*verb>
-%\fi
-% \begin{equation}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{ffcode}
+% \usepackage{mathtools}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{equation*}
 % x = \int_\ff{home}^N f(x).
-% \end{equation}
-%\iffalse
-%</verb>
-%\fi
-% \end{multicols}
+% \end{equation*}
+% \end{document}
+% \end{docshot}
 
 % \section{Line Highlighting}
 
 % You can highlight some lines in your |ffcode| environment,
 % or can use any other additional configuration parameters from
 % |minted| package:
-
-% \begin{multicols}{2}
-% \setlength{\parskip}{0pt}
-% \raggedcolumns
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{article}
-\usepackage{ffcode}
-\begin{document}
-\begin{ffcode*}
-  {highlightlines={1,4-5}}
-while (true) {
-  print("Hello!")
-  print("Enter your name:")
-  scan(x)
-  print("You name is " + x)
-}
-\end{ffcode*}
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
-%
-% \columnbreak
-%
-%\iffalse
-%<*verb>
-%\fi
-\begin{ffcode*}{highlightlines={7,10-11}}
-while (true) {
-  print("Hello!")
-  print("Enter your name:")
-  scan(x)
-  print("You name is " + x)
-}
-\end{ffcode*}
-%\iffalse
-%</verb>
-%\fi
-% \end{multicols}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage[paperwidth=3in]{geometry}
+% \usepackage{ffcode}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{ffcode*}
+%   {highlightlines={1,4-5}}
+% while (true) {
+%   print("Hello!")
+%   print("Enter your name:")
+%   scan(x)
+%   print("You name is " + x)
+% }
+% \end{ffcode*}
+% \end{document}
+% \end{docshot}
 
 % Using this second argument of |ffcode*| (with the trailing asterisk),
 % you can provide any other options from |minted| package to the
@@ -262,8 +187,7 @@ while (true) {
 % \StopEventually{}
 
 % \section{Implementation}
-
-% \changes{v0.2.0}{2021/07/10}{Initial version}
+% \changes{v0.1.0}{2021/06/10}{Initial version}
 
 % First, we parse package options:
 %    \begin{macrocode}
@@ -272,10 +196,14 @@ while (true) {
 \DeclareOptionX{nopygments}{\PassOptionsToPackage{draft=true}{minted}}
 \newif\ifff@noframes
 \DeclareOptionX{noframes}{\ff@noframestrue}
+% \changes{v0.4.0}{2022/01/09}{Package option "nobars" added.}
 \newif\ifff@nobars
 \DeclareOptionX{nobars}{\ff@nobarstrue}
+% \changes{v0.2.0}{2021/06/13}{Package options "nonumbers"
+% and "noframes" added.}
 \newif\ifff@nonumbers
 \DeclareOptionX{nonumbers}{\ff@nonumberstrue}
+% \changes{v0.3.0}{2021/09/07}{Package option "nocn" added.}
 \newif\ifff@nocn
 \DeclareOptionX{nocn}{\ff@nocntrue}
 \ProcessOptionsX\relax
@@ -333,10 +261,11 @@ while (true) {
 
 % \begin{macro}{\ff@print}
 % Then, we define supplementary commands |\ff@print| and |\ff@printx|:
+% \changes{v0.5.1}{2022/10/39}{Now, the command "ff" ignores italic and bold and always prints "texttt" as it should be.}
 %    \begin{macrocode}
 \makeatletter
 \newcommand\ff@print{\begingroup\obeyspaces\ff@printx}
-\newcommand\ff@printx[1]{\texttt{#1}\endgroup}
+\newcommand\ff@printx[1]{\textnormal{\texttt{#1}}\endgroup}
 \makeatother
 %    \end{macrocode}
 % \end{macro}

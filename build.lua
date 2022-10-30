@@ -4,7 +4,7 @@ typesetopts = "-interaction=batchmode -shell-escape -halt-on-error"
 checkopts = "-interaction=batchmode -shell-escape -halt-on-error"
 tagfiles = {"build.lua", "ffcode.dtx"}
 dynamicfiles = {"_minted-*"}
-checkengines = {"pdftex"}
+checkengines = {"pdftex", "luatex", "xetex"}
 
 uploadconfig = {
   pkg = "ffcode",

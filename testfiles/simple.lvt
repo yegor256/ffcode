@@ -1,5 +1,8 @@
 \input{regression-test.tex}
 \documentclass{article}
+\usepackage{ifluatex}
+\usepackage{ifxetex}
+\usepackage[cachedir=_minted-\jobname\ifxetex-xe\else\ifluatex-lua\fi\fi]{minted}
 \usepackage[nocn,nonumbers,noframes]{ffcode}
 \begin{document}
 \START
