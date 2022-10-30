@@ -230,7 +230,7 @@
       framerule=1pt,rulecolor=gray,frame=leftline}
   \fi
 \else
-  \renewcommand{\theFancyVerbLine}{\textcolor{gray}
+  \renewcommand{\theFancyVerbLine}{\textcolor{gray}%
     {\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
   \ifff@nocn
     \ifff@nobars
@@ -293,7 +293,7 @@
   \newcommand\ff[1]{\relax\ifmmode%
     {\ff@rule\ff@print{#1}}%
   \else%
-    {\ff@box{\ff@rule\ff@print{#1}}}
+    {\ff@box{\ff@rule\ff@print{#1}}}%
   \fi}
 \fi\makeatother
 %    \end{macrocode}
