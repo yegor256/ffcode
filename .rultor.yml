@@ -8,7 +8,7 @@ install: |-
   sudo apt-get -y install ghostscript
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
-  sudo tlmgr --verify-repo=none update libertine l3build microtype href-ul pdfcrop docshots pgfopts pgf environ hypdoc mathtools
+  sudo tlmgr --verify-repo=none update iexec libertine l3build microtype href-ul pdfcrop docshots pgfopts pgf environ hypdoc mathtools
   sudo apt-get install -y python3-pygments
   sudo pip3 install pygments
 merge:
@@ -19,6 +19,7 @@ release:
     l3build tag ${tag}
     l3build ctan --show-log-on-error || echo 1
     cat build/doc/ffcode.log
+    exit 1
     texsc
     texqc
     git commit -am "version set to ${tag}"
