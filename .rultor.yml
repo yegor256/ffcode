@@ -6,7 +6,7 @@ install: |-
   sudo apt-get install -y aspell
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
-  sudo tlmgr --verify-repo=none update libertine l3build microtype href-ul pdfcrop docshots pgfopts
+  sudo tlmgr --verify-repo=none update libertine l3build microtype href-ul pdfcrop docshots pgfopts pgf environ
   sudo apt-get install -y python3-pygments
   sudo pip3 install pygments
 merge:
