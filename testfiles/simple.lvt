@@ -5,9 +5,11 @@
 \usepackage[cachedir=_minted-\jobname\ifxetex-xe\else\ifluatex-lua\fi\fi]{minted}
 \usepackage[nocn,nonumbers,noframes]{ffcode}
 \begin{document}
+
 \START
 
-The function \ff{fibo()} is recursive:
+The function |fibo()| is recursive:
+
 \begin{ffcode}
 int fibo(int n) {
   if (n < 2) {
@@ -16,6 +18,9 @@ int fibo(int n) {
   return fibo(n - 1) + fibo(n - 2);
 }
 \end{ffcode}
+
 The line~\ref{ln:ret} terminates it.
+
+This code is fixed-width font: \ff{_hello\abc}
 
 \END

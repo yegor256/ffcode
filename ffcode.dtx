@@ -93,8 +93,7 @@
 % \usepackage{ffcode}
 % \pagestyle{empty}
 % \begin{document}
-% The function \ff{fibo()}
-% is recursive:
+% The function \ff{fibo()} is recursive:
 % \begin{ffcode}
 % int fibo(int n) {
 %   if (n < 2) {
@@ -189,28 +188,33 @@
 % \section{Implementation}
 % \changes{v0.1.0}{2021/06/10}{Initial version}
 
-% First, we parse package options:
+% First, we parse package options with the help of
+% \href{https://ctan.org/pkg/pgfopts}{pgfopts} package:
+% \changes{v0.2.0}{2021/06/13}{Package options \texttt{nonumbers} and \texttt{noframes} added.}
+% \changes{v0.3.0}{2021/09/07}{Package option \texttt{nocn} added.}
+% \changes{v0.4.0}{2022/01/09}{Package option \texttt{nobars} added.}
+% \changes{v0.6.0}{2021/11/14}{We use \texttt{pgfopts} instead of \texttt{xkeyval}.}
 %    \begin{macrocode}
-\RequirePackage{xkeyval}
-\makeatletter
-\DeclareOptionX{nopygments}{\PassOptionsToPackage{draft=true}{minted}}
-\newif\ifff@noframes
-\DeclareOptionX{noframes}{\ff@noframestrue}
-% \changes{v0.4.0}{2022/01/09}{Package option "nobars" added.}
-\newif\ifff@nobars
-\DeclareOptionX{nobars}{\ff@nobarstrue}
-% \changes{v0.2.0}{2021/06/13}{Package options "nonumbers"
-% and "noframes" added.}
-\newif\ifff@nonumbers
-\DeclareOptionX{nonumbers}{\ff@nonumberstrue}
-% \changes{v0.3.0}{2021/09/07}{Package option "nocn" added.}
-\newif\ifff@nocn
-\DeclareOptionX{nocn}{\ff@nocntrue}
-\ProcessOptionsX\relax
-\makeatother
+\RequirePackage{pgfopts}
+\pgfkeys{
+  /ff/.cd,
+  nopygments/.store in=\ff@nopygments,
+  noframes/.store in=\ff@noframes,
+  nonumbers/.store in=\ff@nonumbers,
+  nobars/.store in=\ff@nobars,
+  nocn/.store in=\ff@nocn,
+}
+\ProcessPgfOptions{/ff}
 %    \end{macrocode}
 
-% Then, we configure |minted| package:
+% Then, we disable pygments for \href{https://ctan.org/pkg/pgfopts}{minted}, if necessary:
+%    \begin{macrocode}
+\makeatletter\ifdefined\ff@nopygments
+  \PassOptionsToPackage{draft=true}{minted}
+\fi\makeatother
+%    \end{macrocode}
+
+% Then, we configure \href{https://ctan.org/pkg/pgfopts}{minted} package:
 %    \begin{macrocode}
 \RequirePackage{minted}
 \setminted{breaklines}
@@ -222,8 +226,8 @@
 % \begin{macro}{ffcode}
 % Then, we define |ffcode| environment:
 %    \begin{macrocode}
-\makeatletter\ifff@nonumbers
-  \ifff@nobars
+\makeatletter\ifdefined\ff@nonumbers
+  \ifdefined\ff@nobars
     \newminted[ffcode]{text}{}
   \else
     \newminted[ffcode]{text}{framesep=6pt,
@@ -232,8 +236,8 @@
 \else
   \renewcommand{\theFancyVerbLine}{\textcolor{gray}%
     {\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
-  \ifff@nocn
-    \ifff@nobars
+  \ifdefined\ff@nocn
+    \ifdefined\ff@nobars
       \newminted[ffcode]{text}{
         linenos,numbersep=2pt
       }
@@ -244,7 +248,7 @@
       }
     \fi
   \else
-    \ifff@nobars
+    \ifdefined\ff@nobars
       \newminted[ffcode]{text}{
         firstnumber=last,linenos,numbersep=2pt
       }
@@ -261,11 +265,10 @@
 
 % \begin{macro}{\ff@print}
 % Then, we define supplementary commands |\ff@print| and |\ff@printx|:
-% \changes{v0.5.1}{2022/10/30}{Now, the command "ff" ignores italic and bold and always prints "texttt" as it should be.}
+% \changes{v0.5.1}{2022/10/30}{Now, the command \texttt{ff} ignores italic and bold and always prints \texttt{\char`\\texttt} as it should be.}
 %    \begin{macrocode}
 \makeatletter
-\newcommand\ff@print{\begingroup\obeyspaces\ff@printx}
-\newcommand\ff@printx[1]{\textnormal{\texttt{#1}}\endgroup}
+\newcommand\ff@print[1]{\textnormal{\texttt{\detokenize{#1}}}}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -280,13 +283,13 @@
 % \end{macro}
 
 % \begin{macro}{\ff}
-% Finally, we define |\ff| command:
+% Then, we define |\ff| command:
 %    \begin{macrocode}
-\makeatletter\ifff@noframes
+\makeatletter\ifdefined\ff@noframes
   \newcommand\ff[1]{\ff@rule\ff@print{#1}}
 \else
   \RequirePackage{tcolorbox}
-    \newtcbox\ff@box{nobeforeafter,colframe=gray!80!white,
+  \newtcbox\ff@box{nobeforeafter,colframe=gray!80!white,
     colback=gray!5!white,boxrule=0.1pt,arc=1pt,
     boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
     tcbox raise base}
@@ -296,6 +299,20 @@
     {\ff@box{\ff@rule\ff@print{#1}}}%
   \fi}
 \fi\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\ff}
+% Finally, we let vertical bars work similar to |\ff|:
+%\iffalse%
+%<*verb>%
+%\fi%
+%    \begin{macrocode}
+\catcode`|=\active
+\def|#1|{\ff{#1}}
+%\iffalse
+%</verb>
+%\fi
 %    \end{macrocode}
 % \end{macro}
 
