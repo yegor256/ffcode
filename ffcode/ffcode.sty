@@ -135,17 +135,16 @@
       \ff@box{\ff@rule\ff@print{#1}}%
     \fi%
   \fi%
-  \egroup%
 }
 \makeatother
 
 \makeatletter
-\def\ff{\bgroup\ff@x}
+\def\ff{\ff@x}
 \makeatother
 
 \makeatletter\ifdefined\ff@novert\else
   \catcode`\|\active
-  \AtBeginDocument{\catcode`\|\active\def|{\bgroup\ff@x|}}
+  \AtBeginDocument{\catcode`\|\active\def|{\ff@x|}}
   \catcode`\| 12 %
 \fi\makeatother
 
