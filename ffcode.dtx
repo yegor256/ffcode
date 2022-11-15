@@ -152,7 +152,7 @@
 % \pagestyle{empty}
 % \begin{document}
 % \begin{equation*}
-% x = \int_|home|^N f(x).
+% x = \int_{|home|}^N f(x).
 % \end{equation*}
 % \end{document}
 % \end{docshot}
@@ -315,7 +315,6 @@
       \ff@box{\ff@rule\ff@print{#1}}%
     \fi%
   \fi%
-  \egroup%
 }
 \makeatother
 %    \end{macrocode}
@@ -325,7 +324,7 @@
 % Then, we define |\ff| macro:
 %    \begin{macrocode}
 \makeatletter
-\def\ff{\bgroup\ff@x}
+\def\ff{\ff@x}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -338,7 +337,7 @@
 %    \begin{macrocode}
 \makeatletter\ifdefined\ff@novert\else
   \catcode`\|\active
-  \AtBeginDocument{\catcode`\|\active\def|{\bgroup\ff@x|}}
+  \AtBeginDocument{\catcode`\|\active\def|{\ff@x|}}
   \catcode`\| 12 %
 \fi\makeatother
 %    \end{macrocode}
