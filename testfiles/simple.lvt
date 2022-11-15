@@ -21,6 +21,6 @@ int fibo(int n) {
 
 The line~\ref{ln:ret} terminates it.
 
-This code is fixed-width font: \ff{_hello\abc}
+This code is fixed-width font: \ff{_hello\abc}.
 
 \END

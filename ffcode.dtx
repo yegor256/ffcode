@@ -285,23 +285,47 @@
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{\ff}
-% Then, we define |\ff| command:
+% \begin{macro}{tcolorbox}
+% Then, we use \href{https://ctan.org/pkg/tcolorbox}{tcolorbox} to define |\ff@box|
+% command for a gray box around verbatim text block:
 %    \begin{macrocode}
-\makeatletter\ifdefined\ff@noframes
-  \newcommand\ff[1]{\ff@rule\ff@print{#1}}
-\else
+\makeatletter
+\ifdefined\ff@noframes\else
   \RequirePackage{tcolorbox}
   \newtcbox\ff@box{nobeforeafter,colframe=gray!80!white,
     colback=gray!5!white,boxrule=0.1pt,arc=1pt,
     boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,
     tcbox raise base}
-  \NewDocumentCommand\ff{v}{\relax\ifmmode%
-    {\ff@rule\ff@print{#1}}%
+\fi
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\ff@x}
+% Then, we define |\ff@x| internal command for printing a piece of fixed-width-font text:
+%    \begin{macrocode}
+\makeatletter
+\NewDocumentCommand\ff@x{v}{%
+  \ifdefined\ff@noframes%
+    \ff@rule\ff@print{#1}%
   \else%
-    {\ff@box{\ff@rule\ff@print{#1}}}%
-  \fi}
-\fi\makeatother
+    \relax\ifmmode%
+      \ff@rule\ff@print{#1}%
+    \else%
+      \ff@box{\ff@rule\ff@print{#1}}%
+    \fi%
+  \fi%
+}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\ff}
+% Then, we define |\ff| macro:
+%    \begin{macrocode}
+\makeatletter
+\def\ff{\ff@x}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -311,7 +335,7 @@
 %    \begin{macrocode}
 \makeatletter\ifdefined\ff@novert\else
   \catcode`\|\active
-  \AtBeginDocument{\catcode`\|\active\def|{\ff|}}
+  \AtBeginDocument{\catcode`\|\active\def|{\ff@x|}}
   \catcode`\| 12 %
 \fi\makeatother
 %    \end{macrocode}
