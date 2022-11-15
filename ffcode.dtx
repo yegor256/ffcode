@@ -152,7 +152,7 @@
 % \pagestyle{empty}
 % \begin{document}
 % \begin{equation*}
-% x = \int_{|home|}^N f(x).
+% x = \int_|home|^N f(x).
 % \end{equation*}
 % \end{document}
 % \end{docshot}
@@ -315,6 +315,7 @@
       \ff@box{\ff@rule\ff@print{#1}}%
     \fi%
   \fi%
+  \egroup%
 }
 \makeatother
 %    \end{macrocode}
@@ -324,18 +325,20 @@
 % Then, we define |\ff| macro:
 %    \begin{macrocode}
 \makeatletter
-\def\ff{\ff@x}
+\def\ff{\bgroup\ff@x}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
 
 % \begin{macro}{novert}
 % Finally, we let vertical bars work similar to |\ff|, as suggested
-% \href{https://tex.stackexchange.com/a/665105/1449}{here} (unless |novert| package option is used):
+% \href{https://tex.stackexchange.com/a/665105/1449}{here}
+% and \href{https://tex.stackexchange.com/a/665303/1449}{here}
+% (unless |novert| package option is used):
 %    \begin{macrocode}
 \makeatletter\ifdefined\ff@novert\else
   \catcode`\|\active
-  \AtBeginDocument{\catcode`\|\active\def|{\ff@x|}}
+  \AtBeginDocument{\catcode`\|\active\def|{\bgroup\ff@x|}}
   \catcode`\| 12 %
 \fi\makeatother
 %    \end{macrocode}
