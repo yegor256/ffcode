@@ -16,6 +16,7 @@ jobs:
         if: matrix.os == 'ubuntu-20.04'
       - run: |
           pip3 install pygments
+          easy_install Pygments
           cp /Library/Frameworks/Python.framework/Versions/2.7/bin/pygmentize /usr/local/bin
           pygmentize -V
         if: matrix.os == 'macos-12'
