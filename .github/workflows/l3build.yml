@@ -16,8 +16,7 @@ jobs:
         if: matrix.os == 'ubuntu-20.04'
       - run: |
           pip3 install pygments
-          ls /Library/Frameworks/Python.framework/Versions
-          cp /Library/Frameworks/Python.framework/Versions/2.6/bin/pygmentize /usr/local/bin
+          cp /Library/Frameworks/Python.framework/Versions/2.7/bin/pygmentize /usr/local/bin
           pygmentize -V
         if: matrix.os == 'macos-12'
       - run: sudo apt-get -y install ghostscript
