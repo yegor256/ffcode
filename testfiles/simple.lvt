@@ -8,6 +8,8 @@
 
 \START
 
+\section{Example of |fibo| function}
+
 The function |fibo()| is recursive:
 
 \begin{ffcode}
