@@ -1,6 +1,7 @@
 .DS_Store
 target/
 build/
+_docshots/
 _minted-*
 *.glo
 *.sty

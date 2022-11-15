@@ -1,12 +1,6 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem(pygmentize -S bw -f latex -P commandprefix=PYG > _minted-simple/bw.pygstyle)...executed.
-(_minted-simple/bw.pygstyle)
-runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -P stripnl=False -P "escapeinside=||" -P mathescape=True -o _minted-simple/677FC047998CC2207A0E8277AD9968455692097DB28EF3AEF3DCEC2A69D71E30.pygtex simple.pyg)...executed.
-(_minted-simple/677FC047998CC2207A0E8277AD9968455692097DB28EF3AEF3DCEC2A69D71E30.pygtex
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line ....
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line ....
-)
-LaTeX Warning: Reference `ln:ret' on page 1 undefined on input line ....
+! TeX capacity exceeded, sorry [grouping levels=255].
+\hmode@bgroup ->\leavevmode \bgroup 
+l. ...The function |
+                   fibo()| is recursive: 
