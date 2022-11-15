@@ -144,7 +144,7 @@
 
 \makeatletter\ifdefined\ff@novert\else
   \catcode`\|\active
-  \AtBeginDocument{\catcode`\|\active\def|{\ff@x|}}
+  \AtBeginDocument{\catcode`\|\active\protected\def|{\ff@x|}}
   \catcode`\| 12 %
 \fi\makeatother
 
