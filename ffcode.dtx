@@ -150,6 +150,20 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{sf}
+% You can change the font family of |\ff| pieces to |\sffamily|:
+% \docshotOptions{firstline=4,lastline=9}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage[paperwidth=3in]{geometry}
+% \pagestyle{empty}
+% \usepackage[sf,bold,noframes]{ffcode}
+% \begin{document}
+% Sometimes you may want them to look
+% not strictly fixed-width, but more
+% elegant, like the |fibo()| here.
+% \end{document}
+% \end{docshot}
 
 % \section{Typesetting}
 
@@ -215,11 +229,13 @@
 % \changes{v0.6.0}{2021/11/14}{We use \texttt{pgfopts} instead of \texttt{xkeyval}.}
 % \changes{v0.6.0}{2021/11/14}{Package option \texttt{novert} added, to disable redefinition of vertical bar.}
 % \changes{v0.7.0}{2021/11/28}{Package option \texttt{bold} added, to make all \texttt{\char`\\ff} pieces look bolder than usual.}
+% \changes{v0.7.0}{2021/11/28}{Package option \texttt{sf} added, to make all \texttt{\char`\\ff} pieces be printed as \texttt{\char`\\sffamily}.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 \pgfkeys{
   /ff/.cd,
   bold/.store in=\ff@bold,
+  sf/.store in=\ff@sf,
   nopygments/.store in=\ff@nopygments,
   noframes/.store in=\ff@noframes,
   nonumbers/.store in=\ff@nonumbers,
@@ -293,7 +309,7 @@
 \makeatletter
 \newcommand\ff@print[1]{%
   \textnormal{%
-    \ttfamily%
+    \ifdefined\ff@sf\sffamily\else\ttfamily\fi%
     \ifdefined\ff@bold\fontseries{b}\selectfont\fi%
     #1%
   }%
