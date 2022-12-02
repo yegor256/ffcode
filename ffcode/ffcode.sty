@@ -135,7 +135,11 @@
 \makeatother
 
 \makeatletter
-\NewDocumentCommand\ff@x{v}{%
+\NewDocumentCommand\ff@x{v}{\ff{#1}}
+\makeatother
+
+\makeatletter
+\newcommand\ff[1]{%
   \ifdefined\ff@noframes%
     \ff@rule\ff@print{#1}%
   \else%
@@ -146,10 +150,6 @@
     \fi%
   \fi%
 }
-\makeatother
-
-\makeatletter
-\def\ff{\ff@x}
 \makeatother
 
 \makeatletter\ifdefined\ff@novert\else
