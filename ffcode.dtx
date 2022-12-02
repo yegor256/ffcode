@@ -152,7 +152,7 @@
 
 % \DescribeMacro{sf}
 % You can change the font family of |\ff| pieces to |\sffamily|:
-% \docshotOptions{firstline=4,lastline=9}
+% \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
@@ -161,7 +161,8 @@
 % \begin{document}
 % Sometimes you may want them to look
 % not strictly fixed-width, but more
-% elegant, like the |fibo()| here.
+% elegant, like the \emph{|fibo()|}
+% here.
 % \end{document}
 % \end{docshot}
 
@@ -347,7 +348,16 @@
 % Then, we define |\ff@x| internal command for printing a piece of fixed-width-font text:
 %    \begin{macrocode}
 \makeatletter
-\NewDocumentCommand\ff@x{v}{%
+\NewDocumentCommand\ff@x{v}{\ff{#1}}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\ff}
+% Then, we define |\ff| macro:
+%    \begin{macrocode}
+\makeatletter
+\newcommand\ff[1]{%
   \ifdefined\ff@noframes%
     \ff@rule\ff@print{#1}%
   \else%
@@ -358,15 +368,6 @@
     \fi%
   \fi%
 }
-\makeatother
-%    \end{macrocode}
-% \end{macro}
-
-% \begin{macro}{\ff}
-% Then, we define |\ff| macro:
-%    \begin{macrocode}
-\makeatletter
-\def\ff{\ff@x}
 \makeatother
 %    \end{macrocode}
 % \end{macro}

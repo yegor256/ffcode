@@ -14,3 +14,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line ....
 )
 LaTeX Warning: Reference `ln:ret' on page 1 undefined on input line ....
+! Missing $ inserted.
+<inserted text> 
+$
+l. ...This code is fixed-width font: \ff{_hello\abc}
+                                                 .
