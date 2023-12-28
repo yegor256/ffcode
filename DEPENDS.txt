@@ -16,3 +16,4 @@ soft pgfopts
 soft scheme-basic
 soft tools
 soft xetex
+soft upquote
