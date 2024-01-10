@@ -1,14 +1,5 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem(pygmentize -S bw -f latex -P commandprefix=PYG > _minted-simple-lua/bw.pygstyle)...executed.
-(_minted-simple-lua/bw.pygstyle)
-runsystem(pygmentize -l 'text' -f latex -P commandprefix=PYG -F tokenmerge -P stripnl='False' -P escapeinside='||' -P mathescape='True' -o _minted-simple-lua/677FC047998CC2207A0E8277AD996845D25CC8B59E59840920DBB35654E4BCFA.pygtex simple.pyg)...executed.
-(_minted-simple-lua/677FC047998CC2207A0E8277AD996845D25CC8B59E59840920DBB35654E4BCFA.pygtex
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line ....
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line ....
-)
 LaTeX Warning: Reference `ln:ret' on page 1 undefined on input line ....
 ! Missing $ inserted.
 <inserted text> 

@@ -1,4 +1,4 @@
-hard minted
+hard fancyvrb
 hard pgfopts
 hard tcolorbox
 soft docshots
@@ -16,4 +16,5 @@ soft pgfopts
 soft scheme-basic
 soft tools
 soft xetex
+soft fvextra
 soft upquote
