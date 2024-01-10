@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2024-01-10 09.50.46 Fixed Font Code]
+[2024-01-10 11.01.05 Fixed Font Code]
 
 
 
@@ -64,27 +64,24 @@
 \ProcessPgfPackageOptions{/ff}
 
 \RequirePackage{xcolor}
-\RequirePackage{fancyvrb}
-\makeatletter
-\def\ff@opts{baselinestretch=1,codes={\catcode`\|=12}}
-\ifdefined\ff@nonumbers\else
-  \edef\ff@opts{\unexpanded\expandafter{\ff@opts},
-    numbers=left,numbersep=2pt}
-\fi
-\ifdefined\ff@nobars\else
-  \edef\ff@opts{\unexpanded\expandafter{\ff@opts},
-    frame=leftline,framerule=.2pt}\fi
-\ifdefined\ff@nocn\else\fi
-\makeatother
+\RequirePackage{listings}
 
 \makeatletter
-\newenvironment{ffcode}
-{\VerbatimEnvironment\expanded{\noexpand\begin{Verbatim}[\ff@opts]}%
-}{\end{Verbatim}}
-\newenvironment{ffcode*}[1]
-{\edef\xopts{\unexpanded\expandafter{\ff@opts},#1}
-\VerbatimEnvironment\expanded{\noexpand\begin{Verbatim}[\xopts]}%
-}{\end{Verbatim}}
+\lstnewenvironment{ffcode}[1][]
+  {
+    \lstset{breaklines}
+    \lstset{escapeinside={(*@}{@*)}}
+    \lstset{basicstyle={\ttfamily}}
+    \lstset{columns=fullflexible}
+    \ifdefined\ff@nonumbers\else
+      \lstset{numbers=left,numbersep=5pt,numberstyle={\tiny\sffamily\color{gray}}}
+    \fi
+    \ifdefined\ff@nobars\else
+      \lstset{frame=leftline,framerule=.3pt,rulecolor={\color{gray}}}
+    \ifdefined\ff@nocn\else\fi
+    \lstset{#1}
+  }
+  {}
 \makeatother
 
 \makeatletter
