@@ -262,7 +262,9 @@
     \fi
     \ifdefined\ff@nobars\else
       \lstset{frame=leftline,framerule=.3pt,rulecolor={\color{gray}}}
-    \ifdefined\ff@nocn\else\fi
+    \ifdefined\ff@nocn\else
+      \lstset{firstnumber=last}
+    \fi
     \lstset{#1}
   }
   {}
