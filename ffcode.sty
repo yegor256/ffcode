@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2024-01-10 11.13.48 Fixed Font Code]
+[2024-01-10 12.55.10 Fixed Font Code]
 
 
 
@@ -78,7 +78,9 @@
     \fi
     \ifdefined\ff@nobars\else
       \lstset{frame=leftline,framerule=.3pt,rulecolor={\color{gray}}}
-    \ifdefined\ff@nocn\else\fi
+    \ifdefined\ff@nocn\else
+      \lstset{firstnumber=last}
+    \fi
     \lstset{#1}
   }
   {}
