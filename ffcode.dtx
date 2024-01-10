@@ -97,7 +97,7 @@
 % \begin{ffcode}
 % int fibo(int n) {
 %   if (n < 2) {
-%     return n; \label{ln:ret}
+%     return n; (*@ \label{ln:ret} @*)
 %   }
 %   return fibo(n-1)+fibo(n-2);
 % }
@@ -189,27 +189,26 @@
 % You can highlight some lines in your |ffcode| environment,
 % or can use any other additional configuration parameters from
 % |fancyvrb| and |fvextra| packages:
-% \docshotOptions{firstline=7,lastline=14}
+% \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
 % \usepackage{ffcode}
-% \usepackage{fvextra}
 % \pagestyle{empty}
 % \begin{document}
-% \begin{ffcode*}{highlightlines={1,4-5}}
+% \begin{ffcode}[backgroundcolor=\color{gray!20}]
 % while (true) {
-%   print("Hello!")
+%   (*@\textcolor{red}{print("Hi!")}@*)
 %   print("Enter your name:")
 %   scan(x)
 %   print("You name | " + x)
 % }
-% \end{ffcode*}
+% \end{ffcode}
 % \end{document}
 % \end{docshot}
 
-% Using this second argument of |ffcode*| (with the trailing asterisk),
-% you can provide any other options from |fancyvrb| package to the
+% Using this second argument of |ffcode|,
+% you can provide any other options from the |listings| package to the
 % snippet.
 
 % \StopEventually{}
@@ -241,35 +240,32 @@
 \ProcessPgfPackageOptions{/ff}
 %    \end{macrocode}
 
-% Then, we configure the \href{https://ctan.org/pkg/fancyvrb}{fancyvrb} package:
-% \changes{v0.9.0}{2024/01/09}{The \texttt{minted} package is replaced by the \texttt{fancyvrb} package.}
+% Then, we configure the \href{https://ctan.org/pkg/listings}{listings} package:
+% \changes{v0.9.0}{2024/01/09}{The \texttt{minted} package is replaced by the \texttt{listings} package.}
 %    \begin{macrocode}
 \RequirePackage{xcolor}
-\RequirePackage{fancyvrb}
-\makeatletter
-\def\ff@opts{baselinestretch=1,codes={\catcode`\|=12}}
-\ifdefined\ff@nonumbers\else
-  \edef\ff@opts{\unexpanded\expandafter{\ff@opts},
-    numbers=left,numbersep=2pt}
-\fi
-\ifdefined\ff@nobars\else
-  \edef\ff@opts{\unexpanded\expandafter{\ff@opts},
-    frame=leftline,framerule=.2pt}\fi
-\ifdefined\ff@nocn\else\fi
-\makeatother
+\RequirePackage{listings}
 %    \end{macrocode}
 
 % \begin{macro}{ffcode}
 % Then, we define the |ffcode| environment and its supplementary |ffcode*| counterpart:
 %    \begin{macrocode}
 \makeatletter
-\newenvironment{ffcode}
-{\VerbatimEnvironment\expanded{\noexpand\begin{Verbatim}[\ff@opts]}%
-}{\end{Verbatim}}
-\newenvironment{ffcode*}[1]
-{\edef\xopts{\unexpanded\expandafter{\ff@opts},#1}
-\VerbatimEnvironment\expanded{\noexpand\begin{Verbatim}[\xopts]}%
-}{\end{Verbatim}}
+\lstnewenvironment{ffcode}[1][]
+  {
+    \lstset{breaklines}
+    \lstset{escapeinside={(*@}{@*)}}
+    \lstset{basicstyle={\ttfamily}}
+    \lstset{columns=fullflexible}
+    \ifdefined\ff@nonumbers\else
+      \lstset{numbers=left,numbersep=5pt,numberstyle={\tiny\sffamily\color{gray}}}
+    \fi
+    \ifdefined\ff@nobars\else
+      \lstset{frame=leftline,framerule=.3pt,rulecolor={\color{gray}}}
+    \ifdefined\ff@nocn\else\fi
+    \lstset{#1}
+  }
+  {}
 \makeatother
 %    \end{macrocode}
 % \end{macro}

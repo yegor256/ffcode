@@ -1,4 +1,4 @@
-hard fancyvrb
+hard listings
 hard pgfopts
 hard tcolorbox
 soft docshots
