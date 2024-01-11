@@ -245,6 +245,10 @@
 %    \begin{macrocode}
 \RequirePackage{xcolor}
 \RequirePackage{listings}
+\makeatletter
+% See \href{https://tex.stackexchange.com/questions/706858}{the explanation}:
+\lst@AddToHook{Init}{\setlength{\lineskip}{0pt}}
+\makeatother
 %    \end{macrocode}
 
 % \begin{macro}{ffcode}
@@ -261,7 +265,7 @@
       \lstset{numbers=left,numbersep=5pt,numberstyle={\tiny\sffamily\color{gray}}}
     \fi
     \ifdefined\ff@nobars\else
-      \lstset{frame=leftline,framerule=.3pt,rulecolor={\color{gray}}}
+      \lstset{frame=leftline,framerule=.4pt,rulecolor={\color{gray}}}
     \ifdefined\ff@nocn\else
       \lstset{firstnumber=last}
     \fi
