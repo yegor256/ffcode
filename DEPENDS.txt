@@ -1,6 +1,7 @@
 hard listings
 hard pgfopts
 hard tcolorbox
+soft etoolbox
 soft docshots
 soft environ
 soft href-ul
