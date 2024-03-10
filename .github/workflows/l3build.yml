@@ -17,7 +17,7 @@ jobs:
           python-version: '3.10'
       - run: sudo apt-get -y install ghostscript
         if: matrix.os == 'ubuntu-22.04'
-      - uses: teatimeguest/setup-texlive-action@v3.0.2
+      - uses: teatimeguest/setup-texlive-action@v3.1.0
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
