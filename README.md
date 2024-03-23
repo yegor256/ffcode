@@ -11,7 +11,7 @@ and [`tcolorbox`](https://ctan.org/pkg/tcolorbox) packages.
 
 First,
 [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
-from [CTAN](https://ctan.org/pkg/ffcode) 
+from [CTAN](https://ctan.org/pkg/ffcode)
 and then use in the preamble:
 
 ```tex
