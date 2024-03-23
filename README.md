@@ -1,12 +1,16 @@
+# Fixed-Font LaTeX Primitive: `\ff` and `\begin{ffcode}`
+
 [![make](https://github.com/yegor256/ffcode/actions/workflows/l3build.yml/badge.svg)](https://github.com/yegor256/ffcode/actions/workflows/l3build.yml)
 [![CTAN](https://img.shields.io/ctan/v/ffcode)](https://ctan.org/pkg/ffcode)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/ffcode/blob/master/LICENSE.txt)
 
 This LaTeX package helps you write source code in your academic papers
-and make sure it looks neat. The package uses [`listings`](https://ctan.org/pkg/listings) 
+and make sure it looks neat. The package uses
+[`listings`](https://ctan.org/pkg/listings)
 and [`tcolorbox`](https://ctan.org/pkg/tcolorbox) packages.
 
-First, [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
+First,
+[install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
 from [CTAN](https://ctan.org/pkg/ffcode) 
 and then use in the preamble:
 
@@ -23,7 +27,9 @@ void r() {
 \end{document}
 ```
 
-Otherwise, you can download [`ffcode.sty`](https://yegor256.github.io/ffcode/ffcode.sty) and add to your project.
+Otherwise, you can download
+[`ffcode.sty`](https://yegor256.github.io/ffcode/ffcode.sty) and
+add to your project.
 
 If you want to contribute yourself, make a fork, then create a branch,
 then run `l3build ctan` in the root directory.
