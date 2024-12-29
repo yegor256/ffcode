@@ -261,38 +261,10 @@
 \makeatother
 %    \end{macrocode}
 
-% \begin{macro}{ffcode}
-% Then, we define the |ffcode| environment and its supplementary |ffcode*| counterpart:
+% Then, we define a supplementary command \texttt{\char`\\ff@set}:
 %    \begin{macrocode}
 \makeatletter
-\lstnewenvironment{ffcode}[1][]
-  {
-    \lstset{breaklines}
-    \lstset{escapeinside={(*@}{@*)}}
-    \lstset{basicstyle={\ttfamily}}
-    \lstset{columns=fullflexible}
-    \ifdefined\ff@nonumbers\else
-      \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}}}
-    \fi
-    \ifdefined\ff@nobars\else
-      \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
-    \fi
-    \ifdefined\ff@nocn\else
-      \lstset{firstnumber=last}
-    \fi
-    \lstset{#1}
-  }
-  {}
-\makeatother
-%    \end{macrocode}
-% \end{macro}
-
-% \begin{macro}{ffcode}
-% Then, we define the \texttt{\char`\\ffinput} command:
-% \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
-%    \begin{macrocode}
-\makeatletter
-\newcommand\ffinput[2][]{
+\newcommand\ff@set[1]{
   \lstset{breaklines}
   \lstset{escapeinside={(*@}{@*)}}
   \lstset{basicstyle={\ttfamily}}
@@ -307,7 +279,27 @@
     \lstset{firstnumber=last}
   \fi
   \lstset{#1}
-  \lstinputlisting[#1]{#2}
+}
+\makeatother
+%    \end{macrocode}
+
+% \begin{macro}{ffcode}
+% Then, we define the |ffcode| environment and its supplementary |ffcode*| counterpart:
+%    \begin{macrocode}
+\makeatletter
+\lstnewenvironment{ffcode}[1][]{\ff@set{#1}}{}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{ffcode}
+% Then, we define the \texttt{\char`\\ffinput} command:
+% \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
+%    \begin{macrocode}
+\makeatletter
+\newcommand\ffinput[2][]{%
+  \ff@set{#1}%
+  \lstinputlisting[#1]{#2}%
 }
 \makeatother
 %    \end{macrocode}
