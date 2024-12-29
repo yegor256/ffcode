@@ -107,6 +107,11 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{\ffinput}
+% There is also |\ffinput| command that reads the content from a file
+% and places it into the document, formatted exactly the same way as
+% it would be, if the |ffcode| environment would be used.
+
 % \section{Package Options}
 
 % \DescribeMacro{noframes}
@@ -279,6 +284,30 @@
   }
   {}
 \makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{ffcode}
+% Then, we define the \texttt{\char`\\ffinput} command:
+% \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
+%    \begin{macrocode}
+\newcommand\ffinput[2][]{
+  \lstset{breaklines}
+  \lstset{escapeinside={(*@}{@*)}}
+  \lstset{basicstyle={\ttfamily}}
+  \lstset{columns=fullflexible}
+  \ifdefined\ff@nonumbers\else
+    \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}}}
+  \fi
+  \ifdefined\ff@nobars\else
+    \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
+  \fi
+  \ifdefined\ff@nocn\else
+    \lstset{firstnumber=last}
+  \fi
+  \lstset{#1}
+  \lstinputlisting[#1]{#2}
+}
 %    \end{macrocode}
 % \end{macro}
 
