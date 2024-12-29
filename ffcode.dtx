@@ -291,6 +291,7 @@
 % Then, we define the \texttt{\char`\\ffinput} command:
 % \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
 %    \begin{macrocode}
+\makeatletter
 \newcommand\ffinput[2][]{
   \lstset{breaklines}
   \lstset{escapeinside={(*@}{@*)}}
@@ -308,6 +309,7 @@
   \lstset{#1}
   \lstinputlisting[#1]{#2}
 }
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 

@@ -1,0 +1,13 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{ifluatex}
+\usepackage{ifxetex}
+\usepackage[nobars]{ffcode}
+\begin{document}
+\START
+
+Here is some code:
+
+\ffinput{ffcode.sty}
+
+\END
