@@ -1,0 +1,25 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{ifluatex}
+\usepackage{ifxetex}
+\usepackage[samepage]{ffcode}
+\begin{document}
+\START
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus nunc, iaculis ut sapien vel, egestas mollis nulla. Pellentesque ut mattis dui. Proin porta felis tellus, a vulputate justo semper ac. Sed pretium metus sit amet velit suscipit, nec volutpat metus mollis. In et lectus dignissim, bibendum orci ac, iaculis diam. Aliquam quis magna ac nunc molestie tincidunt eget ac neque. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. Aliquam consequat metus scelerisque vehicula pellentesque.
+
+Sed imperdiet tortor vel neque maximus, sed hendrerit erat vehicula. Praesent quis lorem vitae justo ullamcorper pretium at ut justo. Maecenas et tellus ex. Pellentesque blandit ut ex et molestie. Nulla eget magna enim. Mauris convallis nisl vitae dignissim malesuada. Nam nec magna iaculis, blandit mauris quis, lacinia libero. Curabitur ac nunc non ante malesuada rhoncus id et tortor. Praesent sodales purus sit amet vestibulum pretium. Morbi gravida iaculis metus, eu luctus magna scelerisque at. Nunc hendrerit eu augue sed semper. In est quam, imperdiet ac nisl quis, maximus tincidunt risus. Mauris vehicula, neque in bibendum dignissim, ex eros auctor nunc, nec pellentesque purus nisl a massa.
+
+Donec suscipit, orci dictum facilisis finibus, enim ex pulvinar elit, eget egestas augue ante at risus. Quisque commodo neque et velit ultrices, sit amet malesuada ante finibus. Donec tortor lectus, consequat in ante vel, maximus vestibulum ex. Phasellus bibendum congue erat, non tincidunt velit ultricies eget. Cras blandit nibh quis ante malesuada ultrices. Nunc feugiat enim imperdiet dolor accumsan hendrerit. Integer ullamcorper neque sit amet mi ullamcorper iaculis. Quisque sed ipsum aliquet ligula blandit tincidunt sed eget sapien. Nam vestibulum consequat nulla, at pulvinar diam tincidunt non. Donec egestas porta velit sit amet bibendum. Praesent mi est, interdum sagittis libero ut, varius hendrerit magna.
+
+Here is some code, supposedly placed in the same page:
+
+\ffinput{samepage.lvt}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus nunc, iaculis ut sapien vel, egestas mollis nulla. Pellentesque ut mattis dui. Proin porta felis tellus, a vulputate justo semper ac. Sed pretium metus sit amet velit suscipit, nec volutpat metus mollis. In et lectus dignissim, bibendum orci ac, iaculis diam. Aliquam quis magna ac nunc molestie tincidunt eget ac neque. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. Aliquam consequat metus scelerisque vehicula pellentesque.
+
+Sed imperdiet tortor vel neque maximus, sed hendrerit erat vehicula. Praesent quis lorem vitae justo ullamcorper pretium at ut justo. Maecenas et tellus ex. Pellentesque blandit ut ex et molestie. Nulla eget magna enim. Mauris convallis nisl vitae dignissim malesuada. Nam nec magna iaculis, blandit mauris quis, lacinia libero. Curabitur ac nunc non ante malesuada rhoncus id et tortor. Praesent sodales purus sit amet vestibulum pretium. Morbi gravida iaculis metus, eu luctus magna scelerisque at. Nunc hendrerit eu augue sed semper. In est quam, imperdiet ac nisl quis, maximus tincidunt risus. Mauris vehicula, neque in bibendum dignissim, ex eros auctor nunc, nec pellentesque purus nisl a massa.
+
+Donec suscipit, orci dictum facilisis finibus, enim ex pulvinar elit, eget egestas augue ante at risus. Quisque commodo neque et velit ultrices, sit amet malesuada ante finibus. Donec tortor lectus, consequat in ante vel, maximus vestibulum ex. Phasellus bibendum congue erat, non tincidunt velit ultricies eget. Cras blandit nibh quis ante malesuada ultrices. Nunc feugiat enim imperdiet dolor accumsan hendrerit. Integer ullamcorper neque sit amet mi ullamcorper iaculis. Quisque sed ipsum aliquet ligula blandit tincidunt sed eget sapien. Nam vestibulum consequat nulla, at pulvinar diam tincidunt non. Donec egestas porta velit sit amet bibendum. Praesent mi est, interdum sagittis libero ut, varius hendrerit magna.
+
+\END

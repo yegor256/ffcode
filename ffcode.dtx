@@ -114,6 +114,10 @@
 
 % \section{Package Options}
 
+% \DescribeMacro{samepage}
+% If you want to avoid page breaks inside |ffcode| blocks, use the |samepage|
+% package option.
+
 % \DescribeMacro{noframes}
 % If you want to omit the light gray frames around |\ff|
 % texts, use the package option |noframes|.
@@ -231,12 +235,14 @@
 % \changes{v0.7.0}{2021/11/28}{Package option \texttt{bold} added, to make all \texttt{\char`\\ff} pieces look bolder than usual.}
 % \changes{v0.7.0}{2021/11/28}{Package option \texttt{sf} added, to make all \texttt{\char`\\ff} pieces be printed as \texttt{\char`\\sffamily}.}
 % \changes{v0.9.2}{2024/02/04}{All lengths and sizes are in "em" instead of "pt".}
+% \changes{v0.10.0}{2025/01/02}{Package option \texttt{samepage} added, to keep all \texttt{ffcode} blocks on the same page.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 \pgfkeys{
   /ff/.cd,
   bold/.store in=\ff@bold,
   sf/.store in=\ff@sf,
+  samepage/.store in=\ff@samepage,
   noframes/.store in=\ff@noframes,
   nonumbers/.store in=\ff@nonumbers,
   nobars/.store in=\ff@nobars,
@@ -287,7 +293,9 @@
 % Then, we define the |ffcode| environment and its supplementary |ffcode*| counterpart:
 %    \begin{macrocode}
 \makeatletter
-\lstnewenvironment{ffcode}[1][]{\ff@set{#1}}{}
+\lstnewenvironment{ffcode}[1][]
+  {\ff@set{#1}\ifdefined\ff@samepage\begin{minipage}{\linewidth}\fi}
+  {\ifdefined\ff@samepage\end{minipage}\fi}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -299,7 +307,9 @@
 \makeatletter
 \newcommand\ffinput[2][]{%
   \ff@set{#1}%
+  \ifdefined\ff@samepage\begin{minipage}{\linewidth}\fi%
   \lstinputlisting[#1]{#2}%
+  \ifdefined\ff@samepage\end{minipage}\fi%
 }
 \makeatother
 %    \end{macrocode}

@@ -2,6 +2,8 @@
 \documentclass{article}
 \usepackage{ifluatex}
 \usepackage{ifxetex}
+\usepackage{silence}
+  \WarningFilter{latexfont}{Trying to load font}
 \usepackage[nocn,nonumbers,noframes]{ffcode}
 \begin{document}
 
