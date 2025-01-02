@@ -7,7 +7,7 @@
 %% ffcode.dtx  (with options: `package')
 %% (The MIT License)
 %% 
-%% Copyright (c) 2021-2024 Yegor Bugayenko
+%% Copyright (c) 2021-2025 Yegor Bugayenko
 %% 
 %% Permission is hereby granted, free of charge, to any person obtaining a copy
 %% of this software and associated documentation files (the 'Software'), to deal
@@ -31,7 +31,9 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[0000/00/00 22.35.06 Fixed Font Code]
+[2025/01/02 10.31.37 Fixed Font Code]
+
+
 
 
 
@@ -55,6 +57,7 @@
   /ff/.cd,
   bold/.store in=\ff@bold,
   sf/.store in=\ff@sf,
+  samepage/.store in=\ff@samepage,
   noframes/.store in=\ff@noframes,
   nonumbers/.store in=\ff@nonumbers,
   nobars/.store in=\ff@nobars,
@@ -71,24 +74,37 @@
 \makeatother
 
 \makeatletter
+\newcommand\ff@set[1]{
+  \lstset{breaklines}
+  \lstset{escapeinside={(*@}{@*)}}
+  \lstset{basicstyle={\ttfamily}}
+  \lstset{columns=fullflexible}
+  \ifdefined\ff@nonumbers\else
+    \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}}}
+  \fi
+  \ifdefined\ff@nobars\else
+    \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
+  \fi
+  \ifdefined\ff@nocn\else
+    \lstset{firstnumber=last}
+  \fi
+  \lstset{#1}
+}
+\makeatother
+
+\makeatletter
 \lstnewenvironment{ffcode}[1][]
-  {
-    \lstset{breaklines}
-    \lstset{escapeinside={(*@}{@*)}}
-    \lstset{basicstyle={\ttfamily}}
-    \lstset{columns=fullflexible}
-    \ifdefined\ff@nonumbers\else
-      \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}}}
-    \fi
-    \ifdefined\ff@nobars\else
-      \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
-    \fi
-    \ifdefined\ff@nocn\else
-      \lstset{firstnumber=last}
-    \fi
-    \lstset{#1}
-  }
-  {}
+  {\ff@set{#1}\ifdefined\ff@samepage\begin{minipage}{\linewidth}\fi}
+  {\ifdefined\ff@samepage\end{minipage}\fi}
+\makeatother
+
+\makeatletter
+\newcommand\ffinput[2][]{%
+  \ff@set{#1}%
+  \ifdefined\ff@samepage\begin{minipage}{\linewidth}\fi%
+  \lstinputlisting[#1]{#2}%
+  \ifdefined\ff@samepage\end{minipage}\fi%
+}
 \makeatother
 
 \makeatletter
