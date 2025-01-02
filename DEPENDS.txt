@@ -1,9 +1,10 @@
 hard listings
 hard pgfopts
 hard tcolorbox
-soft etoolbox
 soft docshots
 soft environ
+soft etoolbox
+soft fvextra
 soft href-ul
 soft hypdoc
 soft iexec
@@ -16,6 +17,5 @@ soft pgf
 soft pgfopts
 soft scheme-basic
 soft tools
-soft xetex
-soft fvextra
 soft upquote
+soft xetex
