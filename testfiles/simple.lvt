@@ -3,7 +3,7 @@
 \usepackage{ifluatex}
 \usepackage{ifxetex}
 \usepackage{silence}
-  \WarningFilter{latexfont}{Trying to load font}
+  \WarningFilter{latexfont}{LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line}
 \usepackage[nocn,nonumbers,noframes]{ffcode}
 \begin{document}
 
