@@ -47,7 +47,7 @@ jobs:
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
-      - run: l3build ctan --show-log-on-error --halt-on-error || cat build/doc/ffcode.log
+      - run: l3build ctan --show-log-on-error --halt-on-error
       - run: |
           mkdir build/gh-pages
           cp build/distrib/tds/tex/latex/ffcode/ffcode.sty build/gh-pages
