@@ -29,7 +29,7 @@ checkengines = {"pdftex", "luatex", "xetex"}
 
 uploadconfig = {
   pkg = "ffcode",
-  version = "0.0.0",
+  version = "0.10.0",
   author = "Yegor Bugayenko",
   uploader = "Yegor Bugayenko",
   email = "yegor256@gmail.com",
@@ -50,6 +50,6 @@ uploadconfig = {
 function update_tag(file, content, tagname, tagdate)
   return string.gsub(
     string.gsub(content, "0%.0%.0", tagname),
-    "0000/00/00", os.date("%Y/%m/%d")
+    "2025/01/02", os.date("%Y/%m/%d")
   )
 end
