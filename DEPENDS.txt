@@ -16,6 +16,7 @@ soft pdfcrop
 soft pgf
 soft pgfopts
 soft scheme-basic
+soft silence
 soft tools
 soft upquote
 soft xetex
