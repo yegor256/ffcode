@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2025/01/02 11.05.24 Fixed Font Code]
+[2025/01/05 01.35.06 Fixed Font Code]
 
 
 
@@ -94,16 +94,16 @@
 
 \makeatletter
 \lstnewenvironment{ffcode}[1][]
-  {\ff@set{#1}\ifdefined\ff@samepage\begin{minipage}{\linewidth}\fi}
-  {\ifdefined\ff@samepage\end{minipage}\fi}
+  {\ff@set{#1}\ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi}
+  {\ifdefined\ff@samepage\endminipage\fi}
 \makeatother
 
 \makeatletter
 \newcommand\ffinput[2][]{%
   \ff@set{#1}%
-  \ifdefined\ff@samepage\begin{minipage}{\linewidth}\fi%
+  \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi%
   \lstinputlisting[#1]{#2}%
-  \ifdefined\ff@samepage\end{minipage}\fi%
+  \ifdefined\ff@samepage\endminipage\fi%
 }
 \makeatother
 
