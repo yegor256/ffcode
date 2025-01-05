@@ -294,8 +294,8 @@
 %    \begin{macrocode}
 \makeatletter
 \lstnewenvironment{ffcode}[1][]
-  {\ff@set{#1}\ifdefined\ff@samepage\begin{minipage}{\linewidth}\fi}
-  {\ifdefined\ff@samepage\end{minipage}\fi}
+  {\ff@set{#1}\ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi}
+  {\ifdefined\ff@samepage\endminipage\fi}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -307,9 +307,9 @@
 \makeatletter
 \newcommand\ffinput[2][]{%
   \ff@set{#1}%
-  \ifdefined\ff@samepage\begin{minipage}{\linewidth}\fi%
+  \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi%
   \lstinputlisting[#1]{#2}%
-  \ifdefined\ff@samepage\end{minipage}\fi%
+  \ifdefined\ff@samepage\endminipage\fi%
 }
 \makeatother
 %    \end{macrocode}
