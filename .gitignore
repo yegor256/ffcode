@@ -1,3 +1,7 @@
+_docshots/
+_minted-*
+.DS_Store
+.idea/
 *.aux
 *.bbl
 *.bcf
@@ -20,10 +24,6 @@
 *.tex
 *.toc
 *.zip
-.DS_Store
-.idea/
-_docshots/
-_minted-*
 build/
 ffcode-ctan.curlopt
 node_modules/
