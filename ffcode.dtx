@@ -91,7 +91,10 @@
 % \DescribeMacro{\ffinput}
 % There is also an |\ffinput| command that reads the content from a file
 % and places it into the document, formatted exactly the same way as
-% it would be if the |ffcode| environment were used.
+% it would be if the |ffcode| environment were used. It may be useful
+% to use |ffsave| environment first, which acts exactly like the |ffcode|
+% environment but doesn't print the content. It saves it to a file instead,
+% which may later be used by the |\ffinput| command.
 
 % \section{Package Options}
 
@@ -283,7 +286,7 @@
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{ffcode}
+% \begin{macro}{ffinput}
 % Then, we define the \texttt{\char`\\ffinput} command:
 % \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
 %    \begin{macrocode}
@@ -295,6 +298,17 @@
   \ifdefined\ff@samepage\endminipage\fi%
 }
 \makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{ffsave}
+% Then, we define the \texttt{ffsave} environment:
+% \changes{v0.11.0}{2025/07/06}{The \texttt{ffsave} environment added.}
+%    \begin{macrocode}
+\RequirePackage{fancyvrb}
+\newenvironment{ffsave}[1][ffsave.txt]
+  {\VerbatimEnvironment\begin{VerbatimOut}{#1}}
+  {\end{VerbatimOut}}
 %    \end{macrocode}
 % \end{macro}
 
