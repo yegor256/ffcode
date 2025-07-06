@@ -7,17 +7,17 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line ....
 [1
 ]
-Overfull \vbox (197.92001pt too high) has occurred while \output is active
+Overfull \vbox (245.92001pt too high) has occurred while \output is active
 \vbox(289.07999+0.0)x289.07999, direction TLT
 .\glue(\topskip) 0.0
-.\hbox(248.5+243.5)x289.07999, direction TLT
+.\hbox(272.5+267.5)x289.07999, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
 ...\localbrokenpenalty=0
 ...\localleftbox=null
 ...\localrightbox=null
 ..\mathon
-..\vbox(248.5+243.5)x289.07999, direction TLT
+..\vbox(272.5+267.5)x289.07999, direction TLT
 ...\penalty -50
 ...\glue 6.0 plus 2.0 minus 2.0
 ...\glue 0.0
@@ -25,7 +25,7 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 ...\write1{\@writefile{lol}{\protect \contentsline {lstlisting}{samepage.lvt}{\thepage }{}\protected@file@percent }}
 ...\glue(\parskip) 0.0
 ...\glue(\parskip) 0.0
-...\hbox(8.39996+3.60004)x289.07999, glue set 73.665fil, direction TLT
+...\hbox(8.39996+3.60004)x289.07999, glue set 0.32999fil, direction TLT
 ....\localpar
 .....\localinterlinepenalty=0
 .....\localbrokenpenalty=0
@@ -72,6 +72,1511 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
 .....\TU/lmss/m/n/5 1
+.....\kern4.00002
+....\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(6.94+0.83)x5.25, direction TLT
+.....\hbox(6.94+0.83)x5.25, direction TLT
+......\TU/lmtt/m/n/10 %
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(0.0+0.0)x5.25, direction TLT
+.....\hbox(0.0+0.0)x5.25, direction TLT
+......\glue(\spaceskip) 5.25
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.22+0.11)x21.0, direction TLT
+.....\hbox(6.22+0.11)x21.0, direction TLT
+......\TU/lmtt/m/n/10 S
+......\TU/lmtt/m/n/10 P
+......\TU/lmtt/m/n/10 D
+......\TU/lmtt/m/n/10 X
+......\kern0.0
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(3.41+0.0)x5.25, direction TLT
+.....\hbox(3.41+0.0)x5.25, direction TLT
+......\TU/lmtt/m/n/10 -
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.22+2.29)x89.25, direction TLT
+.....\hbox(6.22+2.29)x89.25, direction TLT
+......\TU/lmtt/m/n/10 F
+......\TU/lmtt/m/n/10 i
+......\TU/lmtt/m/n/10 l
+......\TU/lmtt/m/n/10 e
+......\TU/lmtt/m/n/10 C
+......\TU/lmtt/m/n/10 o
+......\TU/lmtt/m/n/10 p
+......\TU/lmtt/m/n/10 y
+......\TU/lmtt/m/n/10 r
+......\TU/lmtt/m/n/10 i
+......\TU/lmtt/m/n/10 g
+......\TU/lmtt/m/n/10 h
+......\TU/lmtt/m/n/10 t
+......\TU/lmtt/m/n/10 T
+......\TU/lmtt/m/n/10 e
+......\TU/lmtt/m/n/10 x
+......\TU/lmtt/m/n/10 t
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(4.31+0.0)x5.25, direction TLT
+.....\hbox(4.31+0.0)x5.25, direction TLT
+......\TU/lmtt/m/n/10 :
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(0.0+0.0)x5.25, direction TLT
+.....\hbox(0.0+0.0)x5.25, direction TLT
+......\glue(\spaceskip) 5.25
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.22+2.29)x47.25, direction TLT
+.....\hbox(6.22+2.29)x47.25, direction TLT
+......\TU/lmtt/m/n/10 C
+......\TU/lmtt/m/n/10 o
+......\TU/lmtt/m/n/10 p
+......\TU/lmtt/m/n/10 y
+......\TU/lmtt/m/n/10 r
+......\TU/lmtt/m/n/10 i
+......\TU/lmtt/m/n/10 g
+......\TU/lmtt/m/n/10 h
+......\TU/lmtt/m/n/10 t
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(0.0+0.0)x5.25, direction TLT
+.....\hbox(0.0+0.0)x5.25, direction TLT
+......\glue(\spaceskip) 5.25
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.94+0.82)x5.25, direction TLT
+.....\hbox(6.94+0.82)x5.25, direction TLT
+......\TU/lmtt/m/n/10 (
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(4.4+0.06)x5.25, direction TLT
+.....\hbox(4.4+0.06)x5.25, direction TLT
+......\TU/lmtt/m/n/10 c
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.94+0.82)x5.25, direction TLT
+.....\hbox(6.94+0.82)x5.25, direction TLT
+......\TU/lmtt/m/n/10 )
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(0.0+0.0)x5.25, direction TLT
+.....\hbox(0.0+0.0)x5.25, direction TLT
+......\glue(\spaceskip) 5.25
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.22+0.11)x47.25, direction TLT
+.....\hbox(6.22+0.11)x47.25, direction TLT
+......\TU/lmtt/m/n/10 2
+......\TU/lmtt/m/n/10 0
+......\TU/lmtt/m/n/10 2
+......\TU/lmtt/m/n/10 1
+......\kern0.0
+......\discretionary (penalty 50)
+.......< \TU/lmtt/m/n/10 -
+.......= \TU/lmtt/m/n/10 -
+......\TU/lmtt/m/n/10 2
+......\TU/lmtt/m/n/10 0
+......\TU/lmtt/m/n/10 2
+......\TU/lmtt/m/n/10 5
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(0.0+0.0)x5.25, direction TLT
+.....\hbox(0.0+0.0)x5.25, direction TLT
+......\glue(\spaceskip) 5.25
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.11+2.29)x26.25, direction TLT
+.....\hbox(6.11+2.29)x26.25, direction TLT
+......\TU/lmtt/m/n/10 Y
+......\TU/lmtt/m/n/10 e
+......\TU/lmtt/m/n/10 g
+......\TU/lmtt/m/n/10 o
+......\TU/lmtt/m/n/10 r
+....\discretionary (penalty 50)
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty 400
+...\glue(\baselineskip) 0.0
+...\hbox(8.39996+3.60004)x269.07999, glue set 108.29fil, shifted 20.0, direction TLT
+....\hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\hbox(8.39996+3.60004)x0.0, direction TLT
+......\pdfcolorstack 0 push {0.5 g 0.5 G}
+......\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\hbox(8.39996+3.60004)x3.0, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern3.0
+.......\kern0.0
+......\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+........\hbox(8.39996+3.60004)x0.50003, direction TLT
+.........\rule(8.39996+3.60004)x0.0
+.........\kern0.50003
+........\glue 0.0 plus 1.0fil minus 1.0fil
+.......\hbox(8.39996+3.60004)x0.50003, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern-2.0
+........\kern2.0
+........\rule(*+*)x0.50003
+.......\kern3.0
+.......\kern0.0
+......\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.......\kern0.0
+.......\hbox(8.39996+3.60004)x289.07999, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern289.07999
+.......\kern3.0
+.......\hbox(8.39996+3.60004)x0.0, direction TLT
+........\hbox(8.39996+3.60004)x0.0, direction TLT
+.........\rule(8.39996+3.60004)x0.0
+.........\kern0.0
+........\glue 0.0 plus 1.0fil minus 1.0fil
+.......\hbox(8.39996+3.60004)x0.0, direction TLT
+........\rule(8.39996+3.60004)x0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfcolorstack 0 pop
+.....\kern20.0
+.....\kern0.0
+....\hbox(0.0+0.0)x5.25, direction TLT
+.....\hbox(0.0+0.0)x5.25, direction TLT
+......\glue(\spaceskip) 5.25
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.11+2.29)x47.25, direction TLT
+.....\hbox(6.11+2.29)x47.25, direction TLT
+......\TU/lmtt/m/n/10 B
+......\TU/lmtt/m/n/10 u
+......\TU/lmtt/m/n/10 g
+......\TU/lmtt/m/n/10 a
+......\TU/lmtt/m/n/10 y
+......\TU/lmtt/m/n/10 e
+......\TU/lmtt/m/n/10 n
+......\TU/lmtt/m/n/10 k
+......\TU/lmtt/m/n/10 o
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 0.0
+...\hbox(8.39996+3.60004)x289.07999, glue set 65.79fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x3.0, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern3.0
+......\kern0.0
+.....\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.......\hbox(8.39996+3.60004)x0.50003, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern0.50003
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.50003, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern-2.0
+.......\kern2.0
+.......\rule(*+*)x0.50003
+......\kern3.0
+......\kern0.0
+.....\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+......\kern0.0
+......\hbox(8.39996+3.60004)x289.07999, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern289.07999
+......\kern3.0
+......\hbox(8.39996+3.60004)x0.0, direction TLT
+.......\hbox(8.39996+3.60004)x0.0, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.0, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfcolorstack 0 pop
+....\hbox(3.385+0.0)x0.0, glue set - 6.65501fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....\TU/lmss/m/n/5 2
+.....\kern4.00002
+....\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(6.94+0.83)x5.25, direction TLT
+.....\hbox(6.94+0.83)x5.25, direction TLT
+......\TU/lmtt/m/n/10 %
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(0.0+0.0)x5.25, direction TLT
+.....\hbox(0.0+0.0)x5.25, direction TLT
+......\glue(\spaceskip) 5.25
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.22+0.11)x21.0, direction TLT
+.....\hbox(6.22+0.11)x21.0, direction TLT
+......\TU/lmtt/m/n/10 S
+......\TU/lmtt/m/n/10 P
+......\TU/lmtt/m/n/10 D
+......\TU/lmtt/m/n/10 X
+......\kern0.0
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(3.41+0.0)x5.25, direction TLT
+.....\hbox(3.41+0.0)x5.25, direction TLT
+......\TU/lmtt/m/n/10 -
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.11+0.06)x36.75, direction TLT
+.....\hbox(6.11+0.06)x36.75, direction TLT
+......\TU/lmtt/m/n/10 L
+......\TU/lmtt/m/n/10 i
+......\TU/lmtt/m/n/10 c
+......\TU/lmtt/m/n/10 e
+......\TU/lmtt/m/n/10 n
+......\TU/lmtt/m/n/10 s
+......\TU/lmtt/m/n/10 e
+......\kern0.0
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(3.41+0.0)x5.25, direction TLT
+.....\hbox(3.41+0.0)x5.25, direction TLT
+......\TU/lmtt/m/n/10 -
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.17+0.06)x52.5, direction TLT
+.....\hbox(6.17+0.06)x52.5, direction TLT
+......\TU/lmtt/m/n/10 I
+......\TU/lmtt/m/n/10 d
+......\TU/lmtt/m/n/10 e
+......\TU/lmtt/m/n/10 n
+......\TU/lmtt/m/n/10 t
+......\TU/lmtt/m/n/10 i
+......\TU/lmtt/m/n/10 f
+......\TU/lmtt/m/n/10 i
+......\TU/lmtt/m/n/10 e
+......\TU/lmtt/m/n/10 r
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(4.31+0.0)x5.25, direction TLT
+.....\hbox(4.31+0.0)x5.25, direction TLT
+......\TU/lmtt/m/n/10 :
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(0.0+0.0)x5.25, direction TLT
+.....\hbox(0.0+0.0)x5.25, direction TLT
+......\glue(\spaceskip) 5.25
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\hbox(6.11+0.0)x15.75, direction TLT
+.....\hbox(6.11+0.0)x15.75, direction TLT
+......\TU/lmtt/m/n/10 M
+......\TU/lmtt/m/n/10 I
+......\TU/lmtt/m/n/10 T
+....\discretionary (penalty 50)
+.....> \hbox(8.39996+3.60004)x0.0, glue set - 20.0fil, direction TLT
+.....> .\glue 0.0 plus 1.0fil minus 1.0fil
+.....> .\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ..\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x3.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.50003
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.50003, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern-2.0
+.....> ....\kern2.0
+.....> ....\rule(*+*)x0.50003
+.....> ...\kern3.0
+.....> ...\kern0.0
+.....> ..\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+.....> ...\kern0.0
+.....> ...\hbox(8.39996+3.60004)x289.07999, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ....\kern289.07999
+.....> ...\kern3.0
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> .....\rule(8.39996+3.60004)x0.0
+.....> .....\kern0.0
+.....> ....\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ...\hbox(8.39996+3.60004)x0.0, direction TLT
+.....> ....\rule(8.39996+3.60004)x0.0
+.....> ...\glue 0.0 plus 1.0fil minus 1.0fil
+.....> ..\pdfcolorstack 0 pop
+.....> .\kern20.0
+.....> .\kern0.0
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 0.0
+...\hbox(8.39996+3.60004)x289.07999, glue set 144.54fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x3.0, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern3.0
+......\kern0.0
+.....\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.......\hbox(8.39996+3.60004)x0.50003, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern0.50003
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.50003, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern-2.0
+.......\kern2.0
+.......\rule(*+*)x0.50003
+......\kern3.0
+......\kern0.0
+.....\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+......\kern0.0
+......\hbox(8.39996+3.60004)x289.07999, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern289.07999
+......\kern3.0
+......\hbox(8.39996+3.60004)x0.0, direction TLT
+.......\hbox(8.39996+3.60004)x0.0, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.0, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfcolorstack 0 pop
+....\hbox(3.385+0.105)x0.0, glue set - 6.65501fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....\TU/lmss/m/n/5 3
+.....\kern4.00002
+....\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 0.0
+...\hbox(8.39996+3.60004)x289.07999, glue set 73.665fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(8.39996+3.60004)x0.0, direction TLT
+.....\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....\hbox(8.39996+3.60004)x0.0, glue set - 3.0fil, direction TLT
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x3.0, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern3.0
+......\kern0.0
+.....\hbox(8.39996+3.60004)x0.0, glue set - 3.50003fil, direction TLT
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.0, glue set - 0.50003fil, direction TLT
+.......\hbox(8.39996+3.60004)x0.50003, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern0.50003
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.50003, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern-2.0
+.......\kern2.0
+.......\rule(*+*)x0.50003
+......\kern3.0
+......\kern0.0
+.....\hbox(8.39996+3.60004)x0.0, glue set - 292.07999fil, direction TLT
+......\kern0.0
+......\hbox(8.39996+3.60004)x289.07999, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+.......\kern289.07999
+......\kern3.0
+......\hbox(8.39996+3.60004)x0.0, direction TLT
+.......\hbox(8.39996+3.60004)x0.0, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\kern0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(8.39996+3.60004)x0.0, direction TLT
+.......\rule(8.39996+3.60004)x0.0
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfcolorstack 0 pop
+....\hbox(3.28+0.0)x0.0, glue set - 6.65501fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....\TU/lmss/m/n/5 4
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -548,10 +2053,10 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.385+0.0)x0.0, glue set - 6.65501fil, direction TLT
+....\hbox(3.28+0.105)x0.0, glue set - 6.65501fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 2
+.....\TU/lmss/m/n/5 5
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -850,7 +2355,7 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 ....\hbox(3.385+0.105)x0.0, glue set - 6.65501fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 3
+.....\TU/lmss/m/n/5 6
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -1657,10 +3162,10 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.28+0.0)x0.0, glue set - 6.65501fil, direction TLT
+....\hbox(3.28+0.05)x0.0, glue set - 6.65501fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 4
+.....\TU/lmss/m/n/5 7
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -1954,10 +3459,10 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.28+0.105)x0.0, glue set - 6.65501fil, direction TLT
+....\hbox(3.385+0.105)x0.0, glue set - 6.65501fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 5
+.....\TU/lmss/m/n/5 8
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -2253,7 +3758,7 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 ....\hbox(3.385+0.105)x0.0, glue set - 6.65501fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 6
+.....\TU/lmss/m/n/5 9
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -2643,10 +4148,11 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.28+0.05)x0.0, glue set - 6.65501fil, direction TLT
+....\hbox(3.385+0.105)x0.0, glue set - 9.31001fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 7
+.....\TU/lmss/m/n/5 1
+.....\TU/lmss/m/n/5 0
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -2935,10 +4441,11 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.385+0.105)x0.0, glue set - 6.65501fil, direction TLT
+....\hbox(3.385+0.0)x0.0, glue set - 9.31001fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 8
+.....\TU/lmss/m/n/5 1
+.....\TU/lmss/m/n/5 1
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -3085,10 +4592,11 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.385+0.105)x0.0, glue set - 6.65501fil, direction TLT
+....\hbox(3.385+0.0)x0.0, glue set - 9.31001fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 9
+.....\TU/lmss/m/n/5 1
+.....\TU/lmss/m/n/5 2
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -3145,7 +4653,7 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
 .....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 0
+.....\TU/lmss/m/n/5 3
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -12066,7 +13574,7 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
 .....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 1
+.....\TU/lmss/m/n/5 4
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -12119,11 +13627,11 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.385+0.0)x0.0, glue set - 9.31001fil, direction TLT
+....\hbox(3.385+0.105)x0.0, glue set - 9.31001fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
 .....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 2
+.....\TU/lmss/m/n/5 5
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -13159,7 +14667,7 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
 .....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 3
+.....\TU/lmss/m/n/5 6
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -13212,11 +14720,11 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.385+0.0)x0.0, glue set - 9.31001fil, direction TLT
+....\hbox(3.385+0.05)x0.0, glue set - 9.31001fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
 .....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 4
+.....\TU/lmss/m/n/5 7
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -13603,7 +15111,7 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
 .....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 5
+.....\TU/lmss/m/n/5 8
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -13660,7 +15168,7 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
 .....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 6
+.....\TU/lmss/m/n/5 9
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -22577,11 +24085,11 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.385+0.05)x0.0, glue set - 9.31001fil, direction TLT
+....\hbox(3.385+0.105)x0.0, glue set - 9.31001fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
-.....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 7
+.....\TU/lmss/m/n/5 2
+.....\TU/lmss/m/n/5 0
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
@@ -22634,11 +24142,11 @@ Overfull \vbox (197.92001pt too high) has occurred while \output is active
 .......\rule(8.39996+3.60004)x0.0
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
-....\hbox(3.385+0.105)x0.0, glue set - 9.31001fil, direction TLT
+....\hbox(3.385+0.0)x0.0, glue set - 9.31001fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 push {0.5 g 0.5 G}
+.....\TU/lmss/m/n/5 2
 .....\TU/lmss/m/n/5 1
-.....\TU/lmss/m/n/5 8
 .....\kern4.00002
 ....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, direction TLT
