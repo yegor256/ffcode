@@ -29,3 +29,4 @@ ffcode-ctan.curlopt
 node_modules/
 package/
 target/
+.claude/
