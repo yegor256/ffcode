@@ -10,7 +10,7 @@ soft href-ul
 soft hypdoc
 soft iexec
 soft l3build
-soft libertine
+soft paratype
 soft mathtools
 soft microtype
 soft pdfcrop
