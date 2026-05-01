@@ -7,7 +7,7 @@
 %% ffcode.dtx  (with options: `package')
 %% (The MIT License)
 %% 
-%% Copyright (c) 2021-2025 Yegor Bugayenko
+%% Copyright (c) 2021-2026 Yegor Bugayenko
 %% 
 %% Permission is hereby granted, free of charge, to any person obtaining a copy
 %% of this software and associated documentation files (the 'Software'), to deal
@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2025/02/21 18.04.15 Fixed Font Code]
+[2026-05-01 07.27.13 Fixed Font Code]
 
 
 
@@ -79,8 +79,9 @@
   \lstset{escapeinside={(*@}{@*)}}
   \lstset{basicstyle={\ttfamily}}
   \lstset{columns=fullflexible}
+  \lstset{keepspaces=true}
   \ifdefined\ff@nonumbers\else
-    \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}}}
+    \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}},xleftmargin=2.5em}
   \fi
   \ifdefined\ff@nobars\else
     \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
@@ -106,6 +107,11 @@
   \ifdefined\ff@samepage\endminipage\fi%
 }
 \makeatother
+
+\RequirePackage{fancyvrb}
+\newenvironment{ffsave}[1][ffsave.txt]
+  {\VerbatimEnvironment\begin{VerbatimOut}{#1}}
+  {\end{VerbatimOut}}
 
 \makeatletter
 \newcommand\ff@print[1]{%
