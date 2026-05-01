@@ -220,6 +220,7 @@
 % \changes{v0.7.0}{2021/11/28}{Package option \texttt{sf} added, to make all \texttt{\char`\\ff} pieces be printed as \texttt{\char`\\sffamily}.}
 % \changes{v0.9.2}{2024/02/04}{All lengths and sizes are in "em" instead of "pt".}
 % \changes{v0.10.0}{2025/01/02}{Package option \texttt{samepage} added, to keep all \texttt{ffcode} blocks on the same page.}
+% \changes{v0.11.1}{2026/05/01}{Reserve \texttt{xleftmargin} for line numbers so they sit inside the column instead of protruding into the page margin.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 \pgfkeys{
@@ -262,7 +263,7 @@
   \lstset{columns=fullflexible}
   \lstset{keepspaces=true}
   \ifdefined\ff@nonumbers\else
-    \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}}}
+    \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}},xleftmargin=2.5em}
   \fi
   \ifdefined\ff@nobars\else
     \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
