@@ -2,6 +2,7 @@ hard fancyvrb
 hard listings
 hard pgfopts
 hard tcolorbox
+hard xcolor
 soft docshots
 soft environ
 soft etoolbox
@@ -15,7 +16,6 @@ soft mathtools
 soft microtype
 soft pdfcrop
 soft pgf
-soft pgfopts
 soft scheme-basic
 soft silence
 soft tools

@@ -29,7 +29,7 @@ void r() {
 
 Otherwise, you can download
 [`ffcode.sty`](https://yegor256.github.io/ffcode/ffcode.sty) and
-add to your project.
+add it to your project.
 
 If you want to contribute yourself, make a fork, then create a branch,
 then run `l3build ctan` in the root directory.

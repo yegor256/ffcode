@@ -90,11 +90,11 @@
 
 % \DescribeMacro{\ffinput}
 % There is also an |\ffinput| command that reads the content from a file
-% and places it into the document, formatted exactly the same way as
-% it would be if the |ffcode| environment were used. It may be useful
-% to use |ffsave| environment first, which acts exactly like the |ffcode|
-% environment but doesn't print the content. It saves it to a file instead,
-% which may later be used by the |\ffinput| command.
+% and places it into the document, formatted exactly as it would be
+% if the |ffcode| environment were used. It may be useful
+% to use the |ffsave| environment first, which acts like the |ffcode|
+% environment but, instead of printing the content, saves it to a file
+% that can later be read by the |\ffinput| command.
 
 % \section{Package Options}
 
@@ -116,13 +116,12 @@
 % \DescribeMacro{nocn}
 % By default, the numbering is continuous: line numbers start at the
 % first snippet and increment until the end of the document. If you
-% want them to start from one at each snippet, use |nocn|
-% (stands for ``no continuous numbering'')
-% option of the package.
+% want them to start from one in each snippet, use the |nocn|
+% option of the package (it stands for ``no continuous numbering'').
 
 % \DescribeMacro{bold}
-% You can make your |\ff| pieces look bolder than usual, which may be pretty convenient for some document classes
-% (pay attention to the usage of the \href{https://ctan.org/pkg/lmodern}{lmodern} package, without it the bold won't work, as explained \href{https://tex.stackexchange.com/a/215489/1449}{here}):
+% You can make your |\ff| pieces look bolder than usual, which may be convenient for some document classes
+% (pay attention to the usage of the \href{https://ctan.org/pkg/lmodern}{lmodern} package; without it, the bold won't work, as explained \href{https://tex.stackexchange.com/a/215489/1449}{here}):
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -155,7 +154,7 @@
 
 % \section{Typesetting}
 
-% By the way, the package correctly formats low-height texts, for example, just
+% The package correctly formats low-height text, for example, just
 % a dot: \ff{.}
 
 % A pair of vertical lines decorates a TeX command inside the snippet.
@@ -180,8 +179,8 @@
 % \section{Line Highlighting}
 
 % You can highlight some lines in your |ffcode| environment,
-% or can use any other additional configuration parameters from
-% |fancyvrb| and |fvextra| packages:
+% or use any additional configuration parameters from
+% the |listings| package:
 % \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
@@ -200,8 +199,8 @@
 % \end{document}
 % \end{docshot}
 
-% Using this second argument of |ffcode|,
-% you can provide any other options from the |listings| package to the
+% Using the optional argument of |ffcode|,
+% you can pass any other options from the |listings| package to the
 % snippet.
 
 % \StopEventually{}
@@ -214,12 +213,12 @@
 % \changes{v0.2.0}{2021/06/13}{Package options \texttt{nonumbers} and \texttt{noframes} added.}
 % \changes{v0.3.0}{2021/09/07}{Package option \texttt{nocn} added.}
 % \changes{v0.4.0}{2022/01/09}{Package option \texttt{nobars} added.}
-% \changes{v0.6.0}{2021/11/14}{We use \texttt{pgfopts} instead of \texttt{xkeyval}.}
-% \changes{v0.6.0}{2021/11/14}{Package option \texttt{novert} added, to disable redefinition of vertical bar.}
-% \changes{v0.7.0}{2021/11/28}{Package option \texttt{bold} added, to make all \texttt{\char`\\ff} pieces look bolder than usual.}
-% \changes{v0.7.0}{2021/11/28}{Package option \texttt{sf} added, to make all \texttt{\char`\\ff} pieces be printed as \texttt{\char`\\sffamily}.}
+% \changes{v0.6.0}{2022/11/16}{We use \texttt{pgfopts} instead of \texttt{xkeyval}.}
+% \changes{v0.6.0}{2022/11/16}{Package option \texttt{novert} added, to disable the redefinition of the vertical bar.}
+% \changes{v0.7.0}{2022/11/28}{Package option \texttt{bold} added, to make all \texttt{\char`\\ff} pieces look bolder than usual.}
+% \changes{v0.7.0}{2022/11/28}{Package option \texttt{sf} added, to print all \texttt{\char`\\ff} pieces with \texttt{\char`\\sffamily}.}
 % \changes{v0.9.2}{2024/02/04}{All lengths and sizes are in "em" instead of "pt".}
-% \changes{v0.10.0}{2025/01/02}{Package option \texttt{samepage} added, to keep all \texttt{ffcode} blocks on the same page.}
+% \changes{v0.10.0}{2025/01/02}{Package option \texttt{samepage} added, to prevent each \texttt{ffcode} block from breaking across pages.}
 % \changes{v0.11.1}{2026/05/01}{Reserve \texttt{xleftmargin} for line numbers so they sit inside the column instead of protruding into the page margin.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
@@ -253,7 +252,7 @@
 %    \end{macrocode}
 
 % Then, we define a supplementary command \texttt{\char`\\ff@set}:
-% \changes{v0.10.2}{2025/07/06}{We started to use \texttt{keepspaces} in order to guarantee correct visual render of multi-spaced content.}
+% \changes{v0.10.2}{2025/07/06}{We started to use \texttt{keepspaces} in order to guarantee correct visual rendering of multi-spaced content.}
 %    \begin{macrocode}
 \makeatletter
 \newcommand\ff@set[1]{
@@ -330,7 +329,7 @@
 % \end{macro}
 
 % \begin{macro}{\ff@rule}
-% Then, we define supplementary command |\ff@rule|:
+% Then, we define a supplementary command |\ff@rule|:
 %    \begin{macrocode}
 \makeatletter\newcommand\ff@rule
   {\vrule height 0.6em depth 0.1em width 0em}
@@ -338,9 +337,9 @@
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{tcolorbox}
-% Then, we use \href{https://ctan.org/pkg/tcolorbox}{tcolorbox} to define |\ff@box|
-% command for a gray box around verbatim text block:
+% \begin{macro}{\ff@box}
+% Then, we use \href{https://ctan.org/pkg/tcolorbox}{tcolorbox} to define the |\ff@box|
+% command for a gray box around a verbatim text block:
 %    \begin{macrocode}
 \makeatletter
 \ifdefined\ff@noframes\else
@@ -355,7 +354,7 @@
 % \end{macro}
 
 % \begin{macro}{\ff@x}
-% Then, we define |\ff@x| internal command for printing a piece of fixed-width-font text:
+% Then, we define the internal |\ff@x| command for printing a piece of fixed-width-font text:
 %    \begin{macrocode}
 \makeatletter
 \NewDocumentCommand\ff@x{v}{\ff{#1}}
@@ -384,10 +383,10 @@
 % \end{macro}
 
 % \begin{macro}{novert}
-% Finally, we let vertical bars work similar to |\ff|, as suggested
+% Finally, we let vertical bars work similarly to |\ff|, as suggested
 % \href{https://tex.stackexchange.com/a/665105/1449}{here}
 % and \href{https://tex.stackexchange.com/a/665303/1449}{here}
-% (unless |novert| package option is used):
+% (unless the |novert| package option is used):
 %    \begin{macrocode}
 \makeatletter\ifdefined\ff@novert\else
   \catcode`\|\active
