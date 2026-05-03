@@ -19,7 +19,7 @@ jobs:
         os: [ubuntu-24.04, macos-15]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
       - run: sudo apt-get install --yes ghostscript
@@ -38,7 +38,7 @@ jobs:
           sed -i "s/0\.0\.0/$(date +%H.%M.%S)/g" build/gh-pages/ffcode.sty
           sed -i "s|0000-00-00|$(date +%Y-%m-%d)|g" build/gh-pages/ffcode.sty
         if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-24.04'
-      - uses: JamesIves/github-pages-deploy-action@v4.7.3
+      - uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages
           folder: build/gh-pages
