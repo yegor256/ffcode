@@ -10,7 +10,7 @@ checkengines = {"pdftex", "luatex", "xetex"}
 
 uploadconfig = {
   pkg = "ffcode",
-  version = "0.0.0 0000-00-00",
+  version = "0.12.0 2026-05-05",
   author = "Yegor Bugayenko",
   uploader = "Yegor Bugayenko",
   email = "yegor256@gmail.com",
