@@ -258,37 +258,39 @@
 \RequirePackage{xcolor}
 %    \end{macrocode}
 
-% Then, we configure the \href{https://ctan.org/pkg/listings}{listings} package:
+% Then, we configure the \href{https://ctan.org/pkg/listings}{listings} package.
+% The defaults are applied here, at package load, so that a user may override
+% them globally with \texttt{\char`\\lstset} after \texttt{\char`\\usepackage\{ffcode\}}:
 % \changes{v0.9.0}{2024/01/09}{The \texttt{minted} package is replaced by the \texttt{listings} package.}
+% \changes{v0.10.2}{2025/07/06}{We started to use \texttt{keepspaces} in order to guarantee correct visual rendering of multi-spaced content.}
+% \changes{v0.12.0}{2026/05/05}{Static \texttt{\char`\\lstset} defaults moved from the per-environment hook to the preamble, so that user-supplied \texttt{\char`\\lstset} calls are no longer overwritten on every \texttt{ffcode} usage.}
 %    \begin{macrocode}
 \RequirePackage{listings}
 \makeatletter
 % See \href{https://tex.stackexchange.com/questions/706858}{the explanation}:
 \lst@AddToHook{Init}{\setlength{\lineskip}{0pt}}
+\lstset{breaklines}
+\lstset{escapeinside={(*@}{@*)}}
+\lstset{basicstyle={\ttfamily}}
+\lstset{columns=fullflexible}
+\lstset{keepspaces=true}
+\ifdefined\ff@nonumbers\else
+  \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}},xleftmargin=2.5em}
+\fi
+\ifdefined\ff@nobars\else
+  \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
+\fi
+\ifdefined\ff@nocn\else
+  \lstset{firstnumber=last}
+\fi
 \makeatother
 %    \end{macrocode}
 
-% Then, we define a supplementary command \texttt{\char`\\ff@set}:
-% \changes{v0.10.2}{2025/07/06}{We started to use \texttt{keepspaces} in order to guarantee correct visual rendering of multi-spaced content.}
+% Then, we define a supplementary command \texttt{\char`\\ff@set} that
+% applies per-environment options on top of the global defaults:
 %    \begin{macrocode}
 \makeatletter
-\newcommand\ff@set[1]{
-  \lstset{breaklines}
-  \lstset{escapeinside={(*@}{@*)}}
-  \lstset{basicstyle={\ttfamily}}
-  \lstset{columns=fullflexible}
-  \lstset{keepspaces=true}
-  \ifdefined\ff@nonumbers\else
-    \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}},xleftmargin=2.5em}
-  \fi
-  \ifdefined\ff@nobars\else
-    \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
-  \fi
-  \ifdefined\ff@nocn\else
-    \lstset{firstnumber=last}
-  \fi
-  \lstset{#1}
-}
+\newcommand\ff@set[1]{\lstset{#1}}
 \makeatother
 %    \end{macrocode}
 
