@@ -64,10 +64,10 @@
 %
 % \section{Introduction}
 %
-% This package helps you write source code in your articles
-% and make sure it looks nice. Install it from CTAN and then
-% use like this (pay attention to |\ff| command
-% and |ffcode| environment):
+% This package formats source code in articles
+% and ensures it looks nice. After installation from CTAN, the
+% typical usage looks like this (note the |\ff| command
+% and the |ffcode| environment):
 % \begin{docshot}
 % \documentclass{article}
 % \usepackage{ffcode}
@@ -90,37 +90,36 @@
 % \DescribeMacro{\ffinput}
 % There is also an |\ffinput| command that reads the content from a file
 % and places it into the document, formatted exactly as it would be
-% if the |ffcode| environment were used. It may be useful
-% to use the |ffsave| environment first, which acts like the |ffcode|
+% if the |ffcode| environment were used. The |ffsave|
+% environment may be used first; it acts like the |ffcode|
 % environment but, instead of printing the content, saves it to a file
 % that can later be read by the |\ffinput| command.
 
 % \section{Package Options}
 
 % \DescribeMacro{samepage}
-% If you want to avoid page breaks inside |ffcode| blocks, use the |samepage|
-% package option.
+% The |samepage| package option prevents page breaks inside |ffcode| blocks.
 
 % \DescribeMacro{noframes}
-% If you want to omit the light gray frames around |\ff|
-% texts, use the package option |noframes|.
+% The |noframes| package option omits the light gray frames around |\ff|
+% texts.
 
 % \DescribeMacro{nobars}
-% To omit the vertical gray bar at the left side of each snippet,
-% use the |nobars| option of the package.
+% The |nobars| package option omits the vertical gray bar at the left side
+% of each snippet.
 
 % \DescribeMacro{nonumbers}
-% To omit the line numbers, use the |nonumbers| option of the package.
+% The |nonumbers| package option omits the line numbers.
 
 % \DescribeMacro{nocn}
 % By default, the numbering is continuous: line numbers start at the
-% first snippet and increment until the end of the document. If you
-% want them to start from one in each snippet, use the |nocn|
-% option of the package (it stands for ``no continuous numbering'').
+% first snippet and increment until the end of the document. The |nocn|
+% package option (which stands for ``no continuous numbering'') restarts
+% the numbering from one in each snippet.
 
 % \DescribeMacro{bold}
-% You can make your |\ff| pieces look bolder than usual, which may be convenient for some document classes
-% (pay attention to the usage of the \href{https://ctan.org/pkg/lmodern}{lmodern} package; without it, the bold won't work, as explained \href{https://tex.stackexchange.com/a/215489/1449}{here}):
+% The |\ff| pieces may be rendered bolder than usual, which may be convenient for some document classes
+% (note the use of the \href{https://ctan.org/pkg/lmodern}{lmodern} package; without it, the bold will not work, as explained \href{https://tex.stackexchange.com/a/215489/1449}{here}):
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -136,7 +135,7 @@
 % \end{docshot}
 
 % \DescribeMacro{sf}
-% You can change the font family of |\ff| pieces to |\sffamily|:
+% The font family of |\ff| pieces can be changed to |\sffamily|:
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -144,10 +143,9 @@
 % \pagestyle{empty}
 % \usepackage[sf,bold,noframes]{ffcode}
 % \begin{document}
-% Sometimes you may want them to look
-% not strictly fixed-width, but more
-% elegant, like the \emph{|fibo()|}
-% here.
+% Sometimes a less strictly fixed-width,
+% more elegant look may be preferred,
+% like the \emph{|fibo()|} here.
 % \end{document}
 % \end{docshot}
 
@@ -157,7 +155,7 @@
 % a dot: \ff{.}
 
 % A pair of vertical lines decorates a TeX command inside the snippet.
-% If you want to print a single vertical line, use this:
+% A single vertical line can be printed with:
 % ``\verb+|\char`\\vert|+''.
 
 % The command |\ff| behaves differently in math mode --- it doesn't
@@ -170,14 +168,14 @@
 % \pagestyle{empty}
 % \begin{document}
 % \begin{equation*}
-% x = \int_{|home|}^N f(x).
+% x = \int_{|home|}^{\ff{N}} f(x).
 % \end{equation*}
 % \end{document}
 % \end{docshot}
 
-% You can highlight some lines in your |ffcode| environment,
-% or use any additional configuration parameters from
-% the |listings| package:
+% Lines in the |ffcode| environment can be highlighted,
+% and any additional configuration parameters from
+% the |listings| package can be applied:
 % \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
@@ -197,10 +195,34 @@
 % \end{docshot}
 
 % Using the optional argument of |ffcode|,
-% you can pass any other options from the |listings| package to the
+% any other options from the |listings| package can be passed to the
 % snippet.
 
-% You can render a snippet in ``condensed'' mode, with smaller spacing
+% The |\lstset| command from the |listings| package can also be used
+% to configure defaults for the |ffcode| environment.
+% Unlike the optional argument, which applies only to a single snippet,
+% |\lstset| has a global effect: every subsequent code listing in the
+% document picks up the new settings, including all other |ffcode|
+% blocks that follow it.
+% To keep the change local to a single |ffcode| block, wrap the call in
+% a |\begingroup|\ldots|\endgroup| pair:
+% \docshotOptions{firstline=6,lastline=12}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage[paperwidth=3in]{geometry}
+% \usepackage{ffcode}
+% \pagestyle{empty}
+% \begin{document}
+% \begingroup
+% \lstset{backgroundcolor=\color{yellow!30}}
+% \begin{ffcode}
+% print("Hi!")
+% \end{ffcode}
+% \endgroup
+% \end{document}
+% \end{docshot}
+
+% A snippet can be rendered in ``condensed'' mode, with smaller spacing
 % between letters, by passing |columns=fixed| together with a narrower
 % |basewidth| from the |listings| package:
 % \docshotOptions{firstline=6,lastline=12}
