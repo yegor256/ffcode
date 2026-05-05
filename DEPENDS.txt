@@ -11,7 +11,6 @@ soft href-ul
 soft hypdoc
 soft iexec
 soft l3build
-soft paratype
 soft mathtools
 soft microtype
 soft pdfcrop
