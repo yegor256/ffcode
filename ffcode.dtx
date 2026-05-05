@@ -36,7 +36,6 @@
 %<*driver>
 \documentclass{ltxdoc}
 \usepackage[T1]{fontenc}
-\usepackage{paratype}
 \usepackage{microtype}
 \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage{href-ul}
@@ -176,8 +175,6 @@
 % \end{document}
 % \end{docshot}
 
-% \section{Line Highlighting}
-
 % You can highlight some lines in your |ffcode| environment,
 % or use any additional configuration parameters from
 % the |listings| package:
@@ -202,6 +199,26 @@
 % Using the optional argument of |ffcode|,
 % you can pass any other options from the |listings| package to the
 % snippet.
+
+% You can render a snippet in ``condensed'' mode, with smaller spacing
+% between letters, by passing |columns=fixed| together with a narrower
+% |basewidth| from the |listings| package:
+% \docshotOptions{firstline=6,lastline=12}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage[paperwidth=3in]{geometry}
+% \usepackage{ffcode}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{ffcode}[columns=fixed,basewidth=0.4em]
+% while (true) {
+%   print("Enter your name:")
+%   scan(x)
+%   print("Hello, " + x)
+% }
+% \end{ffcode}
+% \end{document}
+% \end{docshot}
 
 % \StopEventually{}
 
