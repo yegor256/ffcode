@@ -64,9 +64,9 @@
 %
 % \section{Introduction}
 %
-% This package formats source code in articles
-% and ensures it looks nice. After installation from CTAN, the
-% typical usage looks like this (note the |\ff| command
+% This package typesets source code within articles
+% and ensures a tidy, consistent appearance. Following installation from
+% CTAN, the typical usage proceeds as follows (note the |\ff| command
 % and the |ffcode| environment):
 % \begin{docshot}
 % \documentclass{article}
@@ -88,12 +88,12 @@
 % \end{docshot}
 
 % \DescribeMacro{\ffinput}
-% There is also an |\ffinput| command that reads the content from a file
-% and places it into the document, formatted exactly as it would be
-% if the |ffcode| environment were used. The |ffsave|
-% environment may be used first; it acts like the |ffcode|
-% environment but, instead of printing the content, saves it to a file
-% that can later be read by the |\ffinput| command.
+% An |\ffinput| command is also provided, which reads content from a file
+% and inserts it into the document, formatted in precisely the manner that
+% would result from the |ffcode| environment. The |ffsave|
+% environment may be employed beforehand; it behaves as the |ffcode|
+% environment, save that the content is written to a file rather than
+% printed, whence it may subsequently be retrieved by the |\ffinput| command.
 
 % \section{Package Options}
 
@@ -112,14 +112,14 @@
 % The |nonumbers| package option omits the line numbers.
 
 % \DescribeMacro{nocn}
-% By default, the numbering is continuous: line numbers start at the
+% By default, line numbering is continuous: numbers commence at the
 % first snippet and increment until the end of the document. The |nocn|
-% package option (which stands for ``no continuous numbering'') restarts
-% the numbering from one in each snippet.
+% package option (an abbreviation for ``no continuous numbering'') causes
+% the numbering to restart from one in each snippet.
 
 % \DescribeMacro{bold}
-% The |\ff| pieces may be rendered bolder than usual, which may be convenient for some document classes
-% (note the use of the \href{https://ctan.org/pkg/lmodern}{lmodern} package; without it, the bold will not work, as explained \href{https://tex.stackexchange.com/a/215489/1449}{here}):
+% The |\ff| fragments may be rendered in a heavier weight than the default, which proves convenient for certain document classes
+% (note the use of the \href{https://ctan.org/pkg/lmodern}{lmodern} package: without it, boldface fails to operate, as explained \href{https://tex.stackexchange.com/a/215489/1449}{here}):
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -135,7 +135,7 @@
 % \end{docshot}
 
 % \DescribeMacro{sf}
-% The font family of |\ff| pieces can be changed to |\sffamily|:
+% The font family of |\ff| fragments may be altered to |\sffamily|:
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -151,15 +151,15 @@
 
 % \section{Typesetting}
 
-% The package correctly formats low-height text, for example, just
-% a dot: \ff{.}
+% The package handles low-height text correctly, for instance a solitary
+% dot: \ff{.}
 
-% A pair of vertical lines decorates a TeX command inside the snippet.
-% A single vertical line can be printed with:
+% A pair of vertical bars decorates a \TeX{} command within a snippet.
+% A single vertical bar may be produced by means of
 % ``\verb+|\char`\\vert|+''.
 
-% The command |\ff| behaves differently in math mode --- it doesn't
-% add gray frames:
+% The |\ff| command behaves differently in math mode---it adds no
+% grey frames:
 % \docshotOptions{firstline=6,lastline=8}
 % \begin{docshot}
 % \documentclass{article}
@@ -173,9 +173,9 @@
 % \end{document}
 % \end{docshot}
 
-% Lines in the |ffcode| environment can be highlighted,
-% and any additional configuration parameters from
-% the |listings| package can be applied:
+% Lines within the |ffcode| environment may be highlighted,
+% and any further configuration parameters from
+% the |listings| package may likewise be supplied:
 % \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
@@ -194,18 +194,18 @@
 % \end{document}
 % \end{docshot}
 
-% Using the optional argument of |ffcode|,
-% any other options from the |listings| package can be passed to the
+% By means of the optional argument of |ffcode|,
+% any other options from the |listings| package may be conveyed to the
 % snippet.
 
-% The |\lstset| command from the |listings| package can also be used
-% to configure defaults for the |ffcode| environment.
-% Unlike the optional argument, which applies only to a single snippet,
-% |\lstset| has a global effect: every subsequent code listing in the
-% document picks up the new settings, including all other |ffcode|
-% blocks that follow it.
-% To keep the change local to a single |ffcode| block, wrap the call in
-% a |\begingroup|\ldots|\endgroup| pair:
+% The |\lstset| command of the |listings| package may also be employed
+% to establish defaults for the |ffcode| environment.
+% In contrast to the optional argument, which applies solely to a single
+% snippet, |\lstset| acts globally: every subsequent code listing in the
+% document inherits the new settings, including any further |ffcode|
+% blocks thereafter.
+% To confine the change to a single |ffcode| block, the call should be
+% wrapped within a |\begingroup|\ldots|\endgroup| pair:
 % \docshotOptions{firstline=6,lastline=12}
 % \begin{docshot}
 % \documentclass{article}
@@ -222,8 +222,8 @@
 % \end{document}
 % \end{docshot}
 
-% A snippet can be rendered in ``condensed'' mode, with smaller spacing
-% between letters, by passing |columns=fixed| together with a narrower
+% A snippet may be rendered in ``condensed'' mode, with reduced spacing
+% between letters, by supplying |columns=fixed| together with a narrower
 % |basewidth| from the |listings| package:
 % \docshotOptions{firstline=6,lastline=12}
 % \begin{docshot}
