@@ -31,7 +31,8 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-05-01 07.39.02 Fixed Font Code]
+[2026-05-05 13.24.27 Fixed Font Code]
+
 
 
 
@@ -71,26 +72,26 @@
 \RequirePackage{listings}
 \makeatletter
 \lst@AddToHook{Init}{\setlength{\lineskip}{0pt}}
+\lstset{breaklines}
+\lstset{escapeinside={(*@}{@*)}}
+\lstset{basicstyle={\ttfamily}}
+\lstset{columns=fullflexible}
+\lstset{keepspaces=true}
+\ifdefined\ff@nonumbers\else
+  \lstset{numbers=left,numbersep=.8em,
+    numberstyle={\tiny\sffamily\color{gray}},
+    xleftmargin=2.5em}
+\fi
+\ifdefined\ff@nobars\else
+  \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
+\fi
+\ifdefined\ff@nocn\else
+  \lstset{firstnumber=last}
+\fi
 \makeatother
 
 \makeatletter
-\newcommand\ff@set[1]{
-  \lstset{breaklines}
-  \lstset{escapeinside={(*@}{@*)}}
-  \lstset{basicstyle={\ttfamily}}
-  \lstset{columns=fullflexible}
-  \lstset{keepspaces=true}
-  \ifdefined\ff@nonumbers\else
-    \lstset{numbers=left,numbersep=.8em,numberstyle={\tiny\sffamily\color{gray}},xleftmargin=2.5em}
-  \fi
-  \ifdefined\ff@nobars\else
-    \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
-  \fi
-  \ifdefined\ff@nocn\else
-    \lstset{firstnumber=last}
-  \fi
-  \lstset{#1}
-}
+\newcommand\ff@set[1]{\lstset{#1}}
 \makeatother
 
 \makeatletter
