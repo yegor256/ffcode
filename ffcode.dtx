@@ -333,10 +333,10 @@
 % \begin{macro}{ffinput}
 % Then, we define the \texttt{\char`\\ffinput} command:
 % \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
+% \changes{v0.12.0}{2026/05/26}{Stopped \texttt{\char`\\ffinput} options from leaking into later listings.}
 %    \begin{macrocode}
 \makeatletter
 \newcommand\ffinput[2][]{%
-  \ff@set{#1}%
   \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi%
   \lstinputlisting[#1]{#2}%
   \ifdefined\ff@samepage\endminipage\fi%
