@@ -1,0 +1,25 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage[nobars]{ffcode}
+\newcount\ffinputstyled
+\newcount\ffinputafter
+\begin{document}
+\START
+
+\ffinput[basicstyle={\ttfamily\global\advance\ffinputstyled by 1\relax}]{ffinput-options.lvt}
+\ffinputafter=\ffinputstyled
+
+\begin{ffcode}
+Listing after ffinput
+\end{ffcode}
+
+\ifnum\ffinputstyled=\ffinputafter
+  \TYPE{ffinput options are local}
+\else
+  \TYPE{ffinput options leaked}
+\fi
+
+\END
