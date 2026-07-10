@@ -332,7 +332,9 @@
 \makeatletter
 % See \href{https://tex.stackexchange.com/questions/706858}{the explanation}:
 \lst@AddToHook{Init}{\setlength{\lineskip}{0pt}}
-% \texttt{acmart} warns about the \texttt{\char`\\@vspace} that \texttt{listings} emits around displays; restore its saved originals during typesetting:
+% \texttt{acmart} warns about the \texttt{\char`\\@vspace}
+% that \texttt{listings} emits around displays;
+% restore its saved originals during typesetting:
 \ifdefined\@vspace@orig
   \lst@AddToHook{DisplayStyle}{%
     \let\@vspace\@vspace@orig
@@ -404,7 +406,8 @@
 \newsavebox\ff@mbox
 \let\ff@grab\relax
 \lst@AddToHook{Init}{\ff@grab}
-\def\ff@colsep{\hspace{0.4em}{\color{gray}\vrule width 0.3pt}\hspace{0.4em}}
+\def\ff@colsep{\hspace{0.4em}{\color{gray}\vrule width 0.3pt}%
+  \hspace{0.4em}}
 \def\ff@allother{%
   \count@=\z@
   \loop\catcode\count@=12 \ifnum\count@<255 \advance\count@\@ne\repeat
