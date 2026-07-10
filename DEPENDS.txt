@@ -1,6 +1,7 @@
 hard fancyvrb
 hard listings
 hard pgfopts
+hard shellesc
 hard tcolorbox
 hard xcolor
 soft docshots
