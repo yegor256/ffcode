@@ -1,0 +1,30 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+% This test emulates the \vspace guard that acmart installs (its
+% \@vspace@orig machinery, see acmart.cls) instead of loading the whole
+% class, so that the expected log stays small and stable across TeX Live
+% versions. It fails when a \ffcolumnbreak block lets its \parbox strut
+% trip that guard (issue #106).
+
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{etoolbox}
+\makeatletter
+\let\@vspace@orig=\@vspace
+\let\@vspacer@orig=\@vspacer
+\apptocmd{\@vspace}{\ClassWarning{acmart}{\string\vspace\space should only be used}}{}{}
+\apptocmd{\@vspacer}{\ClassWarning{acmart}{\string\vspace\space should only be used}}{}{}
+\makeatother
+\usepackage[nocn,nonumbers,noframes]{ffcode}
+\begin{document}
+
+\START
+
+\begin{ffcode}
+Hello, world!
+(*@ \ffcolumnbreak @*)
+Bye!
+\end{ffcode}
+
+\END

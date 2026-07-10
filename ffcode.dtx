@@ -373,6 +373,7 @@
 % listing, exactly as before:
 % \changes{v0.13.0}{2026/07/10}{The \texttt{\char`\\ffcolumnbreak} marker added, to split an \texttt{ffcode} block into two or more side-by-side columns.}
 % \changes{v0.14.0}{2026/07/10}{Columns split by \texttt{\char`\\ffcolumnbreak} are now sized by the longest line in each, instead of splitting \texttt{\char`\\linewidth} evenly.}
+% \changes{v0.14.1}{2026/07/10}{Restore the original \texttt{\char`\\@vspace} inside every \texttt{\char`\\ffcolumnbreak} column, so \texttt{acmart} no longer warns about the top-alignment strut in each column box.}
 %    \begin{macrocode}
 \RequirePackage{fancyvrb}
 \makeatletter
@@ -438,7 +439,12 @@
   \else
     \ff@colwd=#3\relax
   \fi
-  \parbox[t]{\ff@colwd}{\vspace{0pt}%
+  \parbox[t]{\ff@colwd}{%
+    \ifdefined\@vspace@orig
+      \let\@vspace\@vspace@orig
+      \ifdefined\@vspacer@orig\let\@vspacer\@vspacer@orig\fi
+    \fi
+    \vspace{0pt}%
     \lstinputlisting[firstline=#1,lastline=#2]{\ff@file}}%
   \ff@prev=\@ne}
 \def\ff@render{%
