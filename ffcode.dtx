@@ -305,7 +305,7 @@
   nobars/.store in=\ff@nobars,
   novert/.store in=\ff@novert,
   nocn/.store in=\ff@nocn,
-  tmpfile/.store in=\ff@file,
+  tmpfile/.store in=\ff@tmpfile,
   tmpfile/.default=\jobname.ffcode,
   tmpfile,
 }
@@ -368,6 +368,7 @@
 \makeatletter
 \newcommand\ffcolumnbreak{}
 \edef\ff@cbmarker{\string\ffcolumnbreak}
+\edef\ff@cbwrap{\detokenize{(*@}\ff@cbmarker\detokenize{@*)}}
 \def\ff@empty{}
 \newread\ff@read
 \newcount\ff@nlines
@@ -379,7 +380,9 @@
 \def\ff@colsep{\hspace{0.4em}{\color{gray}\vrule width 0.3pt}\hspace{0.4em}}
 \def\ff@colbox#1#2{%
   \parbox[t]{\ff@colwd}{\vspace{0pt}%
-    \lstinputlisting[firstline=#1,lastline=#2]{\ff@file}}}
+    \ifnum#1>#2 \else
+      \lstinputlisting[firstline=#1,lastline=#2]{\ff@tmpfile}%
+    \fi}}
 \protected\def\ff@mark#1{%
   \ifnum\ff@prev=\z@\else\ff@colsep\fi
   \ff@colbox{\the\numexpr\ff@prev+\@ne\relax}{\the\numexpr#1-\@ne\relax}%
@@ -387,24 +390,24 @@
 \def\ff@allother{%
   \count@=\z@
   \loop\catcode\count@=12 \ifnum\count@<255 \advance\count@\@ne\repeat
-  \catcode`\ =10 \endlinechar=-1 }
+  \catcode`\ =9 \catcode`\^^I=9 \endlinechar=-1 }
+\def\ff@recordbreak{%
+  \global\advance\ff@nbreaks\@ne
+  \xdef\ff@breaks{\ff@breaks\noexpand\ff@mark{\the\ff@nlines}}}
 \def\ff@readloop{%
   \read\ff@read to\ff@line
   \ifeof\ff@read
     \let\ff@next\relax
   \else
     \global\advance\ff@nlines\@ne
-    \edef\ff@call{\noexpand\in@{\ff@cbmarker}{\ff@line}}\ff@call
-    \ifin@
-      \global\advance\ff@nbreaks\@ne
-      \xdef\ff@breaks{\ff@breaks\noexpand\ff@mark{\the\ff@nlines}}%
-    \fi
+    \ifx\ff@line\ff@cbmarker\ff@recordbreak\fi
+    \ifx\ff@line\ff@cbwrap\ff@recordbreak\fi
     \let\ff@next\ff@readloop
   \fi
   \ff@next}
 \def\ff@scan{%
   \global\ff@nlines=\z@ \global\ff@nbreaks=\z@ \gdef\ff@breaks{}%
-  \openin\ff@read=\ff@file\relax
+  \openin\ff@read=\ff@tmpfile\relax
   \begingroup\ff@allother\ff@readloop\endgroup
   \closein\ff@read}
 \def\ff@render{%
@@ -412,7 +415,7 @@
   \begingroup
   \expandafter\lstset\expandafter{\ff@opts}%
   \ifx\ff@breaks\ff@empty
-    \lstinputlisting{\ff@file}%
+    \lstinputlisting{\ff@tmpfile}%
   \else
     \ff@ncols=\ff@nbreaks \advance\ff@ncols\@ne
     \ff@sepwd=0.8em \advance\ff@sepwd0.3pt
@@ -447,7 +450,7 @@
   \catcode`\^^M=5\relax
   \def\ff@opts{#1}%
   \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi
-  \VerbatimEnvironment\begin{VerbatimOut}{\ff@file}}
+  \VerbatimEnvironment\begin{VerbatimOut}{\ff@tmpfile}}
 \makeatother
 %    \end{macrocode}
 % \end{macro}

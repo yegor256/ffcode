@@ -34,4 +34,19 @@ A plain block, without any break, still renders as one listing:
 int x = 1;
 \end{ffcode}
 
+A line that merely mentions \ffcolumnbreak must not split:
+
+\begin{ffcode}
+alpha
+this line names \ffcolumnbreak inside prose
+beta
+\end{ffcode}
+
+A leading break yields an empty first column and no error:
+
+\begin{ffcode}
+(*@ \ffcolumnbreak @*)
+tail
+\end{ffcode}
+
 \END
