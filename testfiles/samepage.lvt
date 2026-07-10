@@ -3,19 +3,19 @@
 
 \input{regression-test.tex}
 \documentclass{article}
-\usepackage[a4paper, total={4in, 4in}]{geometry}
+\usepackage[a4paper, total={4in, 6in}]{geometry}
 \usepackage{ifluatex}
 \usepackage{ifxetex}
 \usepackage[samepage]{ffcode}
 \begin{document}
 \START
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus nunc, iaculis ut sapien vel, egestas mollis nulla. Pellentesque ut mattis dui. Proin porta felis tellus, a vulputate justo semper ac. Sed pretium metus sit amet velit suscipit, nec volutpat metus mollis. In et lectus dignissim, bibendum orci ac, iaculis diam. Aliquam quis magna ac nunc molestie tincidunt eget ac neque. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. Aliquam consequat metus scelerisque vehicula pellentesque.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Here is some code, supposedly placed in the same page:
 
 \ffinput{samepage.lvt}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus nunc, iaculis ut sapien vel, egestas mollis nulla. Pellentesque ut mattis dui. Proin porta felis tellus, a vulputate justo semper ac. Sed pretium metus sit amet velit suscipit, nec volutpat metus mollis. In et lectus dignissim, bibendum orci ac, iaculis diam. Aliquam quis magna ac nunc molestie tincidunt eget ac neque. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. Aliquam consequat metus scelerisque vehicula pellentesque.
+Phasellus lectus nunc, iaculis ut sapien vel, egestas mollis nulla.
 
 \END
