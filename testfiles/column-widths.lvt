@@ -1,0 +1,37 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{ifluatex}
+\usepackage{ifxetex}
+\usepackage{ffcode}
+\newdimen\colwidtha
+\newdimen\colwidthb
+\newcount\colcount
+\makeatletter
+\let\ff@origparbox\parbox
+\renewcommand\parbox[3][t]{%
+  \global\advance\colcount\@ne
+  \ifnum\colcount=\@ne\global\colwidtha=\dimexpr#2\relax\fi
+  \ifnum\colcount=\tw@\global\colwidthb=\dimexpr#2\relax\fi
+  \ff@origparbox[#1]{#2}{#3}}
+\makeatother
+\begin{document}
+
+\START
+
+Two columns of equal content share the line equally instead of huddling
+at the left margin:
+
+\begin{ffcode}
+foo
+(*@ \ffcolumnbreak @*)
+bar
+\end{ffcode}
+
+\ifdim\colwidtha=\colwidthb\typeout{EQUALWIDTH:YES}\else\typeout{EQUALWIDTH:NO}\fi
+\ifdim\dimexpr\colwidtha+\colwidthb\relax>0.5\linewidth\typeout{FILLSLINE:YES}\else\typeout{FILLSLINE:NO}\fi
+
+\END
+\end{document}

@@ -207,9 +207,10 @@
 % placing |\ffcolumnbreak| on a line of its own, wrapped in an escape so
 % that |listings| does not print it. Line numbering runs continuously
 % across the columns, which is handy for a listing too tall for the
-% page. Each further |\ffcolumnbreak| adds one more column. Every column
-% is sized to the longest line it holds, so columns of unequal length are
-% packed tightly rather than each taking an equal share of the line:
+% page. Each further |\ffcolumnbreak| adds one more column. By default
+% the columns share the line equally; a column whose longest line does
+% not fit in its equal share is widened just enough to hold it, and the
+% extra space is taken from the columns that have room to spare:
 % \docshotOptions{firstline=6,lastline=14}
 % \begin{docshot}
 % \documentclass{article}
@@ -365,15 +366,20 @@
 % measured before it is printed: it is typeset once into a discarded box,
 % so that |listings| records the width of its longest line in
 % |\lst@maxwidth|, and that width (plus the gutter reserved for line
-% numbers) becomes the natural width of the column. When the natural
-% widths and the separating rules fit within |\linewidth|, every column
-% takes its own natural width, so a narrow column no longer claims an
-% equal share of the line; otherwise the widths are scaled down in
+% numbers) becomes the natural width of the column. The available width
+% is then shared by a water-filling pass in |\ff@computelevel|: it seeks
+% the common level such that every column narrower than the level takes
+% the level, while a column wider than the level keeps its natural width,
+% and the two together fill |\linewidth|. Thus equal-sized columns split
+% the line evenly, and only a column too wide for its share claims more,
+% at the expense of the columns that have room to spare. When even the
+% natural widths overflow |\linewidth|, the widths are scaled down in
 % proportion to fit. A block without any marker is rendered as one
 % listing, exactly as before:
 % \changes{v0.13.0}{2026/07/10}{The \texttt{\char`\\ffcolumnbreak} marker added, to split an \texttt{ffcode} block into two or more side-by-side columns.}
 % \changes{v0.14.0}{2026/07/10}{Columns split by \texttt{\char`\\ffcolumnbreak} are now sized by the longest line in each, instead of splitting \texttt{\char`\\linewidth} evenly.}
 % \changes{v0.14.1}{2026/07/10}{Restore the original \texttt{\char`\\@vspace} inside every \texttt{\char`\\ffcolumnbreak} column, so \texttt{acmart} no longer warns about the top-alignment strut in each column box.}
+% \changes{v0.15.0}{2026/07/10}{Columns split by \texttt{\char`\\ffcolumnbreak} now share the line equally by default, widening only a column that does not fit its equal share.}
 %    \begin{macrocode}
 \RequirePackage{fancyvrb}
 \makeatletter
@@ -390,6 +396,11 @@
 \newdimen\ff@avail
 \newdimen\ff@natwd
 \newdimen\ff@gutter
+\newdimen\ff@level
+\newdimen\ff@fixedsum
+\newcount\ff@fixedcnt
+\newcount\ff@denom
+\newcount\ff@prevcnt
 \newsavebox\ff@mbox
 \let\ff@grab\relax
 \lst@AddToHook{Init}{\ff@grab}
@@ -432,12 +443,34 @@
   \global\advance\ff@total\ff@natwd
   \xdef\ff@cols{\unexpanded\expandafter{\ff@cols}%
     \noexpand\ff@col{#1}{#2}{\the\ff@natwd}}}
+\def\ff@onepass{%
+  \global\ff@fixedsum=\z@ \global\ff@fixedcnt=\z@
+  \begingroup
+    \def\ff@col##1##2##3{%
+      \ifdim##3>\ff@level
+        \global\advance\ff@fixedsum##3\relax
+        \global\advance\ff@fixedcnt\@ne
+      \fi}%
+    \ff@cols
+  \endgroup
+  \ifnum\ff@fixedcnt<\ff@ncols
+    \ff@denom=\numexpr\ff@ncols-\ff@fixedcnt\relax
+    \ff@level=\dimexpr(\ff@avail-\ff@fixedsum)/\ff@denom\relax
+  \fi}
+\def\ff@computelevel{%
+  \ff@level=\dimexpr\ff@avail/\ff@ncols\relax
+  \ff@prevcnt=\z@
+  \loop
+    \ff@onepass
+  \ifnum\ff@fixedcnt>\ff@prevcnt
+    \ff@prevcnt=\ff@fixedcnt
+  \repeat}
 \def\ff@col#1#2#3{%
   \ifnum\ff@prev=\z@\else\ff@colsep\fi
   \ifdim\ff@total>\ff@avail
     \ff@colwd=\dimexpr#3*\number\ff@avail/\number\ff@total\relax
   \else
-    \ff@colwd=#3\relax
+    \ifdim#3>\ff@level\ff@colwd=#3\relax\else\ff@colwd=\ff@level\fi
   \fi
   \parbox[t]{\ff@colwd}{%
     \ifdefined\@vspace@orig
@@ -463,6 +496,7 @@
     \let\ff@seg\ff@measure \ff@segs
     \let\ff@grab\relax
     \global\c@lstnumber=\ff@savednum\relax
+    \ff@computelevel
     \par\addvspace\topsep
     \noindent\hbox{\ff@prev=\z@ \ff@cols}%
     \par\addvspace\topsep
