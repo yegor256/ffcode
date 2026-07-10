@@ -356,10 +356,22 @@
 \RequirePackage{fancyvrb}
 \RequirePackage{shellesc}
 \makeatletter
+\ExplSyntaxOn
+\cs_new_protected:cpn { ff@mkdir } #1
+  {
+    \str_set:Nn \l_tmpa_str {#1}
+    \sys_if_platform_windows:TF
+      {
+        \str_replace_all:Nnn \l_tmpa_str { / } { \c_backslash_str }
+        \ShellEscape { if~not~exist~"\l_tmpa_str"~mkdir~"\l_tmpa_str" }
+      }
+      { \ShellEscape { mkdir~-p~"\l_tmpa_str" } }
+  }
+\ExplSyntaxOff
 \newenvironment{ffsave}[1][ffsave.txt]
   {\filename@parse{#1}%
    \ifx\filename@area\@empty\else
-     \ShellEscape{mkdir -p "\filename@area"}%
+     \expandafter\ff@mkdir\expandafter{\filename@area}%
    \fi
    \VerbatimEnvironment\begin{VerbatimOut}{#1}}
   {\end{VerbatimOut}}
