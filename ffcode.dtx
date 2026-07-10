@@ -118,6 +118,13 @@
 % package option (an abbreviation for ``no continuous numbering'') causes
 % the numbering to restart from one in each snippet.
 
+% \DescribeMacro{tmpfile}
+% Every |ffcode| block is captured verbatim to a scratch file before it
+% is typeset (this is what makes |\ffcolumnbreak| possible). The name of
+% that file defaults to |\jobname.ffcode| and may be changed with the
+% |tmpfile| package option, for instance
+% |\usepackage[tmpfile=build/ffcode.tmp]{ffcode}|.
+
 % \DescribeMacro{bold}
 % The |\ff| fragments may be rendered in a heavier weight than the default, which proves convenient for certain document classes
 % (note the use of the \href{https://ctan.org/pkg/lmodern}{lmodern} package: without it, boldface fails to operate, as explained \href{https://tex.stackexchange.com/a/215489/1449}{here}):
@@ -195,6 +202,31 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{\ffcolumnbreak}
+% A snippet may be split into two or more side-by-side columns by
+% placing |\ffcolumnbreak| on a line of its own, wrapped in an escape so
+% that |listings| does not print it. Line numbering runs continuously
+% across the columns, which is handy for a listing too tall for the
+% page. Each further |\ffcolumnbreak| adds one more column:
+% \docshotOptions{firstline=6,lastline=14}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage[paperwidth=4in]{geometry}
+% \usepackage{ffcode}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{ffcode}
+% int fibo(int n) {
+%   if (n < 2) {
+% (*@ \ffcolumnbreak @*)
+%     return n;
+%   }
+%   return fibo(n-1)+fibo(n-2);
+% }
+% \end{ffcode}
+% \end{document}
+% \end{docshot}
+
 % By means of the optional argument of |ffcode|,
 % any other options from the |listings| package may be conveyed to the
 % snippet.
@@ -260,6 +292,7 @@
 % \changes{v0.9.2}{2024/02/04}{All lengths and sizes are in "em" instead of "pt".}
 % \changes{v0.10.0}{2025/01/02}{Package option \texttt{samepage} added, to prevent each \texttt{ffcode} block from breaking across pages.}
 % \changes{v0.11.1}{2026/05/01}{Reserve \texttt{xleftmargin} for line numbers so they sit inside the column instead of protruding into the page margin.}
+% \changes{v0.13.0}{2026/07/10}{Package option \texttt{tmpfile} added, to configure the scratch file used to capture \texttt{ffcode} bodies.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 \pgfkeys{
@@ -272,6 +305,9 @@
   nobars/.store in=\ff@nobars,
   novert/.store in=\ff@novert,
   nocn/.store in=\ff@nocn,
+  tmpfile/.store in=\ff@file,
+  tmpfile/.default=\jobname.ffcode,
+  tmpfile,
 }
 \ProcessPgfPackageOptions{/ff}
 %    \end{macrocode}
@@ -318,21 +354,100 @@
 \makeatother
 %    \end{macrocode}
 
-% Then, we define a supplementary command \texttt{\char`\\ff@set} that
-% applies per-environment options on top of the global defaults:
+% \begin{macro}{\ffcolumnbreak}
+% Then, we define the |\ffcolumnbreak| marker and the machinery that
+% splits an |ffcode| block into side-by-side columns. Because |listings|
+% typesets a single line-by-line stream, a block is first captured
+% verbatim to a temporary file; that file is then scanned for
+% |\ffcolumnbreak| markers, and each segment between two markers is
+% typeset in its own |\parbox|, separated by a thin gray rule. A block
+% without any marker is rendered as one listing, exactly as before:
+% \changes{v0.13.0}{2026/07/10}{The \texttt{\char`\\ffcolumnbreak} marker added, to split an \texttt{ffcode} block into two or more side-by-side columns.}
 %    \begin{macrocode}
+\RequirePackage{fancyvrb}
 \makeatletter
-\newcommand\ff@set[1]{\lstset{#1}}
+\newcommand\ffcolumnbreak{}
+\edef\ff@cbmarker{\string\ffcolumnbreak}
+\def\ff@empty{}
+\newread\ff@read
+\newcount\ff@nlines
+\newcount\ff@nbreaks
+\newcount\ff@ncols
+\newcount\ff@prev
+\newdimen\ff@colwd
+\newdimen\ff@sepwd
+\def\ff@colsep{\hspace{0.4em}{\color{gray}\vrule width 0.3pt}\hspace{0.4em}}
+\def\ff@colbox#1#2{%
+  \parbox[t]{\ff@colwd}{\vspace{0pt}%
+    \lstinputlisting[firstline=#1,lastline=#2]{\ff@file}}}
+\protected\def\ff@mark#1{%
+  \ifnum\ff@prev=\z@\else\ff@colsep\fi
+  \ff@colbox{\the\numexpr\ff@prev+\@ne\relax}{\the\numexpr#1-\@ne\relax}%
+  \ff@prev=#1\relax}
+\def\ff@allother{%
+  \count@=\z@
+  \loop\catcode\count@=12 \ifnum\count@<255 \advance\count@\@ne\repeat
+  \catcode`\ =10 \endlinechar=-1 }
+\def\ff@readloop{%
+  \read\ff@read to\ff@line
+  \ifeof\ff@read
+    \let\ff@next\relax
+  \else
+    \global\advance\ff@nlines\@ne
+    \edef\ff@call{\noexpand\in@{\ff@cbmarker}{\ff@line}}\ff@call
+    \ifin@
+      \global\advance\ff@nbreaks\@ne
+      \xdef\ff@breaks{\ff@breaks\noexpand\ff@mark{\the\ff@nlines}}%
+    \fi
+    \let\ff@next\ff@readloop
+  \fi
+  \ff@next}
+\def\ff@scan{%
+  \global\ff@nlines=\z@ \global\ff@nbreaks=\z@ \gdef\ff@breaks{}%
+  \openin\ff@read=\ff@file\relax
+  \begingroup\ff@allother\ff@readloop\endgroup
+  \closein\ff@read}
+\def\ff@render{%
+  \ff@scan
+  \begingroup
+  \expandafter\lstset\expandafter{\ff@opts}%
+  \ifx\ff@breaks\ff@empty
+    \lstinputlisting{\ff@file}%
+  \else
+    \ff@ncols=\ff@nbreaks \advance\ff@ncols\@ne
+    \ff@sepwd=0.8em \advance\ff@sepwd0.3pt
+    \ff@colwd=\dimexpr(\linewidth-\ff@sepwd*\ff@ncols+\ff@sepwd)/\ff@ncols\relax
+    \par\addvspace\topsep
+    \noindent\hbox{%
+      \ff@prev=\z@ \ff@breaks \ff@colsep
+      \ff@colbox{\the\numexpr\ff@prev+\@ne\relax}{\the\ff@nlines}}%
+    \par\addvspace\topsep
+  \fi
+  \endgroup}
 \makeatother
 %    \end{macrocode}
+% \end{macro}
 
 % \begin{macro}{ffcode}
-% Then, we define the |ffcode| environment and its supplementary |ffcode*| counterpart:
+% Then, we (re)define the |ffcode| environment. Its body is written
+% verbatim to the temporary file and handed to |\ff@render|. The
+% optional |[...]| argument is parsed the same way |fancyvrb| does it,
+% by turning the end-of-line active before looking ahead, so that the
+% newline after |\begin{ffcode}| is not swallowed when no options are
+% supplied:
 %    \begin{macrocode}
 \makeatletter
-\lstnewenvironment{ffcode}[1][]
-  {\ff@set{#1}\ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi}
-  {\ifdefined\ff@samepage\endminipage\fi}
+\newenvironment{ffcode}
+  {\catcode`\^^M=\active
+   \@ifnextchar[\ff@begin{\ff@begin[]}}
+  {\end{VerbatimOut}%
+   \ff@render
+   \ifdefined\ff@samepage\endminipage\fi}
+\def\ff@begin[#1]{%
+  \catcode`\^^M=5\relax
+  \def\ff@opts{#1}%
+  \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi
+  \VerbatimEnvironment\begin{VerbatimOut}{\ff@file}}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
