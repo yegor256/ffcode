@@ -1,0 +1,37 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{ifluatex}
+\usepackage{ifxetex}
+\usepackage{ffcode}
+\begin{document}
+
+\START
+
+Two columns:
+
+\begin{ffcode}
+Hello, world!
+(*@ \ffcolumnbreak @*)
+Bye!
+\end{ffcode}
+
+Three columns:
+
+\begin{ffcode}
+one
+(*@ \ffcolumnbreak @*)
+two
+(*@ \ffcolumnbreak @*)
+three
+\end{ffcode}
+
+A plain block, without any break, still renders as one listing:
+
+\begin{ffcode}
+int x = 1;
+\end{ffcode}
+
+\END
