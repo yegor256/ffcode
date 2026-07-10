@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-07-10 08.06.08 Fixed Font Code]
+[2026-07-10 08.45.44 Fixed Font Code]
 
 
 
@@ -115,6 +115,11 @@
 \newdimen\ff@avail
 \newdimen\ff@natwd
 \newdimen\ff@gutter
+\newdimen\ff@level
+\newdimen\ff@fixedsum
+\newcount\ff@fixedcnt
+\newcount\ff@denom
+\newcount\ff@prevcnt
 \newsavebox\ff@mbox
 \let\ff@grab\relax
 \lst@AddToHook{Init}{\ff@grab}
@@ -157,12 +162,34 @@
   \global\advance\ff@total\ff@natwd
   \xdef\ff@cols{\unexpanded\expandafter{\ff@cols}%
     \noexpand\ff@col{#1}{#2}{\the\ff@natwd}}}
+\def\ff@onepass{%
+  \global\ff@fixedsum=\z@ \global\ff@fixedcnt=\z@
+  \begingroup
+    \def\ff@col##1##2##3{%
+      \ifdim##3>\ff@level
+        \global\advance\ff@fixedsum##3\relax
+        \global\advance\ff@fixedcnt\@ne
+      \fi}%
+    \ff@cols
+  \endgroup
+  \ifnum\ff@fixedcnt<\ff@ncols
+    \ff@denom=\numexpr\ff@ncols-\ff@fixedcnt\relax
+    \ff@level=\dimexpr(\ff@avail-\ff@fixedsum)/\ff@denom\relax
+  \fi}
+\def\ff@computelevel{%
+  \ff@level=\dimexpr\ff@avail/\ff@ncols\relax
+  \ff@prevcnt=\z@
+  \loop
+    \ff@onepass
+  \ifnum\ff@fixedcnt>\ff@prevcnt
+    \ff@prevcnt=\ff@fixedcnt
+  \repeat}
 \def\ff@col#1#2#3{%
   \ifnum\ff@prev=\z@\else\ff@colsep\fi
   \ifdim\ff@total>\ff@avail
     \ff@colwd=\dimexpr#3*\number\ff@avail/\number\ff@total\relax
   \else
-    \ff@colwd=#3\relax
+    \ifdim#3>\ff@level\ff@colwd=#3\relax\else\ff@colwd=\ff@level\fi
   \fi
   \parbox[t]{\ff@colwd}{%
     \ifdefined\@vspace@orig
@@ -188,6 +215,7 @@
     \let\ff@seg\ff@measure \ff@segs
     \let\ff@grab\relax
     \global\c@lstnumber=\ff@savednum\relax
+    \ff@computelevel
     \par\addvspace\topsep
     \noindent\hbox{\ff@prev=\z@ \ff@cols}%
     \par\addvspace\topsep
