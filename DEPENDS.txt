@@ -1,7 +1,6 @@
 hard fancyvrb
 hard listings
 hard pgfopts
-hard shellesc
 hard tcolorbox
 hard xcolor
 soft docshots
@@ -19,6 +18,6 @@ soft pdfcrop
 soft pgf
 soft scheme-basic
 soft silence
-soft tools
+hard tools
 soft upquote
 soft xetex
