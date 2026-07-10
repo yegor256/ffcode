@@ -34,4 +34,12 @@ A plain block, without any break, still renders as one listing:
 int x = 1;
 \end{ffcode}
 
+Columns wider than the line are shrunk in proportion to fit:
+
+\begin{ffcode}
+a very long first column that on its own already fills the whole text width
+(*@ \ffcolumnbreak @*)
+an even longer second column that certainly cannot fit beside the first one at all
+\end{ffcode}
+
 \END
