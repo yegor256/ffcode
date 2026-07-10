@@ -14,9 +14,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       TERM: xterm-256color
+    defaults:
+      run:
+        shell: bash
     strategy:
       matrix:
-        os: [ubuntu-24.04, macos-15]
+        os: [ubuntu-24.04, macos-15, windows-2025]
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v6
@@ -26,6 +29,8 @@ jobs:
         if: matrix.os == 'ubuntu-24.04'
       - run: brew install ghostscript
         if: matrix.os == 'macos-15'
+      - run: choco install --yes --no-progress ghostscript
+        if: matrix.os == 'windows-2025'
       - run: sed -E 's/^(hard|soft)[[:space:]]+//' DEPENDS.txt > .texlive-packages.txt
       - uses: zauguin/install-texlive@v4.4.0
         with:
