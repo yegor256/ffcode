@@ -31,7 +31,9 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-07-10 05.39.36 Fixed Font Code]
+[2026-07-10 07.00.01 Fixed Font Code]
+
+
 
 
 
@@ -64,6 +66,9 @@
   nobars/.store in=\ff@nobars,
   novert/.store in=\ff@novert,
   nocn/.store in=\ff@nocn,
+  tmpfile/.store in=\ff@file,
+  tmpfile/.default=\jobname.ffcode,
+  tmpfile,
 }
 \ProcessPgfPackageOptions{/ff}
 
@@ -95,14 +100,80 @@
 \fi
 \makeatother
 
+\RequirePackage{fancyvrb}
 \makeatletter
-\newcommand\ff@set[1]{\lstset{#1}}
+\newcommand\ffcolumnbreak{}
+\edef\ff@cbmarker{\string\ffcolumnbreak}
+\def\ff@empty{}
+\newread\ff@read
+\newcount\ff@nlines
+\newcount\ff@nbreaks
+\newcount\ff@ncols
+\newcount\ff@prev
+\newdimen\ff@colwd
+\newdimen\ff@sepwd
+\def\ff@colsep{\hspace{0.4em}{\color{gray}\vrule width 0.3pt}\hspace{0.4em}}
+\def\ff@colbox#1#2{%
+  \parbox[t]{\ff@colwd}{\vspace{0pt}%
+    \lstinputlisting[firstline=#1,lastline=#2]{\ff@file}}}
+\protected\def\ff@mark#1{%
+  \ifnum\ff@prev=\z@\else\ff@colsep\fi
+  \ff@colbox{\the\numexpr\ff@prev+\@ne\relax}{\the\numexpr#1-\@ne\relax}%
+  \ff@prev=#1\relax}
+\def\ff@allother{%
+  \count@=\z@
+  \loop\catcode\count@=12 \ifnum\count@<255 \advance\count@\@ne\repeat
+  \catcode`\ =10 \endlinechar=-1 }
+\def\ff@readloop{%
+  \read\ff@read to\ff@line
+  \ifeof\ff@read
+    \let\ff@next\relax
+  \else
+    \global\advance\ff@nlines\@ne
+    \edef\ff@call{\noexpand\in@{\ff@cbmarker}{\ff@line}}\ff@call
+    \ifin@
+      \global\advance\ff@nbreaks\@ne
+      \xdef\ff@breaks{\ff@breaks\noexpand\ff@mark{\the\ff@nlines}}%
+    \fi
+    \let\ff@next\ff@readloop
+  \fi
+  \ff@next}
+\def\ff@scan{%
+  \global\ff@nlines=\z@ \global\ff@nbreaks=\z@ \gdef\ff@breaks{}%
+  \openin\ff@read=\ff@file\relax
+  \begingroup\ff@allother\ff@readloop\endgroup
+  \closein\ff@read}
+\def\ff@render{%
+  \ff@scan
+  \begingroup
+  \expandafter\lstset\expandafter{\ff@opts}%
+  \ifx\ff@breaks\ff@empty
+    \lstinputlisting{\ff@file}%
+  \else
+    \ff@ncols=\ff@nbreaks \advance\ff@ncols\@ne
+    \ff@sepwd=0.8em \advance\ff@sepwd0.3pt
+    \ff@colwd=\dimexpr(\linewidth-\ff@sepwd*\ff@ncols+\ff@sepwd)/\ff@ncols\relax
+    \par\addvspace\topsep
+    \noindent\hbox{%
+      \ff@prev=\z@ \ff@breaks \ff@colsep
+      \ff@colbox{\the\numexpr\ff@prev+\@ne\relax}{\the\ff@nlines}}%
+    \par\addvspace\topsep
+  \fi
+  \endgroup}
 \makeatother
 
 \makeatletter
-\lstnewenvironment{ffcode}[1][]
-  {\ff@set{#1}\ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi}
-  {\ifdefined\ff@samepage\endminipage\fi}
+\newenvironment{ffcode}
+  {\catcode`\^^M=\active
+   \@ifnextchar[\ff@begin{\ff@begin[]}}
+  {\end{VerbatimOut}%
+   \ff@render
+   \ifdefined\ff@samepage\endminipage\fi}
+\def\ff@begin[#1]{%
+  \catcode`\^^M=5\relax
+  \def\ff@opts{#1}%
+  \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi
+  \VerbatimEnvironment\begin{VerbatimOut}{\ff@file}}
 \makeatother
 
 \makeatletter
