@@ -10,12 +10,12 @@
 \newdimen\colwidthb
 \newcount\colcount
 \makeatletter
-\let\ff@origparbox\parbox
-\renewcommand\parbox[3][t]{%
+\let\ff@origcol\ff@col
+\def\ff@col#1#2#3{%
+  \ff@origcol{#1}{#2}{#3}%
   \global\advance\colcount\@ne
-  \ifnum\colcount=\@ne\global\colwidtha=\dimexpr#2\relax\fi
-  \ifnum\colcount=\tw@\global\colwidthb=\dimexpr#2\relax\fi
-  \ff@origparbox[#1]{#2}{#3}}
+  \ifnum\colcount=\@ne\global\colwidtha=\ff@colwd\fi
+  \ifnum\colcount=\tw@\global\colwidthb=\ff@colwd\fi}
 \makeatother
 \begin{document}
 
@@ -24,6 +24,7 @@
 Two columns of equal content share the line equally instead of huddling
 at the left margin:
 
+\global\colcount=0\relax
 \begin{ffcode}
 foo
 (*@ \ffcolumnbreak @*)
