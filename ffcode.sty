@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-07-10 07.00.01 Fixed Font Code]
+[2026-07-10 07.55.38 Fixed Font Code]
 
 
 
@@ -104,7 +104,6 @@
 \makeatletter
 \newcommand\ffcolumnbreak{}
 \edef\ff@cbmarker{\string\ffcolumnbreak}
-\def\ff@empty{}
 \newread\ff@read
 \newcount\ff@nlines
 \newcount\ff@nbreaks
@@ -112,14 +111,14 @@
 \newcount\ff@prev
 \newdimen\ff@colwd
 \newdimen\ff@sepwd
+\newdimen\ff@total
+\newdimen\ff@avail
+\newdimen\ff@natwd
+\newdimen\ff@gutter
+\newsavebox\ff@mbox
+\let\ff@grab\relax
+\lst@AddToHook{Init}{\ff@grab}
 \def\ff@colsep{\hspace{0.4em}{\color{gray}\vrule width 0.3pt}\hspace{0.4em}}
-\def\ff@colbox#1#2{%
-  \parbox[t]{\ff@colwd}{\vspace{0pt}%
-    \lstinputlisting[firstline=#1,lastline=#2]{\ff@file}}}
-\protected\def\ff@mark#1{%
-  \ifnum\ff@prev=\z@\else\ff@colsep\fi
-  \ff@colbox{\the\numexpr\ff@prev+\@ne\relax}{\the\numexpr#1-\@ne\relax}%
-  \ff@prev=#1\relax}
 \def\ff@allother{%
   \count@=\z@
   \loop\catcode\count@=12 \ifnum\count@<255 \advance\count@\@ne\repeat
@@ -133,30 +132,59 @@
     \edef\ff@call{\noexpand\in@{\ff@cbmarker}{\ff@line}}\ff@call
     \ifin@
       \global\advance\ff@nbreaks\@ne
-      \xdef\ff@breaks{\ff@breaks\noexpand\ff@mark{\the\ff@nlines}}%
+      \xdef\ff@segs{\unexpanded\expandafter{\ff@segs}\noexpand\ff@seg
+        {\the\numexpr\ff@prev+\@ne\relax}{\the\numexpr\ff@nlines-\@ne\relax}}%
+      \global\ff@prev=\ff@nlines
     \fi
     \let\ff@next\ff@readloop
   \fi
   \ff@next}
 \def\ff@scan{%
-  \global\ff@nlines=\z@ \global\ff@nbreaks=\z@ \gdef\ff@breaks{}%
+  \global\ff@nlines=\z@ \global\ff@nbreaks=\z@
+  \global\ff@prev=\z@ \gdef\ff@segs{}%
   \openin\ff@read=\ff@file\relax
   \begingroup\ff@allother\ff@readloop\endgroup
-  \closein\ff@read}
+  \closein\ff@read
+  \ifnum\ff@nbreaks>\z@
+    \xdef\ff@segs{\unexpanded\expandafter{\ff@segs}\noexpand\ff@seg
+      {\the\numexpr\ff@prev+\@ne\relax}{\the\ff@nlines}}%
+  \fi}
+\def\ff@measure#1#2{%
+  \setbox\ff@mbox=\vbox{\hfuzz\maxdimen
+    \lstinputlisting[numbers=none,breaklines=false,%
+      firstline=#1,lastline=#2]{\ff@file}}%
+  \ff@natwd=\dimexpr\lst@maxwidth+\ff@gutter\relax
+  \global\advance\ff@total\ff@natwd
+  \xdef\ff@cols{\unexpanded\expandafter{\ff@cols}%
+    \noexpand\ff@col{#1}{#2}{\the\ff@natwd}}}
+\def\ff@col#1#2#3{%
+  \ifnum\ff@prev=\z@\else\ff@colsep\fi
+  \ifdim\ff@total>\ff@avail
+    \ff@colwd=\dimexpr#3*\number\ff@avail/\number\ff@total\relax
+  \else
+    \ff@colwd=#3\relax
+  \fi
+  \parbox[t]{\ff@colwd}{\vspace{0pt}%
+    \lstinputlisting[firstline=#1,lastline=#2]{\ff@file}}%
+  \ff@prev=\@ne}
 \def\ff@render{%
   \ff@scan
   \begingroup
   \expandafter\lstset\expandafter{\ff@opts}%
-  \ifx\ff@breaks\ff@empty
+  \ifnum\ff@nbreaks=\z@
     \lstinputlisting{\ff@file}%
   \else
     \ff@ncols=\ff@nbreaks \advance\ff@ncols\@ne
     \ff@sepwd=0.8em \advance\ff@sepwd0.3pt
-    \ff@colwd=\dimexpr(\linewidth-\ff@sepwd*\ff@ncols+\ff@sepwd)/\ff@ncols\relax
+    \ff@avail=\dimexpr\linewidth-\ff@sepwd*\ff@ncols+\ff@sepwd\relax
+    \global\ff@total=\z@ \gdef\ff@cols{}%
+    \edef\ff@savednum{\the\c@lstnumber}%
+    \def\ff@grab{\global\ff@gutter\@totalleftmargin}%
+    \let\ff@seg\ff@measure \ff@segs
+    \let\ff@grab\relax
+    \global\c@lstnumber=\ff@savednum\relax
     \par\addvspace\topsep
-    \noindent\hbox{%
-      \ff@prev=\z@ \ff@breaks \ff@colsep
-      \ff@colbox{\the\numexpr\ff@prev+\@ne\relax}{\the\ff@nlines}}%
+    \noindent\hbox{\ff@prev=\z@ \ff@cols}%
     \par\addvspace\topsep
   \fi
   \endgroup}
