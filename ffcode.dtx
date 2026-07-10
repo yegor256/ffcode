@@ -346,13 +346,36 @@
 % \end{macro}
 
 % \begin{macro}{ffsave}
-% Then, we define the \texttt{ffsave} environment:
+% Then, we define the \texttt{ffsave} environment. Before opening the
+% output stream, its missing parent directory is created, so that
+% \texttt{\char`\\begin\char`\{ffsave\char`\}[foo/bar.txt]}
+% works even when \texttt{foo/} is absent (this needs shell escape enabled):
 % \changes{v0.11.0}{2025/07/06}{The \texttt{ffsave} environment added.}
+% \changes{v0.12.1}{2026/07/10}{The \texttt{ffsave} environment now creates the missing parent directory of its target file.}
 %    \begin{macrocode}
 \RequirePackage{fancyvrb}
+\RequirePackage{shellesc}
+\makeatletter
+\ExplSyntaxOn
+\cs_new_protected:cpn { ff@mkdir } #1
+  {
+    \str_set:Nn \l_tmpa_str {#1}
+    \sys_if_platform_windows:TF
+      {
+        \str_replace_all:Nnn \l_tmpa_str { / } { \c_backslash_str }
+        \ShellEscape { if~not~exist~"\l_tmpa_str"~mkdir~"\l_tmpa_str" }
+      }
+      { \ShellEscape { mkdir~-p~"\l_tmpa_str" } }
+  }
+\ExplSyntaxOff
 \newenvironment{ffsave}[1][ffsave.txt]
-  {\VerbatimEnvironment\begin{VerbatimOut}{#1}}
+  {\filename@parse{#1}%
+   \ifx\filename@area\@empty\else
+     \expandafter\ff@mkdir\expandafter{\filename@area}%
+   \fi
+   \VerbatimEnvironment\begin{VerbatimOut}{#1}}
   {\end{VerbatimOut}}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 

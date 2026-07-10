@@ -18,6 +18,6 @@ soft pdfcrop
 soft pgf
 soft scheme-basic
 soft silence
-soft tools
+hard tools
 soft upquote
 soft xetex
