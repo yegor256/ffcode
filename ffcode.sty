@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-07-10 07.55.38 Fixed Font Code]
+[2026-07-10 08.06.08 Fixed Font Code]
 
 
 
@@ -164,7 +164,12 @@
   \else
     \ff@colwd=#3\relax
   \fi
-  \parbox[t]{\ff@colwd}{\vspace{0pt}%
+  \parbox[t]{\ff@colwd}{%
+    \ifdefined\@vspace@orig
+      \let\@vspace\@vspace@orig
+      \ifdefined\@vspacer@orig\let\@vspacer\@vspacer@orig\fi
+    \fi
+    \vspace{0pt}%
     \lstinputlisting[firstline=#1,lastline=#2]{\ff@file}}%
   \ff@prev=\@ne}
 \def\ff@render{%
