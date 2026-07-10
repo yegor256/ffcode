@@ -296,7 +296,8 @@
 % \texttt{acmart} warns about the \texttt{\char`\\@vspace} that \texttt{listings} emits around displays; restore its saved originals during typesetting:
 \ifdefined\@vspace@orig
   \lst@AddToHook{DisplayStyle}{%
-    \let\@vspace\@vspace@orig\let\@vspacer\@vspacer@orig}
+    \let\@vspace\@vspace@orig
+    \ifdefined\@vspacer@orig\let\@vspacer\@vspacer@orig\fi}
 \fi
 \lstset{breaklines}
 \lstset{escapeinside={(*@}{@*)}}
