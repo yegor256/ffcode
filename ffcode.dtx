@@ -295,7 +295,6 @@
 % \changes{v0.13.0}{2026/07/10}{Package option \texttt{tmpfile} added, to configure the scratch file used to capture \texttt{ffcode} bodies.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
-\def\ff@file{\jobname.ffcode}
 \pgfkeys{
   /ff/.cd,
   bold/.store in=\ff@bold,
@@ -307,6 +306,8 @@
   novert/.store in=\ff@novert,
   nocn/.store in=\ff@nocn,
   tmpfile/.store in=\ff@file,
+  tmpfile/.default=\jobname.ffcode,
+  tmpfile,
 }
 \ProcessPgfPackageOptions{/ff}
 %    \end{macrocode}
