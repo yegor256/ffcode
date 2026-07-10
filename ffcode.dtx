@@ -440,7 +440,10 @@
     \ff@colwd=#3\relax
   \fi
   \parbox[t]{\ff@colwd}{%
-    \ifdefined\@vspace@orig\let\@vspace\@vspace@orig\fi
+    \ifdefined\@vspace@orig
+      \let\@vspace\@vspace@orig
+      \ifdefined\@vspacer@orig\let\@vspacer\@vspacer@orig\fi
+    \fi
     \vspace{0pt}%
     \lstinputlisting[firstline=#1,lastline=#2]{\ff@file}}%
   \ff@prev=\@ne}
