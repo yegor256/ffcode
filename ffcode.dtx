@@ -287,11 +287,18 @@
 % \changes{v0.9.0}{2024/01/09}{The \texttt{minted} package is replaced by the \texttt{listings} package.}
 % \changes{v0.10.2}{2025/07/06}{We started to use \texttt{keepspaces} in order to guarantee correct visual rendering of multi-spaced content.}
 % \changes{v0.12.0}{2026/05/05}{Static \texttt{\char`\\lstset} defaults moved from the per-environment hook to the preamble, so that user-supplied \texttt{\char`\\lstset} calls are no longer overwritten on every \texttt{ffcode} usage.}
+% \changes{v0.12.2}{2026/07/10}{Restore the original \texttt{\char`\\@vspace} inside listings, so \texttt{acmart} no longer warns about the vertical spacing that \texttt{listings} emits around every block.}
 %    \begin{macrocode}
 \RequirePackage{listings}
 \makeatletter
 % See \href{https://tex.stackexchange.com/questions/706858}{the explanation}:
 \lst@AddToHook{Init}{\setlength{\lineskip}{0pt}}
+% \texttt{acmart} warns about the \texttt{\char`\\@vspace} that \texttt{listings} emits around displays; restore its saved originals during typesetting:
+\ifdefined\@vspace@orig
+  \lst@AddToHook{DisplayStyle}{%
+    \let\@vspace\@vspace@orig
+    \ifdefined\@vspacer@orig\let\@vspacer\@vspacer@orig\fi}
+\fi
 \lstset{breaklines}
 \lstset{escapeinside={(*@}{@*)}}
 \lstset{basicstyle={\ttfamily}}
