@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-07-10 08.45.44 Fixed Font Code]
+[2026-07-10 10.55.11 Fixed Font Code]
 
 
 
@@ -123,7 +123,8 @@
 \newsavebox\ff@mbox
 \let\ff@grab\relax
 \lst@AddToHook{Init}{\ff@grab}
-\def\ff@colsep{\hspace{0.4em}{\color{gray}\vrule width 0.3pt}\hspace{0.4em}}
+\def\ff@colsep{\hspace{0.4em}{\color{gray}\vrule width 0.3pt}%
+  \hspace{0.4em}}
 \def\ff@allother{%
   \count@=\z@
   \loop\catcode\count@=12 \ifnum\count@<255 \advance\count@\@ne\repeat
