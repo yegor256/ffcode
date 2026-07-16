@@ -37,9 +37,13 @@
 \documentclass{ltxdoc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{fail-fast}
 \usepackage{microtype}
 \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
+\PassOptionsToPackage{hyperindex=false}{hyperref}
 \usepackage{href-ul}
+\usepackage{bookmark}
+\renewcommand{\RerunFileCheck}[3]{\AddToHook{enddocument/info}{#2}}
 \usepackage{ffcode}
 \usepackage{amsmath}
 \usepackage{multicol}
