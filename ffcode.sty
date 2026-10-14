@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-10-08 03.16.13 Fixed Font Code]
+[2026-10-14 13.04.16 Fixed Font Code]
 
 
 
@@ -75,7 +75,6 @@
 \RequirePackage{xcolor}
 
 \RequirePackage{listings}
-\makeatletter
 \lst@AddToHook{Init}{\setlength{\lineskip}{0pt}}
 \ifdefined\@vspace@orig
   \lst@AddToHook{DisplayStyle}{%
@@ -98,10 +97,8 @@
 \ifdefined\ff@nocn\else
   \lstset{firstnumber=last}
 \fi
-\makeatother
 
 \RequirePackage{fancyvrb}
-\makeatletter
 \newcommand\ffcolumnbreak{}
 \edef\ff@cbmarker{\string\ffcolumnbreak}
 \newread\ff@read
@@ -109,6 +106,7 @@
 \newcount\ff@nbreaks
 \newcount\ff@ncols
 \newcount\ff@prev
+\newcount\ff@start
 \newdimen\ff@colwd
 \newdimen\ff@sepwd
 \newdimen\ff@total
@@ -139,21 +137,21 @@
     \ifin@
       \global\advance\ff@nbreaks\@ne
       \xdef\ff@segs{\unexpanded\expandafter{\ff@segs}\noexpand\ff@seg
-        {\the\numexpr\ff@prev+\@ne\relax}{\the\numexpr\ff@nlines-\@ne\relax}}%
-      \global\ff@prev=\ff@nlines
+        {\the\numexpr\ff@start+\@ne\relax}{\the\numexpr\ff@nlines-\@ne\relax}}%
+      \global\ff@start=\ff@nlines
     \fi
     \let\ff@next\ff@readloop
   \fi
   \ff@next}
 \def\ff@scan{%
   \global\ff@nlines=\z@ \global\ff@nbreaks=\z@
-  \global\ff@prev=\z@ \gdef\ff@segs{}%
+  \global\ff@start=\z@ \gdef\ff@segs{}%
   \openin\ff@read=\ff@file\relax
   \begingroup\ff@allother\ff@readloop\endgroup
   \closein\ff@read
   \ifnum\ff@nbreaks>\z@
     \xdef\ff@segs{\unexpanded\expandafter{\ff@segs}\noexpand\ff@seg
-      {\the\numexpr\ff@prev+\@ne\relax}{\the\ff@nlines}}%
+      {\the\numexpr\ff@start+\@ne\relax}{\the\ff@nlines}}%
   \fi}
 \def\ff@measure#1#2{%
   \setbox\ff@mbox=\vbox{\hfuzz\maxdimen
@@ -222,9 +220,7 @@
     \par\addvspace\topsep
   \fi
   \endgroup}
-\makeatother
 
-\makeatletter
 \newenvironment{ffcode}
   {\catcode`\^^M=\active
    \@ifnextchar[\ff@begin{\ff@begin[]}}
@@ -236,19 +232,14 @@
   \def\ff@opts{#1}%
   \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi
   \VerbatimEnvironment\begin{VerbatimOut}{\ff@file}}
-\makeatother
 
-\makeatletter
 \newcommand\ffinput[2][]{%
   \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi%
   \lstinputlisting[#1]{#2}%
   \ifdefined\ff@samepage\endminipage\fi%
 }
-\makeatother
 
-\RequirePackage{fancyvrb}
 \RequirePackage{shellesc}
-\makeatletter
 \ExplSyntaxOn
 \cs_new_protected:cpn { ff@mkdir } #1
   {
@@ -268,9 +259,7 @@
    \fi
    \VerbatimEnvironment\begin{VerbatimOut}{#1}}
   {\end{VerbatimOut}}
-\makeatother
 
-\makeatletter
 \newcommand\ff@print[1]{%
   \textnormal{%
     \ifdefined\ff@sf\sffamily\else\ttfamily\fi%
@@ -278,13 +267,10 @@
     #1%
   }%
 }
-\makeatother
 
-\makeatletter\newcommand\ff@rule
+\newcommand\ff@rule
   {\vrule height 0.6em depth 0.1em width 0em}
-\makeatother
 
-\makeatletter
 \ifdefined\ff@noframes\else
   \RequirePackage{tcolorbox}
   \newtcbox\ff@box{nobeforeafter,colframe=gray!80!white,
@@ -292,13 +278,9 @@
     boxsep=0.12em,left=0.05em,right=0.05em,top=0.02em,bottom=0.02em,
     tcbox raise base}
 \fi
-\makeatother
 
-\makeatletter
 \NewDocumentCommand\ff@x{v}{\ff{#1}}
-\makeatother
 
-\makeatletter
 \newcommand\ff[1]{%
   \ifdefined\ff@noframes%
     \ff@rule\ff@print{#1}%
@@ -310,13 +292,12 @@
     \fi%
   \fi%
 }
-\makeatother
 
-\makeatletter\ifdefined\ff@novert\else
+\ifdefined\ff@novert\else
   \catcode`\|\active
   \AtBeginDocument{\catcode`\|\active\protected\def|{\ff@x|}}
   \catcode`\| 12 %
-\fi\makeatother
+\fi
 
 \endinput
 %%
