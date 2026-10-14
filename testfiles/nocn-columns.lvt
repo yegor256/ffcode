@@ -1,0 +1,34 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+% This test fails when the nocn option restarts line numbers in every
+% \ffcolumnbreak column instead of once per block (issue #121).
+
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage[nocn]{ffcode}
+\makeatletter
+\let\ff@origcol\ff@col
+\def\ff@col#1#2#3{%
+  \ff@origcol{#1}{#2}{#3}%
+  \typeout{LASTNUMBER:\the\c@lstnumber}}
+\makeatother
+\begin{document}
+
+\START
+
+\begin{ffcode}
+aaa
+bbb
+(*@ \ffcolumnbreak @*)
+ccc
+ddd
+\end{ffcode}
+
+\begin{ffcode}
+eee
+(*@ \ffcolumnbreak @*)
+fff
+\end{ffcode}
+
+\END
