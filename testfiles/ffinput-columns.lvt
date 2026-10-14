@@ -1,0 +1,31 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+% This test fails when \ffinput prints a file that holds a
+% \ffcolumnbreak marker as one column, instead of splitting it the way
+% the ffcode environment does (issue #123).
+
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{ffcode}
+\newcount\colcount
+\makeatletter
+\let\ff@origcol\ff@col
+\def\ff@col#1#2#3{%
+  \ff@origcol{#1}{#2}{#3}%
+  \global\advance\colcount\@ne}
+\makeatother
+\begin{document}
+
+\START
+
+\begin{ffsave}[ffinput-columns.txt]
+foo
+(*@ \ffcolumnbreak @*)
+bar
+\end{ffsave}
+
+\ffinput{ffinput-columns.txt}
+\typeout{COLUMNS:\the\colcount}
+
+\END

@@ -531,13 +531,16 @@
 % \end{environment}
 
 % \begin{macro}{\ffinput}
-% Then, we define the \texttt{\char`\\ffinput} command:
+% Then, we define the \texttt{\char`\\ffinput} command. It hands its file
+% and options to |\ff@render|, inside a group, so that it prints a file
+% exactly as the |ffcode| environment would, columns included:
 % \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
 % \changes{v0.12.0}{2026/05/26}{Stopped \texttt{\char`\\ffinput} options from leaking into later listings.}
+% \changes{v0.15.3}{2026/10/14}{The \texttt{\char`\\ffinput} command now splits a file into columns at \texttt{\char`\\ffcolumnbreak} markers, as the \texttt{ffcode} environment does.}
 %    \begin{macrocode}
 \newcommand\ffinput[2][]{%
   \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi%
-  \lstinputlisting[#1]{#2}%
+  \begingroup\def\ff@file{#2}\def\ff@opts{#1}\ff@render\endgroup
   \ifdefined\ff@samepage\endminipage\fi%
 }
 %    \end{macrocode}
