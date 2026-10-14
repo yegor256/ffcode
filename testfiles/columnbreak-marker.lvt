@@ -1,0 +1,35 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+% This test fails when a line that merely mentions \ffcolumnbreak is
+% taken for a column break, instead of only a line that holds nothing
+% but the escaped marker (issue #122).
+
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{ffcode}
+\makeatletter
+\def\breaks{\typeout{BREAKS:\the\ff@nbreaks}}
+\makeatother
+\begin{document}
+
+\START
+
+\begin{ffcode}
+foo(); (*@\ffcolumnbreak@*) bar();
+\end{ffcode}
+\breaks
+
+\begin{ffcode}
+\newcommand\ffcolumnbreaks{}
+\end{ffcode}
+\breaks
+
+\begin{ffcode}
+foo();
+   (*@   \ffcolumnbreak   @*)
+bar();
+\end{ffcode}
+\breaks
+
+\END

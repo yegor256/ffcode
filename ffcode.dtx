@@ -359,8 +359,10 @@
 % splits an |ffcode| block into side-by-side columns. Because |listings|
 % typesets a single line-by-line stream, a block is first captured
 % verbatim to a temporary file; that file is then scanned for
-% |\ffcolumnbreak| markers, which cut it into segments. Each segment is
-% measured before it is printed: it is typeset once into a discarded box,
+% |\ffcolumnbreak| markers, which cut it into segments. Only a line that
+% holds nothing but the escaped marker, spaces aside, counts as a break;
+% any other line that mentions |\ffcolumnbreak| is left to |listings|.
+% Each segment is measured before it is printed: it is typeset once into a discarded box,
 % so that |listings| records the width of its longest line in
 % |\lst@maxwidth|, and that width (plus the gutter reserved for line
 % numbers) becomes the natural width of the column. The available width
@@ -378,10 +380,12 @@
 % \changes{v0.13.0}{2026/07/10}{Restore the original \texttt{\char`\\@vspace} inside every \texttt{\char`\\ffcolumnbreak} column, so \texttt{acmart} no longer warns about the top-alignment strut in each column box.}
 % \changes{v0.15.0}{2026/07/10}{Columns split by \texttt{\char`\\ffcolumnbreak} now share the line equally by default, widening only a column that does not fit its equal share.}
 % \changes{v0.15.1}{2026/10/14}{Line numbers no longer restart in every \texttt{\char`\\ffcolumnbreak} column when the \texttt{nocn} option is used.}
+% \changes{v0.15.2}{2026/10/14}{Only a line holding nothing but the escaped \texttt{\char`\\ffcolumnbreak} marker now splits a block, so code that merely mentions it is no longer cut out.}
 %    \begin{macrocode}
 \RequirePackage{fancyvrb}
 \newcommand\ffcolumnbreak{}
-\edef\ff@cbmarker{\string\ffcolumnbreak}
+\def\ff@flat#1{\zap@space#1 \@empty}
+\edef\ff@cbmarker{\detokenize{(*@}\string\ffcolumnbreak\detokenize{@*)}}
 \newread\ff@read
 \newcount\ff@nlines
 \newcount\ff@nbreaks
@@ -414,8 +418,8 @@
     \let\ff@next\relax
   \else
     \global\advance\ff@nlines\@ne
-    \edef\ff@call{\noexpand\in@{\ff@cbmarker}{\ff@line}}\ff@call
-    \ifin@
+    \edef\ff@flatline{\expandafter\ff@flat\expandafter{\ff@line}}%
+    \ifx\ff@flatline\ff@cbmarker
       \global\advance\ff@nbreaks\@ne
       \xdef\ff@segs{\unexpanded\expandafter{\ff@segs}\noexpand\ff@seg
         {\the\numexpr\ff@start+\@ne\relax}{\the\numexpr\ff@nlines-\@ne\relax}}%
