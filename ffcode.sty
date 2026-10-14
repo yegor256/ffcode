@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-10-14 13.04.16 Fixed Font Code]
+[2026-10-14 13.37.53 Fixed Font Code]
 
 
 
@@ -184,7 +184,7 @@
     \ff@prevcnt=\ff@fixedcnt
   \repeat}
 \def\ff@col#1#2#3{%
-  \ifnum\ff@prev=\z@\else\ff@colsep\fi
+  \ifnum\ff@prev=\z@\else\ff@colsep\lstset{firstnumber=last}\fi
   \ifdim\ff@total>\ff@avail
     \ff@colwd=\dimexpr#3*\number\ff@avail/\number\ff@total\relax
   \else
