@@ -1,0 +1,19 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+% This test fails when a package option set to false still takes effect,
+% so that nonumbers=false drops the line numbers and the margin reserved
+% for them (issue #124).
+
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage[nonumbers=false]{ffcode}
+\begin{document}
+
+\START
+
+\makeatletter
+\typeout{XLEFTMARGIN:\lst@xleftmargin}
+\makeatother
+
+\END

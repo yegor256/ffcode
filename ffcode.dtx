@@ -100,6 +100,10 @@
 
 % \section{Package Options}
 
+% Each option below is a switch: naming it turns it on, and it also
+% accepts an explicit value, either |true| or |false|. For instance,
+% |\usepackage[nonumbers=false]{ffcode}| keeps the line numbers.
+
 % \DescribeMacro{samepage}
 % The |samepage| package option prevents page breaks inside |ffcode| blocks.
 
@@ -292,18 +296,27 @@
 % \changes{v0.10.0}{2025/01/02}{Package option \texttt{samepage} added, to prevent each \texttt{ffcode} block from breaking across pages.}
 % \changes{v0.11.1}{2026/05/01}{Reserve \texttt{xleftmargin} for line numbers so they sit inside the column instead of protruding into the page margin.}
 % \changes{v0.13.0}{2026/07/10}{Package option \texttt{tmpfile} added, to configure the scratch file used to capture \texttt{ffcode} bodies.}
+% \changes{v0.15.4}{2026/10/14}{Package options are now true switches, so that \texttt{nonumbers=false} and the like no longer turn the feature on.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
+\newif\ifff@bold
+\newif\ifff@sf
+\newif\ifff@samepage
+\newif\ifff@noframes
+\newif\ifff@nonumbers
+\newif\ifff@nobars
+\newif\ifff@novert
+\newif\ifff@nocn
 \pgfkeys{
   /ff/.cd,
-  bold/.store in=\ff@bold,
-  sf/.store in=\ff@sf,
-  samepage/.store in=\ff@samepage,
-  noframes/.store in=\ff@noframes,
-  nonumbers/.store in=\ff@nonumbers,
-  nobars/.store in=\ff@nobars,
-  novert/.store in=\ff@novert,
-  nocn/.store in=\ff@nocn,
+  bold/.is if=ff@bold,
+  sf/.is if=ff@sf,
+  samepage/.is if=ff@samepage,
+  noframes/.is if=ff@noframes,
+  nonumbers/.is if=ff@nonumbers,
+  nobars/.is if=ff@nobars,
+  novert/.is if=ff@novert,
+  nocn/.is if=ff@nocn,
   tmpfile/.store in=\ff@file,
   tmpfile/.default=\jobname.ffcode,
   tmpfile,
@@ -341,15 +354,15 @@
 \lstset{basicstyle={\ttfamily}}
 \lstset{columns=fullflexible}
 \lstset{keepspaces=true}
-\ifdefined\ff@nonumbers\else
+\ifff@nonumbers\else
   \lstset{numbers=left,numbersep=.8em,
     numberstyle={\tiny\sffamily\color{gray}},
     xleftmargin=2.5em}
 \fi
-\ifdefined\ff@nobars\else
+\ifff@nobars\else
   \lstset{frame=leftline,framerule=.05em,rulecolor={\color{gray}}}
 \fi
-\ifdefined\ff@nocn\else
+\ifff@nocn\else
   \lstset{firstnumber=last}
 \fi
 %    \end{macrocode}
@@ -521,11 +534,11 @@
    \@ifnextchar[\ff@begin{\ff@begin[]}}
   {\end{VerbatimOut}%
    \ff@render
-   \ifdefined\ff@samepage\endminipage\fi}
+   \ifff@samepage\endminipage\fi}
 \def\ff@begin[#1]{%
   \catcode`\^^M=5\relax
   \def\ff@opts{#1}%
-  \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi
+  \ifff@samepage\noindent\minipage{\linewidth}\fi
   \VerbatimEnvironment\begin{VerbatimOut}{\ff@file}}
 %    \end{macrocode}
 % \end{environment}
@@ -539,9 +552,9 @@
 % \changes{v0.15.3}{2026/10/14}{The \texttt{\char`\\ffinput} command now splits a file into columns at \texttt{\char`\\ffcolumnbreak} markers, as the \texttt{ffcode} environment does.}
 %    \begin{macrocode}
 \newcommand\ffinput[2][]{%
-  \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi%
+  \ifff@samepage\noindent\minipage{\linewidth}\fi%
   \begingroup\def\ff@file{#2}\def\ff@opts{#1}\ff@render\endgroup
-  \ifdefined\ff@samepage\endminipage\fi%
+  \ifff@samepage\endminipage\fi%
 }
 %    \end{macrocode}
 % \end{macro}
@@ -583,8 +596,8 @@
 %    \begin{macrocode}
 \newcommand\ff@print[1]{%
   \textnormal{%
-    \ifdefined\ff@sf\sffamily\else\ttfamily\fi%
-    \ifdefined\ff@bold\fontseries{b}\selectfont\fi%
+    \ifff@sf\sffamily\else\ttfamily\fi%
+    \ifff@bold\fontseries{b}\selectfont\fi%
     #1%
   }%
 }
@@ -603,7 +616,7 @@
 % Then, we use \href{https://ctan.org/pkg/tcolorbox}{tcolorbox} to define the |\ff@box|
 % command for a gray box around a verbatim text block:
 %    \begin{macrocode}
-\ifdefined\ff@noframes\else
+\ifff@noframes\else
   \RequirePackage{tcolorbox}
   \newtcbox\ff@box{nobeforeafter,colframe=gray!80!white,
     colback=gray!5!white,boxrule=0.01em,arc=0.1em,
@@ -625,7 +638,7 @@
 % Then, we define |\ff| macro:
 %    \begin{macrocode}
 \newcommand\ff[1]{%
-  \ifdefined\ff@noframes%
+  \ifff@noframes%
     \ff@rule\ff@print{#1}%
   \else%
     \relax\ifmmode%
@@ -643,7 +656,7 @@
 % and \href{https://tex.stackexchange.com/a/665303/1449}{here}
 % (unless the |novert| package option is used):
 %    \begin{macrocode}
-\ifdefined\ff@novert\else
+\ifff@novert\else
   \catcode`\|\active
   \AtBeginDocument{\catcode`\|\active\protected\def|{\ff@x|}}
   \catcode`\| 12 %
