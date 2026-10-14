@@ -99,6 +99,8 @@
 % environment may be employed beforehand; it behaves as the |ffcode|
 % environment, save that the content is written to a file rather than
 % printed, whence it may subsequently be retrieved by the |\ffinput| command.
+% The name of that file is given in the optional argument of |ffsave|,
+% for instance |\begin{ffsave}[foo.txt]|, and defaults to |ffsave.txt|.
 
 % \section{Package Options}
 
@@ -115,6 +117,11 @@
 
 % \DescribeMacro{nonumbers}
 % The |nonumbers| package option omits the line numbers.
+
+% \DescribeMacro{novert}
+% By default, a pair of vertical bars works as a shortcut for |\ff|.
+% The |novert| package option leaves the vertical bar as an ordinary
+% character.
 
 % \DescribeMacro{nocn}
 % By default, line numbering is continuous: numbers commence at the
@@ -148,7 +155,7 @@
 
 % \DescribeMacro{sf}
 % The font family of |\ff| fragments may be altered to |\sffamily|:
-% \docshotOptions{firstline=4,lastline=10}
+% \docshotOptions{firstline=4,lastline=9}
 % \begin{docshot}
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
@@ -168,10 +175,10 @@
 
 % A pair of vertical bars decorates a \TeX{} command within a snippet.
 % A single vertical bar may be produced by means of
-% ``\verb+|\char`\\vert|+''.
+% ``\verb+\ff{\char`\|}+''.
 
 % The |\ff| command behaves differently in math mode---it adds no
-% grey frames:
+% gray frames:
 % \docshotOptions{firstline=6,lastline=8}
 % \begin{docshot}
 % \documentclass{article}
@@ -234,10 +241,6 @@
 % \end{document}
 % \end{docshot}
 
-% By means of the optional argument of |ffcode|,
-% any other options from the |listings| package may be conveyed to the
-% snippet.
-
 % The |\lstset| command of the |listings| package may also be employed
 % to establish defaults for the |ffcode| environment.
 % In contrast to the optional argument, which applies solely to a single
@@ -246,7 +249,7 @@
 % blocks thereafter.
 % To confine the change to a single |ffcode| block, the call should be
 % wrapped within a |\begingroup|\ldots|\endgroup| pair:
-% \docshotOptions{firstline=6,lastline=12}
+% \docshotOptions{firstline=6,lastline=11}
 % \begin{docshot}
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
@@ -296,7 +299,7 @@
 % \changes{v0.6.0}{2022/11/16}{Package option \texttt{novert} added, to disable the redefinition of the vertical bar.}
 % \changes{v0.7.0}{2022/11/28}{Package option \texttt{bold} added, to make all \texttt{\char`\\ff} pieces look bolder than usual.}
 % \changes{v0.7.0}{2022/11/28}{Package option \texttt{sf} added, to print all \texttt{\char`\\ff} pieces with \texttt{\char`\\sffamily}.}
-% \changes{v0.9.2}{2024/02/04}{All lengths and sizes are in "em" instead of "pt".}
+% \changes{v0.9.2}{2024/02/04}{All lengths and sizes are in ``em'' instead of ``pt''.}
 % \changes{v0.10.0}{2025/01/02}{Package option \texttt{samepage} added, to prevent each \texttt{ffcode} block from breaking across pages.}
 % \changes{v0.11.1}{2026/05/01}{Reserve \texttt{xleftmargin} for line numbers so they sit inside the column instead of protruding into the page margin.}
 % \changes{v0.13.0}{2026/07/10}{Package option \texttt{tmpfile} added, to configure the scratch file used to capture \texttt{ffcode} bodies.}
@@ -326,7 +329,12 @@
 
 % Then, we configure the \href{https://ctan.org/pkg/listings}{listings} package.
 % The defaults are applied here, at package load, so that a user may override
-% them globally with \texttt{\char`\\lstset} after \texttt{\char`\\usepackage\{ffcode\}}:
+% them globally with \texttt{\char`\\lstset} after \texttt{\char`\\usepackage\{ffcode\}}.
+% The line skip is reset to zero at the start of every listing, as
+% \href{https://tex.stackexchange.com/questions/706858}{explained here}.
+% Also, \texttt{acmart} warns about the \texttt{\char`\\@vspace}
+% that \texttt{listings} emits around displays, so its saved originals
+% are restored during typesetting:
 % \changes{v0.9.0}{2024/01/09}{The \texttt{minted} package is replaced by the \texttt{listings} package.}
 % \changes{v0.10.2}{2025/07/06}{We started to use \texttt{keepspaces} in order to guarantee correct visual rendering of multi-spaced content.}
 % \changes{v0.12.0}{2026/05/05}{Static \texttt{\char`\\lstset} defaults moved from the per-environment hook to the preamble, so that user-supplied \texttt{\char`\\lstset} calls are no longer overwritten on every \texttt{ffcode} usage.}
@@ -334,11 +342,7 @@
 %    \begin{macrocode}
 \RequirePackage{listings}
 \makeatletter
-% See \href{https://tex.stackexchange.com/questions/706858}{the explanation}:
 \lst@AddToHook{Init}{\setlength{\lineskip}{0pt}}
-% \texttt{acmart} warns about the \texttt{\char`\\@vspace}
-% that \texttt{listings} emits around displays;
-% restore its saved originals during typesetting:
 \ifdefined\@vspace@orig
   \lst@AddToHook{DisplayStyle}{%
     \let\@vspace\@vspace@orig
@@ -513,7 +517,7 @@
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{ffcode}
+% \begin{environment}{ffcode}
 % Then, we (re)define the |ffcode| environment. Its body is written
 % verbatim to the temporary file and handed to |\ff@render|. The
 % optional |[...]| argument is parsed the same way |fancyvrb| does it,
@@ -535,9 +539,9 @@
   \VerbatimEnvironment\begin{VerbatimOut}{\ff@file}}
 \makeatother
 %    \end{macrocode}
-% \end{macro}
+% \end{environment}
 
-% \begin{macro}{ffinput}
+% \begin{macro}{\ffinput}
 % Then, we define the \texttt{\char`\\ffinput} command:
 % \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
 % \changes{v0.12.0}{2026/05/26}{Stopped \texttt{\char`\\ffinput} options from leaking into later listings.}
@@ -552,7 +556,7 @@
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{ffsave}
+% \begin{environment}{ffsave}
 % Then, we define the \texttt{ffsave} environment. Before opening the
 % output stream, its missing parent directory is created, so that
 % \texttt{\char`\\begin\char`\{ffsave\char`\}[foo/bar.txt]}
@@ -584,7 +588,7 @@
   {\end{VerbatimOut}}
 \makeatother
 %    \end{macrocode}
-% \end{macro}
+% \end{environment}
 
 % \begin{macro}{\ff@print}
 % Then, we define a supplementary macro |\ff@print|:
@@ -656,7 +660,6 @@
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{novert}
 % Finally, we let vertical bars work similarly to |\ff|, as suggested
 % \href{https://tex.stackexchange.com/a/665105/1449}{here}
 % and \href{https://tex.stackexchange.com/a/665303/1449}{here}
@@ -668,7 +671,6 @@
   \catcode`\| 12 %
 \fi\makeatother
 %    \end{macrocode}
-% \end{macro}
 
 %    \begin{macrocode}
 \endinput
