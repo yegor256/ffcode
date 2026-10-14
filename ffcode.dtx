@@ -45,8 +45,6 @@
 \usepackage{bookmark}
 \renewcommand{\RerunFileCheck}[3]{\AddToHook{enddocument/info}{#2}}
 \usepackage{ffcode}
-\usepackage{amsmath}
-\usepackage{multicol}
 \usepackage{xcolor}
 \usepackage[dtx,runs=2]{docshots}
 \PageIndex
@@ -55,8 +53,6 @@
 \RecordChanges
 \begin{document}
 	\DocInput{ffcode.dtx}
-	\PrintChanges
-	\PrintIndex
 \end{document}
 %</driver>
 % \fi
@@ -341,7 +337,6 @@
 % \changes{v0.12.2}{2026/07/10}{Restore the original \texttt{\char`\\@vspace} inside listings, so \texttt{acmart} no longer warns about the vertical spacing that \texttt{listings} emits around every block.}
 %    \begin{macrocode}
 \RequirePackage{listings}
-\makeatletter
 \lst@AddToHook{Init}{\setlength{\lineskip}{0pt}}
 \ifdefined\@vspace@orig
   \lst@AddToHook{DisplayStyle}{%
@@ -364,7 +359,6 @@
 \ifdefined\ff@nocn\else
   \lstset{firstnumber=last}
 \fi
-\makeatother
 %    \end{macrocode}
 
 % \begin{macro}{\ffcolumnbreak}
@@ -392,7 +386,6 @@
 % \changes{v0.15.0}{2026/07/10}{Columns split by \texttt{\char`\\ffcolumnbreak} now share the line equally by default, widening only a column that does not fit its equal share.}
 %    \begin{macrocode}
 \RequirePackage{fancyvrb}
-\makeatletter
 \newcommand\ffcolumnbreak{}
 \edef\ff@cbmarker{\string\ffcolumnbreak}
 \newread\ff@read
@@ -400,6 +393,7 @@
 \newcount\ff@nbreaks
 \newcount\ff@ncols
 \newcount\ff@prev
+\newcount\ff@start
 \newdimen\ff@colwd
 \newdimen\ff@sepwd
 \newdimen\ff@total
@@ -430,21 +424,21 @@
     \ifin@
       \global\advance\ff@nbreaks\@ne
       \xdef\ff@segs{\unexpanded\expandafter{\ff@segs}\noexpand\ff@seg
-        {\the\numexpr\ff@prev+\@ne\relax}{\the\numexpr\ff@nlines-\@ne\relax}}%
-      \global\ff@prev=\ff@nlines
+        {\the\numexpr\ff@start+\@ne\relax}{\the\numexpr\ff@nlines-\@ne\relax}}%
+      \global\ff@start=\ff@nlines
     \fi
     \let\ff@next\ff@readloop
   \fi
   \ff@next}
 \def\ff@scan{%
   \global\ff@nlines=\z@ \global\ff@nbreaks=\z@
-  \global\ff@prev=\z@ \gdef\ff@segs{}%
+  \global\ff@start=\z@ \gdef\ff@segs{}%
   \openin\ff@read=\ff@file\relax
   \begingroup\ff@allother\ff@readloop\endgroup
   \closein\ff@read
   \ifnum\ff@nbreaks>\z@
     \xdef\ff@segs{\unexpanded\expandafter{\ff@segs}\noexpand\ff@seg
-      {\the\numexpr\ff@prev+\@ne\relax}{\the\ff@nlines}}%
+      {\the\numexpr\ff@start+\@ne\relax}{\the\ff@nlines}}%
   \fi}
 \def\ff@measure#1#2{%
   \setbox\ff@mbox=\vbox{\hfuzz\maxdimen
@@ -513,7 +507,6 @@
     \par\addvspace\topsep
   \fi
   \endgroup}
-\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -525,7 +518,6 @@
 % newline after |\begin{ffcode}| is not swallowed when no options are
 % supplied:
 %    \begin{macrocode}
-\makeatletter
 \newenvironment{ffcode}
   {\catcode`\^^M=\active
    \@ifnextchar[\ff@begin{\ff@begin[]}}
@@ -537,7 +529,6 @@
   \def\ff@opts{#1}%
   \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi
   \VerbatimEnvironment\begin{VerbatimOut}{\ff@file}}
-\makeatother
 %    \end{macrocode}
 % \end{environment}
 
@@ -546,13 +537,11 @@
 % \changes{v0.10.0}{2024/12/29}{The \texttt{\char`\\ffinput} command added.}
 % \changes{v0.12.0}{2026/05/26}{Stopped \texttt{\char`\\ffinput} options from leaking into later listings.}
 %    \begin{macrocode}
-\makeatletter
 \newcommand\ffinput[2][]{%
   \ifdefined\ff@samepage\noindent\minipage{\linewidth}\fi%
   \lstinputlisting[#1]{#2}%
   \ifdefined\ff@samepage\endminipage\fi%
 }
-\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -564,9 +553,7 @@
 % \changes{v0.11.0}{2025/07/06}{The \texttt{ffsave} environment added.}
 % \changes{v0.12.1}{2026/07/10}{The \texttt{ffsave} environment now creates the missing parent directory of its target file.}
 %    \begin{macrocode}
-\RequirePackage{fancyvrb}
 \RequirePackage{shellesc}
-\makeatletter
 \ExplSyntaxOn
 \cs_new_protected:cpn { ff@mkdir } #1
   {
@@ -586,7 +573,6 @@
    \fi
    \VerbatimEnvironment\begin{VerbatimOut}{#1}}
   {\end{VerbatimOut}}
-\makeatother
 %    \end{macrocode}
 % \end{environment}
 
@@ -594,7 +580,6 @@
 % Then, we define a supplementary macro |\ff@print|:
 % \changes{v0.5.1}{2022/10/30}{Now, the command \texttt{ff} ignores italic and bold and always prints \texttt{\char`\\texttt} as it should be.}
 %    \begin{macrocode}
-\makeatletter
 \newcommand\ff@print[1]{%
   \textnormal{%
     \ifdefined\ff@sf\sffamily\else\ttfamily\fi%
@@ -602,16 +587,14 @@
     #1%
   }%
 }
-\makeatother
 %    \end{macrocode}
 % \end{macro}
 
 % \begin{macro}{\ff@rule}
 % Then, we define a supplementary command |\ff@rule|:
 %    \begin{macrocode}
-\makeatletter\newcommand\ff@rule
+\newcommand\ff@rule
   {\vrule height 0.6em depth 0.1em width 0em}
-\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -619,7 +602,6 @@
 % Then, we use \href{https://ctan.org/pkg/tcolorbox}{tcolorbox} to define the |\ff@box|
 % command for a gray box around a verbatim text block:
 %    \begin{macrocode}
-\makeatletter
 \ifdefined\ff@noframes\else
   \RequirePackage{tcolorbox}
   \newtcbox\ff@box{nobeforeafter,colframe=gray!80!white,
@@ -627,16 +609,13 @@
     boxsep=0.12em,left=0.05em,right=0.05em,top=0.02em,bottom=0.02em,
     tcbox raise base}
 \fi
-\makeatother
 %    \end{macrocode}
 % \end{macro}
 
 % \begin{macro}{\ff@x}
 % Then, we define the internal |\ff@x| command for printing a piece of fixed-width-font text:
 %    \begin{macrocode}
-\makeatletter
 \NewDocumentCommand\ff@x{v}{\ff{#1}}
-\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -644,7 +623,6 @@
 % \changes{v0.8.0}{2022/12/01}{The \texttt{\char`\\ff} command is now a normal command, not verbatim.}
 % Then, we define |\ff| macro:
 %    \begin{macrocode}
-\makeatletter
 \newcommand\ff[1]{%
   \ifdefined\ff@noframes%
     \ff@rule\ff@print{#1}%
@@ -656,7 +634,6 @@
     \fi%
   \fi%
 }
-\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -665,11 +642,11 @@
 % and \href{https://tex.stackexchange.com/a/665303/1449}{here}
 % (unless the |novert| package option is used):
 %    \begin{macrocode}
-\makeatletter\ifdefined\ff@novert\else
+\ifdefined\ff@novert\else
   \catcode`\|\active
   \AtBeginDocument{\catcode`\|\active\protected\def|{\ff@x|}}
   \catcode`\| 12 %
-\fi\makeatother
+\fi
 %    \end{macrocode}
 
 %    \begin{macrocode}
