@@ -31,7 +31,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ffcode}
-[2026-10-14 13.38.32 Fixed Font Code]
+[2026-10-14 13.45.28 Fixed Font Code]
 
 
 
@@ -100,7 +100,8 @@
 
 \RequirePackage{fancyvrb}
 \newcommand\ffcolumnbreak{}
-\edef\ff@cbmarker{\string\ffcolumnbreak}
+\def\ff@flat#1{\zap@space#1 \@empty}
+\edef\ff@cbmarker{\detokenize{(*@}\string\ffcolumnbreak\detokenize{@*)}}
 \newread\ff@read
 \newcount\ff@nlines
 \newcount\ff@nbreaks
@@ -133,8 +134,8 @@
     \let\ff@next\relax
   \else
     \global\advance\ff@nlines\@ne
-    \edef\ff@call{\noexpand\in@{\ff@cbmarker}{\ff@line}}\ff@call
-    \ifin@
+    \edef\ff@flatline{\expandafter\ff@flat\expandafter{\ff@line}}%
+    \ifx\ff@flatline\ff@cbmarker
       \global\advance\ff@nbreaks\@ne
       \xdef\ff@segs{\unexpanded\expandafter{\ff@segs}\noexpand\ff@seg
         {\the\numexpr\ff@start+\@ne\relax}{\the\numexpr\ff@nlines-\@ne\relax}}%
