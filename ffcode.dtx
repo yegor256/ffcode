@@ -135,8 +135,7 @@
 % \DescribeMacro{bold}
 % The |\ff| fragments may be rendered in a heavier weight than the default, which proves convenient for certain document classes
 % (note the use of the \href{https://ctan.org/pkg/lmodern}{lmodern} package: without it, boldface fails to operate, as explained \href{https://tex.stackexchange.com/a/215489/1449}{here}):
-% \docshotOptions{firstline=4,lastline=10}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=4,lastline=10}]
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
 % \pagestyle{empty}
@@ -151,8 +150,7 @@
 
 % \DescribeMacro{sf}
 % The font family of |\ff| fragments may be altered to |\sffamily|:
-% \docshotOptions{firstline=4,lastline=9}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=4,lastline=9}]
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
 % \pagestyle{empty}
@@ -175,8 +173,7 @@
 
 % The |\ff| command behaves differently in math mode---it adds no
 % gray frames:
-% \docshotOptions{firstline=6,lastline=8}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=8}]
 % \documentclass{article}
 % \usepackage{ffcode}
 % \usepackage{mathtools}
@@ -191,8 +188,7 @@
 % Lines within the |ffcode| environment may be highlighted,
 % and any further configuration parameters from
 % the |listings| package may likewise be supplied:
-% \docshotOptions{firstline=6,lastline=13}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=13}]
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
 % \usepackage{ffcode}
@@ -218,8 +214,7 @@
 % the columns share the line equally; a column whose longest line does
 % not fit in its equal share is widened just enough to hold it, and the
 % extra space is taken from the columns that have room to spare:
-% \docshotOptions{firstline=6,lastline=14}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=14}]
 % \documentclass{article}
 % \usepackage[paperwidth=4in]{geometry}
 % \usepackage{ffcode}
@@ -245,8 +240,7 @@
 % blocks thereafter.
 % To confine the change to a single |ffcode| block, the call should be
 % wrapped within a |\begingroup|\ldots|\endgroup| pair:
-% \docshotOptions{firstline=6,lastline=11}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=11}]
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
 % \usepackage{ffcode}
@@ -264,8 +258,7 @@
 % A snippet may be rendered in ``condensed'' mode, with reduced spacing
 % between letters, by supplying |columns=fixed| together with a narrower
 % |basewidth| from the |listings| package:
-% \docshotOptions{firstline=6,lastline=12}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=12}]
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
 % \usepackage{ffcode}
