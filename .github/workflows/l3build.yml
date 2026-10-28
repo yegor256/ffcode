@@ -34,7 +34,7 @@ jobs:
       - run: choco install --yes --no-progress ghostscript
         if: matrix.os == 'windows-2025'
       - run: sed -E 's/^(hard|soft)[[:space:]]+//' DEPENDS.txt > .texlive-packages.txt
-      - uses: zauguin/install-texlive@v4.4.0
+      - uses: zauguin/install-texlive@v4.5.0
         with:
           package_file: .texlive-packages.txt
           texlive_version: 2026
